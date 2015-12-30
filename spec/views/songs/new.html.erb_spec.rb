@@ -1,17 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe "songs/new", type: :view do
+RSpec.describe "songs/new", type: :feature do
   it "renders form" do
-    assign(:song, Song.new)
+    visit new_song_path
 
-    render
+    form = find("form")
 
-    assert_select "form[action=?]", songs_path do
-      assert_select "input#song_title[name=?]", "song[title]"
-      assert_select "input#song_release_year[name=?]", "song[release_year]"
-      assert_select "input#song_released[name=?]", "song[released]"
-      assert_select "input#song_genre[name=?]", "song[genre]"
-      assert_select "input#song_artist_name[name=?]", "song[artist_name]"
-    end
+    expect(form.find("input#song_title")[:name]).to eq("song[title]")
+    expect(form.find("input#song_release_year")[:name]).to eq("song[release_year]")
+    expect(form.find("input#song_released")[:name]).to eq("song[released]")
+    expect(form.find("input#song_genre")[:name]).to eq("song[genre]")
+    expect(form.find("input#song_artist_name")[:name]).to eq("song[artist_name]")
   end
 end
