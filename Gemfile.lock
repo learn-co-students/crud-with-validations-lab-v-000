@@ -162,7 +162,6 @@ PLATFORMS
 DEPENDENCIES
   capybara
   jbuilder (~> 2.0)
-  mime-types (>= 1.16)
   pry
   rails (= 4.2.5)
   rspec-rails
