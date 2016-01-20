@@ -2,12 +2,18 @@
 <html>
 <head>
   <title>CrudWithValidationsLab</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
+    <h2 class="lead">
+      <%= link_to 'Home', songs_path %> |
+      <%= link_to 'New Song', new_song_path %>
+    </h2>
 
-<%= yield %>
-
+    <%= yield %>
+  </div>
 </body>
 </html>
