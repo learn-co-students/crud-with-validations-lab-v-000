@@ -13,5 +13,4 @@
 <br>
 <%=link_to "Edit Song", edit_song_path(@song)%>
 
-<%=form_tag song_path(@song), method: "delete" %>
-<%=submit_tag "Delete Song"%>
+<%=link_to "Delete Song", delete_song_path(@song)%>
