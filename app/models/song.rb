@@ -7,7 +7,8 @@ class Song < ActiveRecord::Base
   validate :song_already_made?
 
   def song_already_made?
-    errors.add(:song_made, "Song already made this year") if !!Song.find_by(title: self.title, artist_name: self.artist_name, release_year: self.release_year)
+    song_found = Song.find_by(title: self.title, artist_name: self.artist_name, release_year: self.release_year)
+    errors.add(:song_made, "Song already made this year") if !song_found.nil? && song_found.id != self.id
   end
 
   def song_released?
