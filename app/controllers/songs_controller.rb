@@ -20,12 +20,11 @@ class SongsController < ApplicationController
   end
 
   def edit
-    @song = Song.find(params[:id])
-
+    @song = set :song 
   end
 
   def update
-    @song = Song.find(params[:id])
+    @song = set :song 
     @song.update(song_params)
 
     if @song.valid?
@@ -38,11 +37,11 @@ class SongsController < ApplicationController
   end
 
   def show
-    @song = Song.find(params[:id])
+    @song = set :song
   end
 
   def destroy
-    @song = Song.find(params[:id])
+    @song = set :song
     @song.destroy
 
     redirect_to songs_path
@@ -54,7 +53,12 @@ class SongsController < ApplicationController
       params.require(:song).permit(:title, :released, :release_year, :artist_name)
     end
 
+    def set(model_name)
+      Object.const_get(model_name.capitalize).find(params[:id])
+    end
 
 end
+
+
 
 
