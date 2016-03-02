@@ -25,7 +25,7 @@
         <td><%= song.genre %></td>
         <td><%= link_to 'View', song %></td>
         <td><%= link_to 'Edit', edit_song_path(song) %></td>
-        <td><%= button_to 'Delete', song, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+        <td><%= link_to 'Delete', song_path(song), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
