@@ -4,11 +4,11 @@
 
   <%= f.text_field :release_year %><br>
   
-  <%= f.text_field :released %><br>
+  <%= f.check_box :released %><br>
+  
+  <%= f.text_field :artist_name %><br>
   
   <%= f.text_field :genre %><br>
-
-  <%= f.text_field :artist_name %><br>
 
   <%= f.submit %>
 <% end %>
