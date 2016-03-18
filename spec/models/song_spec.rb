@@ -16,6 +16,7 @@ RSpec.describe Song, type: :model do
   let(:unreleased) { missing_release_year.merge(released: false) }
   let(:future_release_year) { valid_attributes.merge(release_year: Date.today.year + 1) }
 
+
   it "is valid when expected" do
     expect(Song.new(valid_attributes)).to be_valid
   end
