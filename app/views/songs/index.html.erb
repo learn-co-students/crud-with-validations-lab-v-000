@@ -1,0 +1,11 @@
+<tbody>
+  <% @songs.each do |song| %>
+    <tr>
+      <h1><%= song.title %></h1>
+      <h2><%= song.artist_name %></h2>
+      <h2><%= song.release_year %></h2>
+      <h2><%= song.genre %></h2>
+      <%= link_to "Delete", song, method: :delete, data: { confirm: "Really?" } %>
+    </tr>
+  <% end %>
+</tbody>
