@@ -1,7 +1,7 @@
 
 <h1>Songs</h1>
 
-<div><%= link_to 'Create Song', new_song_path %></div>
+<div><%= link_to 'Create a new song', new_song_path %></div>
 <br />
 
 <table>
@@ -25,7 +25,7 @@
         <td>
           <%= link_to 'View', song %> |
           <%= link_to 'Edit', edit_song_path(song) %> |
-          <%= link_to 'Delete', song, method: :delete, data: { confirm: 'For real?' } %>
+          <%= link_to 'Delete', song, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
     <% end %>
