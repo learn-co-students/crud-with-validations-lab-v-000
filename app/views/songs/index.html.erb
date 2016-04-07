@@ -1,0 +1,8 @@
+<% @songs.each do |song| %>
+  <tbody>
+    <tr>
+      <%= link_to(song.title, song_path(song))%>, <%=song.release_year%>
+    </tr>
+  </tbody>
+  <% end %>
+
