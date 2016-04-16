@@ -3,3 +3,4 @@
 <p>Release Year: <%= @song.release_year %></p>
 <p><%= @song.artist_name %></p>
 <p><%= @song.genre %></p>
+<p><%= link_to "Delete Song", @song, method: :delete %></p>
