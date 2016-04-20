@@ -1,0 +1,42 @@
+<%= form_for @song do |f| %>
+
+  <!-- Show de errors -->
+  <% if @song.errors.any? %>
+    <div id="error_explanation">
+      <h2>There were errors:</h2>
+
+      <ul>
+        <% @song.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %> <!-- end of errors -->
+
+  <div class="field<%= '_with_errors' if !@song.errors[:title].empty? %>">
+  <p><%= f.label :title %>
+  <%= f.text_field :title, @song.title %></p>
+  </div>
+
+  <div class="field<%= '_with_errors' if !@song.errors[:artist_name].empty? %>">
+  <p><%= f.label :artist_name %>
+  <%= f.text_field :artist_name, @song.artist_name %></p>
+  </div>
+
+  <div class="field<%= '_with_errors' if !@song.errors[:genre].empty? %>">
+  <p><%= f.label :genre %>
+  <%= f.text_field :genre, @song.genre %></p>
+  </div>
+
+  <div class="field<%= '_with_errors' if !@song.errors[:released].empty? %>">
+  <p><%= f.label :released %>
+  <%= f.check_box :released, @song.released %></p>
+  </div>
+
+  <div class="field<%= '_with_errors' if !@song.errors[:release_year].empty? %>">
+  <p><%= f.label :release_year %>
+  <%= f.text_field :release_year, @song.release_year %></p>
+  </div>
+
+  <%= f.submit %>
+<% end %> <!-- end of form -->
