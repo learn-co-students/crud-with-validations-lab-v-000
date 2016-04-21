@@ -1,0 +1,17 @@
+<h1><%=@song.title%></h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Released</th>
+    <th>Released Year</th>
+    <th>Artist</th>
+    <th>Genre</th>
+  </tr>
+  <tr>
+    <td><%= @song.title %></td>
+    <td><%= @song.released %></td>
+    <td><%= @song.release_year %></td>
+    <td><%= @song.artist_name %></td>
+    <td><%= @song.genre %></td>
+  </tr>
+</table>
