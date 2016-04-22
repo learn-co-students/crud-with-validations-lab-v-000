@@ -1,17 +1,28 @@
+<%= link_to "Songs", songs_path %>
 <h1><%=@song.title%></h1>
 <table>
-  <tr>
-    <th>Title</th>
-    <th>Released</th>
-    <th>Released Year</th>
-    <th>Artist</th>
-    <th>Genre</th>
-  </tr>
-  <tr>
-    <td><%= @song.title %></td>
-    <td><%= @song.released %></td>
-    <td><%= @song.release_year %></td>
-    <td><%= @song.artist_name %></td>
-    <td><%= @song.genre %></td>
-  </tr>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Released</th>
+      <th>Released Year</th>
+      <th>Artist</th>
+      <th>Genre</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @song.title %></td>
+      <td><%= @song.released %></td>
+      <td><%= @song.release_year %></td>
+      <td><%= @song.artist_name %></td>
+      <td><%= @song.genre %></td>
+      <td><%= link_to "Edit", edit_song_path(@song) %></td>
+      <td><%= form_tag song_path(@song.id), method: "delete" %>
+        <%= submit_tag "Delete #{@song.title}" %>
+      </td>
+    </tr>
+  </tbody>
 </table>
