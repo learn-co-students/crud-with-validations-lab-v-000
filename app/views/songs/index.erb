@@ -1,12 +1,15 @@
 <h1>Song List</h1>
 <table style="width: 25%">
-  <tr>
-    <th>Title</th>
-    <th>Released</th>
-    <th>Released Year</th>
-    <th>Artist</th>
-    <th>Genre</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Released</th>
+      <th>Released Year</th>
+        <th>Artist</th>
+      <th>Genre</th>
+    </tr>
+  </thead>
+  <tbody>
 <% @songs.each do |song| %>
   <tr>
     <td><%= song.title %></td>
@@ -16,5 +19,5 @@
     <td><%= song.genre %></td>
   </tr>
 <% end %>
+  </tbody>
 </table>
-<br>
