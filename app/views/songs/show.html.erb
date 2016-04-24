@@ -1,0 +1,9 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <h1><%= @song.title %></h1>
+  <%= link_to "Delete", song_path(@song), method: :delete, data: {confirm: 'Are you sure?'} %>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <%= form_for(@song) do |t| %>
+  <label>Title:</label><br>
+  <%= t.text_field :title %>
+  <%= t.submit %>
+  <% end %>
+</body>
+</html>
