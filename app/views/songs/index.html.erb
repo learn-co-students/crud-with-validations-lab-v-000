@@ -1,0 +1,6 @@
+<h2>Songs</h2>
+<tbody>
+<% @songs.each do |song| %>
+  <tr><%= link_to song.title, song_path(song) %></tr>
+<% end if @songs %>
+</tbody>
