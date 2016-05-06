@@ -1,0 +1,6 @@
+<tbody>
+<% @songs.each do |song| %>
+ <tr><div class="song"><tr><%= song.title %>
+  <%= link_to "Delete", song_path(song), method: :delete %></tr>
+</div></tr>
+<% end %></tbody>
