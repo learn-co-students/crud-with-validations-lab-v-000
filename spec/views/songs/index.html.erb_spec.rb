@@ -25,6 +25,7 @@ RSpec.describe "songs/index", type: :feature do
 
   it "renders a list of songs" do
     visit songs_path
+    save_and_open_page
     expect(all("tbody > tr").size).to eq(2)
   end
 end
