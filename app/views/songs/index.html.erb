@@ -1,0 +1,8 @@
+<tbody>
+  <% @songs.each do |song| %>
+    <tr><%= link_to song.title, song_path(song) %> by <%= song.artist_name %>
+      |
+      <%= link_to "Delete", song, method: :delete, data: { confirm: "Really?" } %> <!-- jquery -->
+    </tr><br>
+  <% end %>
+</tbody>
