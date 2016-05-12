@@ -1,5 +1,9 @@
 class Song < ActiveRecord::Base
   validates :title, presence: true
+  validates :title, uniqueness: {
+    scope: [:release_year, :artist_name],
+    message: "Cannot release the same song twice in a year."
+  }
   validates :released, inclusion: { in: [true, false] }
   validate :release_year_presence
   validates :artist_name, presence: true
