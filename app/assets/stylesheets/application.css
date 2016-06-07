@@ -19,3 +19,12 @@
   background-color: red;
   display: table;
 }
+
+table, td, th{
+  border: 1px solid #333;
+}
+
+td, th {
+  padding: 10px;
+  text-align: left;
+}
