@@ -1,0 +1,6 @@
+<tr>
+  <td><%= link_to song.title, song_path(song) %></td>
+  <td><%= song.release_year %></td>
+  <td><%= song.artist_name %></td>
+  <td><%= link_to 'Delete song', song_path(song), method: :delete, data: { confirm: "Are you sure?" } %>
+</tr>
