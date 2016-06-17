@@ -1,0 +1,8 @@
+Song#Index
+<table>
+    <tbody>
+    <% @songs.all.each do |song| %>
+        <tr><td><%= song.inspect %></td></tr>
+    <% end %>
+    </tbody>
+</table>
