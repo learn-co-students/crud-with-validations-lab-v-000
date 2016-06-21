@@ -21,6 +21,7 @@ class SongsController < ApplicationController
   end
 
   def show
+    raise params.inspect
   end
 
   def edit
@@ -37,6 +38,8 @@ class SongsController < ApplicationController
   end
 
   def destroy
+    raise params.inspect
+
     @song.destroy
     redirect_to songs_path
   end
