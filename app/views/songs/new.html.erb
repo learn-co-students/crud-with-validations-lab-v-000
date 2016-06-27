@@ -1,0 +1,39 @@
+<h3>Create a new song:</h3><br>
+
+<%= form_for @song do |t| %>
+  <% if @song.errors.any? %>
+    <p><%= pluralize(@song.errors.count, 'error')%> were found:</p>
+    <ul>
+      <% @song.errors.full_messages.each do |m|%>
+        <li><%= m %></li>
+      <% end %>
+    </ul>
+  <% end %><br>
+
+  <div class="field">
+  <%= t.label :title %>
+  <%= t.text_field :title %>
+  </div>
+
+  <div class="field">
+  <%= t.label :released %>
+  <%= t.check_box :released %>
+  </div>
+
+  <div class="field">
+  <%= t.label :release_year %>
+  <%= t.number_field :release_year %>
+  </div>
+
+  <div class="field">
+  <%= t.label :artist_name %>
+  <%= t.text_field :artist_name %>
+  </div>
+
+  <div class="field">
+  <%= t.label :genre %>
+  <%= t.text_field :genre %>
+  </div>
+
+  <%= t.submit %>
+<% end %>
