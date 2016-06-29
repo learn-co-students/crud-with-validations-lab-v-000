@@ -1,0 +1,15 @@
+Song
+
+title:string released:boolean release_year:integer artist_name:string genre:string
+
+Validations:
+
+1. title must not be blank - check
+2. title cannon be repeated by the same artist in the same year - check 
+3. released must be true or false - check
+
+4. release_year is optional if released is false, must not be blank if released is true - check
+
+
+5. release_year must be less than or equal to the current year - check 
+6. artist_name must not be blank - check 
