@@ -1,0 +1,14 @@
+<table>
+  <thead><tr>
+    <th>Title</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <%@songs.each do |song|%>
+  <tbody><tr>
+    <td><%=link_to song.title, song_path(song)%></td>
+    <td><a href="..." data-method="delete" rel="nofollow">Delete this entry</a></td>
+  </tr>
+  </tbody>
+  <%end%>
+<table>
