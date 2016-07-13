@@ -1,0 +1,19 @@
+<h1>Songs:</h1>
+<% @songs.each do |song| %>
+  <table>
+    <tbody>
+      <tr>
+        <td><%= song.title %> - </td>
+        <td><%= song.artist_name %> | </td>
+        <td>
+          <%= link_to 'View', song %> |
+          <%= link_to 'Edit', edit_song_path(song) %> |
+          <!-- <%= link_to 'Delete', song, method: :delete, data: { confirm: 'Are you sure?' } %> -->
+          <!-- This is just linking back to the show page, so I'm commenting it out and will come back to it. -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>
+<br>
+<%= link_to 'Create a New Song', song_path(:new) %>
