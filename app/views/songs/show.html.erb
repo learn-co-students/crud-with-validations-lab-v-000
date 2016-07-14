@@ -1,4 +1,6 @@
-<h1>Show</h1>
-<%= @song.title %>
-<%= @song.artist_name %>
-<%= @song.released_year %>
+
+<h3><%= @song.title %></h3>
+<p><%= @song.release_year %></p>
+<p><%= @song.artist_name %></p>
+<p><%= @song.genre %></p>
+<%= link_to "Delete", @song, method: :destroy, data: { confirm: "Really?" } %>
