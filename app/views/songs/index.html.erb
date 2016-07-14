@@ -1,0 +1,14 @@
+<h1>All Songs</h1>
+<h2>Index</h2>
+
+<% @songs.each do |song| %>
+<ul>
+  <%= song.title %>
+  <%= song.artist_name %>
+  <%= song.genre %>
+  <%= song.release_year %>
+  <%= link_to 'View', song %>
+  <%= link_to 'Edit', edit_song_path(song) %></ul>
+  <!-- <%= link_to 'Delete', song, method: :delete, data: { confirm: 'Are you sure?' } %> -->
+  <% end %>
+ </ul>
