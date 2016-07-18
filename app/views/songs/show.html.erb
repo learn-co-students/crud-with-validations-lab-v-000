@@ -1,0 +1,5 @@
+<h2><%= @song.title %></h2>
+<%= link_to "edit", edit_song_path(@song) %>
+<p>Copyright <%= @song.release_year %></p>
+<hr />
+<p><%= @song.artist %>, <%= @song.genre %></p>
