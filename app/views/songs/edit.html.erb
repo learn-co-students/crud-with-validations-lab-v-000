@@ -1,0 +1,12 @@
+<h1>Update <%= @song.title %></h1>
+
+<%= render 'form' %>
+
+<%= form_for @song do |f| %>
+  Title: <%= f.text_field :title %><br><br>
+  Released: <%= f.check_box :released %><br><br>
+  Year Released: <%= f.number_field :release_year %><br><br>
+  Artist: <%= f.text_field :artist_name %><br><br>
+  Genre: <%= f.text_field :genre %><br><br>
+  <%= f.submit %>
+<% end %>
