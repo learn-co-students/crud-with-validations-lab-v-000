@@ -1,0 +1,16 @@
+<h1>Songs</h1>
+<tbody>
+  <% @songs.each do |song| %>
+    <tr>
+      <td><%= song.title %></td>
+      <td><%= song.release_year %></td>
+      <td><%= song.genre %></td>
+      <td><%= song.artist_name %></td>
+      <td>
+        <%= link_to 'View', song %> |
+        <%= link_to 'Delete', song, method: :delete, data: { confirm: 'For real?' } %><br><br>
+      </td>
+    </tr>
+  <% end %>
+  <%= link_to 'Create Song', new_song_path %>
+</tbody>
