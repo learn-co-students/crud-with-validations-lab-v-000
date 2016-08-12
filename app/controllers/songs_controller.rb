@@ -26,7 +26,7 @@ class SongsController < ApplicationController
   end
 
   def edit
-
+    @song = Song.find(params[:id])
   end
 
 
@@ -35,4 +35,4 @@ class SongsController < ApplicationController
     :title, :release_year, :released, :genre, :artist_name
   )
 end
-end 
+end
