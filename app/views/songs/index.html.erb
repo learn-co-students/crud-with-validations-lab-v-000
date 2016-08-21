@@ -20,7 +20,9 @@
       <td><%= s.title %></td>
       <td><%= s.genre %></td>
       <td><%= s.release_year %></td>
-      <td><%= link_to 'View', s %> <%= link_to 'Edit', s %> <%= link_to 'Delete', s, method: :delete %>
+      <td><%= link_to 'View', s %> <%= link_to 'Edit', s %> <%= form_tag song_path(s), method: 'delete' do %>
+          <%= submit_tag 'Delete' %>
+        <% end %>
       </td>
     </tr>
     <% end %>
