@@ -6,7 +6,9 @@ class Song < ActiveRecord::Base
 
   def cannot_release_same_song_in_same_year
     song = Song.find_by(title: self.title)
-    if song
+    # the second check is for allowing updating of a song. Without this it won't pass
+    #   validation when updating a song because it sees a conflict with itself.
+    if song && self.id != song.id
       if song.released && self.released
         if song.release_year == self.release_year
           errors.add(:release_year, "can't be the same as another song with same title")
@@ -19,6 +21,5 @@ class Song < ActiveRecord::Base
     rel = self.released
     rel.is_a?(TrueClass) || rel.is_a?(FalseClass)
   end
-
 
 end
