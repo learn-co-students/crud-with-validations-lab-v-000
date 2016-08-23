@@ -1,8 +1,7 @@
 class Song < ActiveRecord::Base
   validates :title, presence: true
-  # validate :title, 
+  validates :title, uniqueness: { scope: [:release_year, :artist_name] }
   validates :released, inclusion: { in: [true, false] }
-  # validates :release_year, inclusion: { in: 1900..Date.today.year }, unless: :released?
   validates :artist_name, presence: true
   with_options if: :released? do |song|
     song.validates :release_year, presence: true
@@ -12,8 +11,4 @@ class Song < ActiveRecord::Base
   def released?
     released == true
   end
-
-  def duplicate_title
-  end
-
 end
