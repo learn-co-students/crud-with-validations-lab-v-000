@@ -1,5 +1,11 @@
 <h1>Songs</h1>
 
 <p>
-  <%= @song.title %>
+  <% @song.attributes.each do |attribute| %>
+  <%= attribute %><br>
+  <% end %>
 </p>
+
+<%= link_to 'Edit Song', [:edit, @song] %>
+
+<%= link_to 'Back', songs_path %>
