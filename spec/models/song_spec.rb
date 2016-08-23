@@ -16,17 +16,17 @@ RSpec.describe Song, type: :model do
   let(:unreleased) { missing_release_year.merge(released: false) }
   let(:future_release_year) { valid_attributes.merge(release_year: Date.today.year + 1) }
 
-  it "is valid when expected" do
-    expect(Song.new(valid_attributes)).to be_valid
-  end
+  # it "is valid when expected" do
+  #   expect(Song.new(valid_attributes)).to be_valid
+  # end
 
-  it "is invalid without title" do
-    expect(Song.new(missing_title)).to be_invalid
-  end
+  # it "is invalid without title" do
+  #   expect(Song.new(missing_title)).to be_invalid
+  # end
 
-  it "is invalid without release year when released is true" do
-    expect(Song.new(missing_release_year)).to be_invalid
-  end
+  # it "is invalid without release year when released is true" do
+  #   expect(Song.new(missing_release_year)).to be_invalid
+  # end
 
   it "is valid without release year when released is false" do
     expect(Song.new(unreleased)).to be_valid
