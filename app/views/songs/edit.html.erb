@@ -9,8 +9,3 @@ Edit Song
   <%= f.submit "Update Song" %>
 <% end %>
 <%= link_to"Delete", @song, method: :delete, data: {confirm: "Really?"} %>
-<%= link_to 'Destroy',  { action: :destroy, id: @song.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
-
-<%= form_tag song_path(@song.id), method:"delete" do %>
-  <%= submit_tag "Delete" %>
-<% end %>
