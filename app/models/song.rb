@@ -3,6 +3,7 @@ class Song < ActiveRecord::Base
   validate :cannot_release_same_song_in_same_year
   validate :released_is_a_boolean
   validates :release_year, presence: true, if: "self.released"
+  validates :release_year, numericality: {less_than_or_equal_to: Time.now.year}, if: "self.released"
 
   def cannot_release_same_song_in_same_year
     song = Song.find_by(title: self.title)
