@@ -1,4 +1,4 @@
-<h1>Songs</h1>
+<h1><%= @song.title %></h1>
 
 <p>
   <% @song.attributes.each do |attribute| %>
@@ -9,3 +9,7 @@
 <%= link_to 'Edit Song', [:edit, @song] %>
 
 <%= link_to 'Back', songs_path %>
+
+<%= form_tag song_path(@song.id), method: "delete" do %>
+  <%= submit_tag "Delete #{@song.title}" %>
+<% end %>
