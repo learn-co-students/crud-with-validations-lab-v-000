@@ -1,0 +1,8 @@
+<%= form_tag songs_path, method: "post" do %>
+<%= text_field_tag "song[title]" %>
+<%= text_field_tag "song[release_year]" %>
+<%= text_field_tag "song[released]" %>
+<%= text_field_tag "song[genre]" %>
+<%= text_field_tag "song[artist_name]" %>
+
+<%end%>

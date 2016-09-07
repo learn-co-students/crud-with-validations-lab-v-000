@@ -1,0 +1,10 @@
+<% form_for @song do |f| %>
+<%= f.error_messages %>
+<%= f.text_field_tag :song_title %>
+<%= f.text_field_tag "song[release_year]" %>
+<%= f.text_field_tag "song[released]" %>
+<%= f.text_field_tag "song[genre]" %>
+<%= f.text_field_tag "song[artist_name]" %>
+ <%= link_to "Delete", method: "patch" :delete, data: { confirm: "Really?" } %>
+
+<%end%>
