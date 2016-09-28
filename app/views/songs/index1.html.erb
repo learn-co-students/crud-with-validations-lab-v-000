@@ -1,0 +1,18 @@
+<h1>All Songs</h1>
+
+<th>
+  ID  TITLE  ARTIST  RELEASED YEAR GENRE
+</th><br>
+<% @songs.each do |song| %>
+ 
+ <tr> <%= song.id %>
+  <%= link_to song.title, song_path(song.id) %>
+  <%= song.artist_name %>
+  <%= song.released %>
+  <%= song.release_year %>
+  <%= song.genre %>
+  </tr><br>
+<% end %>
+ 
+<br>
+<h2><%= link_to 'Create new song', new_song_path %></h2>
