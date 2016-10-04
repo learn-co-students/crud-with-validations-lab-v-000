@@ -1,0 +1,23 @@
+<h1>All Songs</h1>
+<table>
+  <thead>
+  <tr>
+     <th>Song Id</th>
+     <th>Title</th>
+  </tr>
+  </thead>
+  <tfoot>
+  <tr>
+      <td>haaaaay</td>
+      <td>pleas work</td>
+  </tr>
+  </tfoot>
+  <tbody>
+  <%@songs.each do |song|%>
+  <tr>
+	<td><%=song.id%></td>
+	<td><%=song.title%></td>
+  </tr>
+  <%end%>
+  </tbody>
+</table>
