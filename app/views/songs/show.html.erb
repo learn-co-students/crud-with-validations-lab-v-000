@@ -1,11 +1,19 @@
 <h2><%= @song.title %></h2>
-<%= link_to "Edit", edit_song_path(@song) %>
 
 <p>Artist: <%= @song.artist_name %></p>
 <p>Released: <%= @song.release_year %></p>
 <p>Genre: <%= @song.genre %></p>
 
+<% if @song.released? %>
+  <p>
+    Released in
+    <strong><%= @song.release_year %></strong>
+  </p>
+<% end %>
+
+<%= link_to "Edit This Song", edit_song_path(@song) %>
+
 <br>
-
-<%= link_to "Back to Index", songs_path %>
-
+<br>
+<%= form_tag song_path(@song.id), method: "delete" %>
+  <%= submit_tag "Delete #{@song.title}" %>
