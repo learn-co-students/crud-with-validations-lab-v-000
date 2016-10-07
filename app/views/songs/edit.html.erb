@@ -1,0 +1,20 @@
+<h2>Update a Song</h2>
+
+<%= form_for @song do |f| %>
+  Title: <%= f.text_field :title %> 
+  Released: <%= f.check_box :released %>
+  Release Year: <%= f.text_field :release_year %>
+  Artist Name: <%= f.text_field :artist_name %>
+  Genre: <%= f.text_field :genre %> 
+  <%= f.submit %>
+
+
+
+<% end %>
+
+<br>
+
+<br>
+<br>
+
+<%= link_to "Back To Index", songs_path %> 
