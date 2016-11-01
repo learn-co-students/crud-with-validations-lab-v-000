@@ -7,7 +7,7 @@
     <% @songs.each do |song| %>
       <tr>
         <%= song.title %>
-        <%= link_to "Delete", song, method: :delete %>
+        <%= link_to "Delete", song, method: :delete, data: { confirm: "For real?" } %>
       </tr>
     <% end %>
   </tbody>
