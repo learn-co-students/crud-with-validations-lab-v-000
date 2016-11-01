@@ -1,1 +1,10 @@
-<h1><%= @song.name %></h1>
+<h1><%= @song.title %></h1>
+<p>
+  Released: <%= @song.released ? @song.release_year : "Not yet"%>
+</p>
+<p>
+  Artist: <%= @song.artist_name %>
+</p>
+<p>
+  Genre: <%= @song.genre %>
+</p>
