@@ -1,0 +1,6 @@
+<h1><%= @song.title %></h1>
+<p><%= @song.release_year if @song.release_year %></p>
+<p><%= @song.artist_name %></p>
+<p><%= @song.genre %></p>
+<%= link_to "Edit", edit_song_path(@song) %>
+<%= link_to "Delete", @song, method: :delete, data: { confirm: "Are you sure?" } %>
