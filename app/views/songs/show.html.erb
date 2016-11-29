@@ -1,0 +1,44 @@
+<%= link_to "edit", edit_song_path(@song) %>
+<%= link_to "delete", song_path(@song), method: :delete %>
+<%= link_to "songs", songs_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        Title
+      </th>
+      <th>
+        Artist
+      </th>
+      <th>
+        Genre
+      </th>
+      <th>
+        Released
+      </th>
+      <th>
+        Release Year
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>
+      <%= link_to @song.title, song_path(@song) %>
+    </td>
+    <td>
+      <%= @song.artist_name %>
+    </td>
+    <td>
+      <%= @song.genre %>
+    </td>
+    <td>
+      <%= @song.released %>
+    </td>
+    <td>
+      <%= @song.release_year if @song.released %>
+    </td>
+  </tr>
+  </tbody>
+</table>
