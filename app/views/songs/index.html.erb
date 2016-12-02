@@ -1,0 +1,20 @@
+<h1>This is the index</h1>
+<h2>We have <%= pluralize(@songs.size, "song") %></h2>
+<tbody>
+  <% @songs.each do |song| %>
+    <tr>
+      <td>
+        <%= link_to song.title, song_path(song) %>, <%= song.release_year unless song.release_year.nil? %>, by <%= song.artist_name %> [<%= song.genre %>]
+      </td>
+      <td>
+        <%= link_to 'View', song %>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_song_path(song) %>
+      </td>
+      <td>
+        <%= link_to 'Delete', song, method: :delete, data: {confirm: "Are you sure?"} %>
+      </td>
+    </tr>
+  <% end %>
+</tbody>
