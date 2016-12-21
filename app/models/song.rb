@@ -2,10 +2,9 @@ class Song < ActiveRecord::Base
   validates :title, presence: true
   validates :title, uniqueness: {scope: :release_year}
 
-  validate :release_year
+  validates :release_year, numericality: { less_than_or_equal_to: Time.now.year.to_i }, presence: true, if: "released?"
 
-  def release_year
-    validates_presence_of :release_year 
-  end
+
+
 
 end
