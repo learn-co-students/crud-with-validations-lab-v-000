@@ -1,0 +1,10 @@
+<h1>New Song Form</h1>
+<%=form_tag songs_path do %>
+<%= label_tag :title %>
+<%= text_field_tag :title, @song.title %>
+<%= label_tag(:released, "Released?") %>
+<%= check_box_tag(:released) %>
+
+
+
+<%end%>
