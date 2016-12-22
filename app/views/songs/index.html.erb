@@ -1,43 +1,47 @@
 
 
   <table>
+    <thead>
+      <tr>
+        <th>
+          Title
+        </th>
+        <th>
+          released
+        </th>
+        <th>
+          Release year
+        </th>
+        <th>
+          ARtist name
+        </th>
+        <th>
+          Genre
+        </th>
+      </tr>
+    </thead>
+    <% @songs.each do |song| %>
+    <tbody>
     <tr>
-      <th>
-        Title
-      </th>
-      <th>
-        released
-      </th>
-      <th>
-        Release year
-      </th>
-      <th>
-        ARtist name
-      </th>
-      <th>
-        Genre
-      </th>
-  </tr>
-  <% @songs.each do |song| %>
-  <tr>
-    <td>
-      <%= song.title %>
-    </td>
-    <td>
-      <%= song.released %>
-    </td>
-    <td>
-      <%= song.release_year %>
-    </td>
-    <td>
-      <%= song.artist_name %>
-    </td>
-    <td>
-    <%=  song.genre%>
-    </td>
-    <td>
-      <%= link_to "Delete", song, method: :delete%>
-    </td>
-  </tr>
+      <td>
+        <%= song.title %>
+      </td>
+      <td>
+        <%= song.released %>
+      </td>
+      <td>
+        <%= song.release_year %>
+      </td>
+      <td>
+        <%= song.artist_name %>
+      </td>
+      <td>
+      <%=  song.genre%>
+      </td>
+      <td>
+        <%= link_to "Delete", song, method: :delete%>
+      </td>
+    </tr>
+  </tbody>
     <%end%>
   </table>
