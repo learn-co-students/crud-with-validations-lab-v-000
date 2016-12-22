@@ -1,7 +1,44 @@
-<% @songs.each do |song| %>
-<h3>Title:<%= song.title %></h3>
-<h3>released:<%= song.released %></h3>
-<h3>release_year:<%= song.release_year %></h3>
-<h3>Artist name:<%= song.artist_name %></h3>
-<h3>Genre: <%= song.genre %></h3>
-  <%end%>
+
+<div class="song">
+  <table>
+    <tr>
+      <th>
+        Title
+      </th>
+      <th>
+        released
+      </th>
+      <th>
+        Release year
+      </th>
+      <th>
+        ARtist name
+      </th>
+      <th>
+        Genre
+      </th>
+  </tr>
+  <% @songs.each do |song| %>
+  <tr>
+    <td>
+      <%= song.title %>
+    </td>
+    <td>
+      <%= song.released %>
+    </td>
+    <td>
+      <%= song.release_year %>
+    </td>
+    <td>
+      <%= song.artist_name %>
+    </td>
+    <td>
+    <%=  song.genre%>
+    </td>
+    <td>
+      <%= link_to "Delete", song, method: :delete%>
+    </td>
+  </tr>
+    <%end%>
+  </table>
+</div>
