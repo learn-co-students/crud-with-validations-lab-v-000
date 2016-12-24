@@ -1,0 +1,27 @@
+<h2>Editing "<%= @song.title %>"</h2>
+
+<% if @song.errors.any? %>
+  <div id="error_explanation">
+    <h2>There were some errors:</h2>
+    <ul>
+      <% @song.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+<%= form_for @song do |f| %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %><br>
+  <%= f.label :release_year %><br>
+  <%= f.number_field :release_year %><br>
+  <%= f.label :released %><br>
+  <%= f.check_box :released %><br>
+  <%= f.label :genre %><br>
+  <%= f.text_field :genre %><br>
+  <%= f.label :artist_name %><br>
+  <%= f.text_field :artist_name %><br>
+  <%= f.submit %>
+<% end %>
