@@ -1,0 +1,16 @@
+<h1>Songs Index</h1>
+<% if !@songs.empty? %>
+  <table border="1">
+    <tbody>
+      <% @songs.each do |song| %>
+        <tr>
+        <td><%= song.title %></td>
+        <td><%= song.release_year %></td>
+        <td><%= song.artist_name %></td>
+        <td><%= song.genre %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+<br><a href="/songs/new">Create new song</a>
