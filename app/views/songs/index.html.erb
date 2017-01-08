@@ -1,0 +1,12 @@
+<div id="song list">
+<tbody>
+  <% @songs.each do |song| %>
+  <tr>
+    <div class="song url">
+      <%= link_to song.title, song %>
+      <%= link_to "Delete Song", @song, method: :destroy, data: { confirm: "Are you sure?" } %>
+    </div>
+  </tr>
+  <% end %>
+</tbody>
+</div>
