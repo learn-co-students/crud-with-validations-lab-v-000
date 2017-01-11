@@ -3,9 +3,13 @@
 <head>
   <title>CrudWithValidationsLab</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%=  javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <%= link_to "Songs", songs_path %>
+  <%= link_to "New Song", new_song_path %>
 
 <%= yield %>
 
