@@ -1,0 +1,16 @@
+<h1>All Songs</h1>
+<table>
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <td>"<%= song.title %>" by <%= song.artist_name %></td>
+        <td>Genre: <%= song.genre %></td>
+        <% if song.released %>
+          <td>Release Year: <%= song.release_year %></td>
+        <% else %>
+          <td>Unreleased</td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
