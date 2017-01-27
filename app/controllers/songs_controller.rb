@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
- before_action :set_song, only: :show
+ before_action :set_song, only: [:show, :edit, :update]
 
   def new
     @song = Song.new
@@ -16,11 +16,17 @@ class SongsController < ApplicationController
   end
 
   def show
-
   end
 
   def index
     @songs = Song.all
+  end
+
+  def edit
+  end
+
+  def update
+    redirect_to song_path(@song)
   end
 
   private
