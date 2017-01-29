@@ -1,0 +1,17 @@
+<h1>Songs</h1>
+<br><br>
+
+<%= link_to "New Song", new_song_path %><br>
+<table>
+  <thead><tr>
+    <th>Title</th>
+    <th>Delete</th>
+  </tr>
+  </thead>
+  <% @songs.each do |song| %>
+  <tbody><tr>
+    <td><%= link_to song.title, song_path(song) %></td>
+    <td><%= link_to "Delete", song, method: :delete, data: { confirm: "This is forever. Do you really want to delete?" } %></td>
+  </tbody>
+  <% end %>
+</table>
