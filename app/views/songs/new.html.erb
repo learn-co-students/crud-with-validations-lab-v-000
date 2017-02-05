@@ -1,11 +1,11 @@
 <h1> Create a new Song </h1>
 
-<%= form_for@song do |f| %>
+<%= form_for @song do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %><br />
 
   <%= f.label :released %>
-  <%= f.checkbox :released %>
+  <%= f.check_box :released %>
 
   <%= f.label :release_year %>
   <%= f.text_field :release_year %>
@@ -18,5 +18,5 @@
 
   <% end %>
   
-  <%= 
+
  
