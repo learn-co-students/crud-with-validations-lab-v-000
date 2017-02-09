@@ -1,7 +1,17 @@
+<h1>All Songs</h1>
+
 <tbody>
   <% @songs.all.each do |s| %>
-    <tr>
-      <%= s.title %>      
-    </tr>
+    <div class="song">
+      <tr>
+        <span>
+          <%= s.title %>
+          <br>
+          <%= link_to "Delete", s, method: :delete, data: { confirm: "Permanently delete this song?" } %>
+        </span>
+      </tr>
+      <br>
+      <br>
+    </div>
   <% end %>
 </tbody>
