@@ -1,0 +1,5 @@
+Song.create(title: '41', released: true, release_year: 1994, artist_name: 'Dave Matthews Band', genre: 'jam band')
+Song.create(title: 'As If', released: false, release_year: nil, artist_name: 'Matt Louis', genre: 'alternative')
+Song.create(title: 'Sound of Silence', released: true, release_year: 1965, artist_name: 'Simon & Garfunkel', genre: 'folk rock')
+Song.create(title: "I've Got a Feeling", released: true, release_year: 1970, artist_name: 'The Beatles', genre: 'rock')
+Song.create(title: 'Imagine', released: true, release_year: 1971, artist_name: 'John Lennon', genre: 'pop')
