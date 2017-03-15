@@ -76,6 +76,7 @@ RSpec.describe SongsController, type: :controller do
 
     before do
       patch :update, { id: song.id, song: new_attributes }
+
     end
 
     it "updates the song" do
