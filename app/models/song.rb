@@ -6,8 +6,10 @@ class Song < ActiveRecord::Base
   validate :validate_release_year
 
   def validate_release_year
-    if released == true && !release_year
-      errors.add(:release_year, "must be specified if Song is released")
+    if release_year.nil?
+      if released == true
+        errors.add(:release_year, "must be specified if Song is released")
+      end
     elsif release_year > Date.today.year
       errors.add(:release_year, "must not be in the future")
     end
