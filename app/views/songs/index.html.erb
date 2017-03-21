@@ -1,5 +1,20 @@
 <h1>INDEX</h1>
 
-<% @songs.each do |song| %>
-  <%= song.title %>
-<% end %>
+<table>
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Updated</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <td><%= song.id %></td>
+        <td><%= song.title %></td>
+        <td><%= song.updated_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

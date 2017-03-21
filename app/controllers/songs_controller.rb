@@ -14,14 +14,11 @@ class SongsController < ApplicationController
 
   def create
     @song = Song.new(song_params)
-puts "XXXXXX"
-puts @song.inspect
-binding.pry
     if @song.valid?
       @song.save
-puts @song
       redirect_to song_path(@song)
     else
+      puts "RERENDER NEW!!!!"
       render :new
     end
   end
@@ -31,7 +28,7 @@ puts @song
 
   def update
 	  if @song.update(song_params)
-		   redirect_to post_path(@song)
+		   redirect_to song_path(@song)
     else
       render :edit
     end
