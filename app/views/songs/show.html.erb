@@ -1,0 +1,20 @@
+<h1>SHOW</h1>
+
+<label>Title: </label>
+<%= @song.title %><br>
+<br>
+<label>Artist: </label>
+<%= @song.artist_name %><br>
+<br>
+<label>Genre: </label>
+<%= @song.genre %><br>
+<br>
+<label>Released: </label>
+<%= @song.released %><br>
+<br>
+<label>Release Year: </label>
+<%= @song.release_year %><br>
+<br>
+
+<%= link_to 'Edit', edit_song_path(@song) %><br>
+<%= link_to "Delete", @song, method: :delete, data: { confirm: "Confirm delete" } %>
