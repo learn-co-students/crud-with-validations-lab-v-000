@@ -1,0 +1,5 @@
+<h1><%=@song.title %></h1>
+<ul>
+    <%@song.attributes.each do |k,v|%>
+    <li><%=k.capitalize%>: <%=v%></li>
+</ul>
