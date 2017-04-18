@@ -1,0 +1,6 @@
+<h1>Edit <%= @song.title %></h1>
+
+<%= render partial: "song_form", object: @song %>
+
+<%= form_tag song_path(@song), method: "delete" %>
+  <%= submit_tag "delete" %>
