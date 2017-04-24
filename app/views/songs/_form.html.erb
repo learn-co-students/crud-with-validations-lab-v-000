@@ -1,0 +1,17 @@
+<%= form_for @song do |s| %>
+  <%= s.label :title %>
+  <%= s.text_field :title %>
+
+  <%= s.label :artist_name %>
+  <%= s.text_field :artist_name %>
+
+  <%= s.check_box :released %>
+
+  <%= s.label :release_year %>
+  <%= s.text_field :release_year %>
+
+  <%= s.label :genre %>
+  <%= s.text_field :genre %>
+
+  <%= s.submit %>
+<% end %>
