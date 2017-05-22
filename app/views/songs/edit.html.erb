@@ -1,0 +1,5 @@
+<h2>Editing "<%= @song.title %>"</h2>
+
+<%= form_tag song_path(@song), method: "patch" do %>
+  <%= render "form" %>
+<% end %>
