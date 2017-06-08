@@ -29,18 +29,18 @@ RSpec.describe SongsController, type: :controller do
     end
 
     it "views a single song" do
-      get :show, { id: song.id }
+      get :show, params: { id: song.id }
       expect(assigns(:song)).to eq(song)
     end
 
     it "fetches a song for editing" do
-      get :edit, { id: song.id }
+      get :edit, params: { id: song.id }
       expect(assigns(:song)).to eq(song)
     end
   end
 
   context "creating a valid song" do
-    before { post(:create, { song: valid_attributes }) }
+    before { post(:create, params: { song: valid_attributes }) }
 
     it "creates a new Song" do
       expect(Song.count).to eq(1)
@@ -57,7 +57,7 @@ RSpec.describe SongsController, type: :controller do
   end
 
   context "creating an invalid song" do
-    before { post(:create, { song: invalid_attributes}) }
+    before { post(:create, params: { song: invalid_attributes}) }
 
     it "has not been persisted" do
       expect(assigns(:song)).to be_new_record
@@ -75,7 +75,7 @@ RSpec.describe SongsController, type: :controller do
     let(:song) { Song.create!(valid_attributes) }
 
     before do
-      patch :update, { id: song.id, song: new_attributes }
+      patch :update, params: { id: song.id, song: new_attributes }
     end
 
     it "updates the song" do
@@ -91,7 +91,7 @@ RSpec.describe SongsController, type: :controller do
   context "updating a song with invalid data" do
     let(:song) { Song.create!(valid_attributes) }
     before do
-      patch :update, { id: song.id, song: invalid_attributes }
+      patch :update, params: { id: song.id, song: invalid_attributes }
     end
 
     it "does not persist changes" do
@@ -106,7 +106,7 @@ RSpec.describe SongsController, type: :controller do
   context "destroying a song" do
     let(:song) { Song.create!(valid_attributes) }
     before do
-      delete :destroy, { id: song.id }
+      delete :destroy, params: { id: song.id }
     end
 
     it "destroys the requested song" do
