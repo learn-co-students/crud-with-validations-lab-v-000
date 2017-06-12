@@ -1,0 +1,34 @@
+<h2>All songs</h2>
+
+<div id="songs-table">
+	<table>
+		<thead>
+			<th bgcolor="#FF0000">Title</th>
+			<th bgcolor="#FF0000">Released</th>
+			<th bgcolor="#FF0000">Release Year</th>
+			<th bgcolor="#FF0000">Artist Name</th>
+			<th bgcolor="#FF0000">Genre</th>
+		</thead>
+		<tfoot>
+			<tr></tr>
+		</tfoot>
+		<tbody>
+		    <% @songs.each do |s|%>
+				<tr>
+					<td><%= link_to(s.title, song_path(s.id)) %></td>
+					<td><%= s.released %></td>
+					<td><%= s.release_year %></td>
+					<td><%=s.artist_name %></td>
+					<td><%=s.genre %></td>
+					<td>
+						<%= link_to("View", s)%>
+						<%= link_to "Edit", edit_song_path(s)%>
+						<%= link_to "Delete", s, method: :delete, data: {confirm: "Are you sure?"} %>
+					</td>
+				</tr>
+	        <% end%>
+		</tbody>
+	</table>	
+</div>
+
+
