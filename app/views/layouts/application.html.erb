@@ -9,5 +9,13 @@
 
 <%= yield %>
 
+<!-- added below to add link to all songs veiw (index) on every page but index -->
+<% unless current_page?(controller: "songs", action: "index") %>
+  <hr />
+  <%= link_to "View All Songs", songs_path %>
+<% end %>
+<!-- added below to allow Delete link to work -->
+<%=  javascript_include_tag "application" %>
+
 </body>
 </html>
