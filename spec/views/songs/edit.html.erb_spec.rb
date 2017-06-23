@@ -1,5 +1,4 @@
 require 'rails_helper'
-
 RSpec.describe "songs/edit", type: :feature do
   let(:song_attributes) do
     {
