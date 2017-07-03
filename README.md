@@ -1,5 +1,16 @@
 # CRUD With Validations Lab
 
+# HOW TO CORRECT THE DELETE ROUTE NOT WORKING:
+- Include `gem jquery-rails` in your gem file
+- Make a `app/assets/javascripts/application.js` file
+- Put this inside of it:
+```
+//= require jquery
+//= require jquery_ujs
+
+```
+
+
 Your goal in this lab is to create a thorough CRUD interface for one model, the
 `Song`.
 

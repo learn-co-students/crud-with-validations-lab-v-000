@@ -29,6 +29,7 @@ class SongsController < ApplicationController
   def update
     @song = Song.find_by(:id => params[:id])
 
+    binding.pry
     if @song.update(song_params)
       redirect_to song_path(@song)
     else

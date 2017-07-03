@@ -18,7 +18,7 @@
         <td>
           <%= link_to 'View', song %> |
           <%= link_to 'Edit', edit_song_path(song) %> |
-          <%= link_to 'Delete', song, method: :delete, data: { confirm: 'Do you really want to delete this?' } %>
+          <%= link_to 'Delete', song_path(song), method: :delete, data: { confirm: 'Do you really want to delete this?' } %>
         </td>
       </tr>
     <% end %>
