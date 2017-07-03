@@ -1,0 +1,23 @@
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Artist</th>
+      <th>Year</th>
+      <th>Genre</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= @song.title %></td>
+      <td><%= @song.artist_name %></td>
+      <td><%= @song.release_year %></td>
+      <td><%= @song.genre %><td>
+      <td>
+        <%= link_to 'Edit', edit_song_path(@song) %> |
+        <%= link_to 'Delete', song_path(@song), method: :delete, data: { confirm: 'Really? You want to destory me?' } %>
+      </td>
+    </tr>
+  </tbody>
+</table>
