@@ -1,0 +1,25 @@
+<h1>Songs</h1>
+<ol type="circle">
+<table>
+    <tr>
+      <th>Title:</th>
+      <th>Released:</th>
+      <th>Release_Year:</th>
+      <th>Artist Name:</th>
+      <th>Genre:</th>
+      <th></th>
+    </tr>
+
+ <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+          <td><%= song.title  %></td>
+          <td><%= song.released  %></td>
+          <td><%= song.release_year  %></td>
+          <td><%= song.artist_name %></td>
+          <td><%= song.genre  %></td>
+          <td><%= link_to "Delete", song, method: :delete, data: {confirm: "Delete?"} %></td>
+     </tr>
+    <% end %>
+ </tbody>
+</table>
