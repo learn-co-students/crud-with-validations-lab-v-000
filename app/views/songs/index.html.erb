@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <% @songs.first.attributes.each_key do |attribute| %>
+        <th style="border:1px;color:black"><%= attribute unless attribute =~ /id|created_at|updated_at/ %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <% song.attributes.each do |attribute,value| %>
+          <td style="border:1px;color:red"><%= value unless attribute =~ /id|created_at|updated_at/ %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
