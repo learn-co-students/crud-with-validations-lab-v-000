@@ -1,0 +1,16 @@
+<h1>Song List</h1>
+
+<table>
+  <tbody>
+    <% @songs.each do |song| %>
+      
+
+      <tr><%= link_to song.title, song_path(song) %><br></tr>
+      
+      <%= link_to "Delete", song, method: :delete, data: {confirm: "Really?"} %><br>
+      
+      
+    <% end %>
+  </tbody>
+</table>  
+  
