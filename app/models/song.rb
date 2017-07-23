@@ -6,7 +6,8 @@ class Song < ApplicationRecord
     presence: true, if: :released?,
     inclusion: {in: 1900..Date.today.year}
 
-  def released?
-    released == true
-  end
+  private
+    def released?
+      released == true
+    end
 end
