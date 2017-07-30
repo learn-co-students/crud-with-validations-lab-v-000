@@ -1,0 +1,8 @@
+<%= @song.title %>
+<%= @song.artist_name %>
+<% if @song.released? %>
+  <%= @song.release_year %>
+<% end %>
+<% if @song.genre? %>
+  <%= @song.genre %>
+<% end %>
