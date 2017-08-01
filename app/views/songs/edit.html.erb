@@ -1,0 +1,5 @@
+<h1>Edit <%= @song.title %></h1>
+
+<%= render "shared/form" %>
+
+<%= link_to "Delete", @song, method: :delete, data: { confirm: "You Sure?" } %>
