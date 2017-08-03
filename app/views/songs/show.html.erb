@@ -1,0 +1,15 @@
+<div class='menu'>
+  <%= button_to "home", songs_path, method: :get %>
+  <%= button_to "edit", edit_song_path(@song), method: :get %>
+  <%= form_for @song, method: :delete do |f| %>
+    <%= f.submit "delete" %>
+  <% end %>
+</div>
+<div class='song'>
+  <h1><%= @song.title %></h1>
+    <ul style='list-style-type: none;'>
+      <li><strong>year: </strong><%= @song.release_year %></li>
+      <li><strong>artist: </strong><%= @song.artist_name %></li>
+      <li><strong>genre: </strong><%= @song.genre %></li>
+    </ul>
+</div>

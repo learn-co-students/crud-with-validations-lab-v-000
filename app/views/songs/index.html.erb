@@ -1,0 +1,12 @@
+<h1>Songs</h1>
+  <table width='600px'>
+    <%= button_to "new song", new_song_path, method: :get %><br><br>
+    <tbody>
+      <% @songs.each do |song| %>
+      <tr>
+        <td width="90%"><%= link_to song.title, song_path(song) %></td>
+        <td width="10%"><%= link_to "delete", song, method: :delete, data: { confirm: "delete this song?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
