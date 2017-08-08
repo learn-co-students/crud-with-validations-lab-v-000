@@ -1,6 +1,6 @@
-<h2>Editing </h2>
+<h2>Editing <%= @song.title %></h2>
 
-  <%= form_for @post do |f| %>
+  <%= form_for @song do |f| %>
     <%= f.text_field :title %>
     <%= f.check_box :released %>
     <%= f.number_field :release_year %>
