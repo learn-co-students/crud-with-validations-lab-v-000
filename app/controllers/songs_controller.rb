@@ -13,19 +13,26 @@ class SongsController < ApplicationController
 	end
 
 	def create
-		@song = Song.new(song_params(params))
-	  @song.save
-	  redirect_to song_path(@song)
+		@song = Song.create(song_params(params))
+    if @song.errors.full_messages.size > 0
+      render :new
+    else
+      redirect_to song_path(@song)
+    end
+	end
+
+	def edit
+	  @song = Song.find(params[:id])
 	end
 
 	def update
 		@song = Song.find(params[:id])
 	  @song.update(post_params(params))
-	  redirect_to song_path(@song)
-	end
-
-	def edit
-	  @song = Song.find(params[:id])
+    if @song.errors.full_messages.size > 0
+      render :edit
+    else
+      redirect_to song_path(@song)
+    end
 	end
 
 	private
