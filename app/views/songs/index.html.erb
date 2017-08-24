@@ -1,0 +1,11 @@
+<h2>Songs Index</h2>
+
+<table class="table" id="songs">
+
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <td><%= link_to song.title, song_path(song) %></td>
+      </tr>
+    <% end %>
+  </tbody>

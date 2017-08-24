@@ -13,9 +13,7 @@ class SongsController < ApplicationController
 	end
 
 	def create
-    binding.pry
-		@song = Song.create(song_params(params))
-    binding.pry
+		@song = Song.create(song_params(:title, :artist_name, :release_year, :released, :genre))
     if @song.errors.full_messages.size > 0
       render :new
     else
@@ -29,13 +27,18 @@ class SongsController < ApplicationController
 
 	def update
 		@song = Song.find(params[:id])
-	  @song.update(post_params(params))
+	  @song.update(song_params(:title, :artist_name, :release_year, :released, :genre))
     if @song.errors.full_messages.size > 0
       render :edit
     else
       redirect_to song_path(@song)
     end
 	end
+
+  def destroy
+    Song.find(params[:id]).destroy
+    redirect_to songs_url
+  end
 
 	private
 
