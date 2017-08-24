@@ -13,7 +13,9 @@ class SongsController < ApplicationController
 	end
 
 	def create
+    binding.pry
 		@song = Song.create(song_params(params))
+    binding.pry
     if @song.errors.full_messages.size > 0
       render :new
     else
