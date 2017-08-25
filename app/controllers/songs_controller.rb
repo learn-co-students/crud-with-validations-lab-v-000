@@ -10,11 +10,19 @@ class SongsController < ApplicationController
     end
 
     def create
-        song = Song.new(song_params(:title, :artist_name, :release_year, :released, :genre))
-        if song.save
-            redirect_to song_path(song)
+        @song = Song.new(song_params(:title, :artist_name, :release_year, :released, :genre))
+        if @song.save
+            redirect_to song_path(@song)
         else
             render :new
+        end
+    end
+
+    def update
+        if @song.update(song_params(:title, :artist_name, :release_year, :released, :genre))
+            redirect_to song_path(@song)
+        else
+            render :edit
         end
     end
 
