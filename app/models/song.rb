@@ -19,7 +19,7 @@ class Song < ActiveRecord::Base
   def same_song_made?
     @songs = Song.all
     @songs.each do |song|
-      if song.artist_name == self.artist_name && song.release_year == self.release_year
+      if song.artist_name == self.artist_name && song.release_year == self.release_year && song.title == self.title
         errors.add(:title, "Already have a song with same artist & release year.")
       end
     end
