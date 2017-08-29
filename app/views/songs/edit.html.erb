@@ -1,0 +1,4 @@
+<h1>Edit <%= @song.title %></h1>
+<%= render layout: 'songs/form', locals: {song: @song} do |f| %>
+  <%= f.submit "Update Song" %>
+<% end %>
