@@ -8,5 +8,5 @@
 
 <%= link_to 'Edit', edit_song_path %><br><br>
 
-<%= link_to 'Delete', song_path(@song), method: :delete%><br>
+<%= link_to 'Delete', song_path(@song), :method => :delete, data: { confirm: 'For real?' }%><br>
 <!-- Delete Not Working -->
