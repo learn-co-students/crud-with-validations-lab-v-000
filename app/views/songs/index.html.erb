@@ -1,0 +1,9 @@
+<tbody>
+	<% @songs.each do |song| %>
+	<tr>
+	 <td><%= song.title %></td>
+	 <td><%= song.artist_name %></td>
+	 <td><%= link_to "edit", edit_song_path(song) %></td>
+	</tr>
+	<% end %>
+</tbody>
