@@ -10,11 +10,14 @@ class SongsController < ApplicationController
 
   def create
     @song = Song.new(song_params)
-    binding.pry
     @song.save
 
     redirect_to song_path(@song)
   end
+
+  def show
+    @song = Song.find(params[:id]) 
+  end 
 
     private
 
