@@ -1,0 +1,4 @@
+<%= @song.title %><br>
+<%= @song.artist_name %><br>
+<%= link_to "edit", edit_song_path(@song) %><br>
+<%= link_to "Delete", @song, method: :delete, data: { confirm: "Really?" } %>

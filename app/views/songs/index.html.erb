@@ -1,0 +1,13 @@
+<h1>Song list</h1>
+<tbody>
+<% @songs.each do |song| %>
+    <ul>
+        <li><%= song.title %></li>
+        <li><%= song.artist_name %></li>
+        <li><%= song.genre %></li>
+        <li><%= link_to "edit", edit_song_path(song) %></li>
+    </ul>
+   
+<% end %>
+</tbody>
+
