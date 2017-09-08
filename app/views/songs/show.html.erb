@@ -1,4 +1,4 @@
-<%= @song.title %>
-<%= form_tag song_path(@song.id), method: "delete" %>
-    <%= submit_tag "Delete #{@song.title}" %>
-<% end %>
+<%= @song.title %><br>
+<%= @song.artist_name %><br>
+<%= link_to "edit", edit_song_path(@song) %><br>
+<%= link_to "Delete", @song, method: :delete, data: { confirm: "Really?" } %>

@@ -27,7 +27,7 @@ class SongsController < ApplicationController
     end
 
     def update
-        if @song.update(song_params(:title))
+        if @song.update(song_params(:title, :released, :release_year, :artist_name, :genre))
             redirect_to song_path(@song)
         else
             render :edit
@@ -36,7 +36,7 @@ class SongsController < ApplicationController
 
     def destroy
         @song.destroy
-        redirect_to songs_url
+        redirect_to songs_path
     end
 
     private
