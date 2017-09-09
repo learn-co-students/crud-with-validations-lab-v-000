@@ -1,0 +1,10 @@
+<%= form_for @song do |f| %>
+  <%= f.text_field :title, :html => {:id => 'song_title'}%><br><br>
+  <p>song_released</p>
+  <%= f.check_box :released?, :html => {:id => 'song_released'} %><%= f.label 'song_released', "Yes", class: 'released' %><br>
+
+  <%= f.text_field :release_year, :html => {:id => 'song_release_year'}%><br><br>
+  <%= f.text_field :artist_name, :html => {:id => 'song_artist_name'} %><br><br>
+  <%= f.text_field :genre, :html => {:id => 'song_genre'} %><br><br>
+  <%= f.submit %>
+<% end %>
