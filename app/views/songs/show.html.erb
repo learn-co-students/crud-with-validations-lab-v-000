@@ -1,0 +1,23 @@
+<h1><%= @song.title %></h1>
+<div>
+  <label>Title</label><br>
+  <p><%= @song.title %></p><br>
+
+  <% if @song.released? %>
+    <label>Year</label><br>
+    <p>
+      <%= @song.release_year %><br>
+    </p>
+  <% end %>
+
+  <label>Genre</label><br>
+  <p><%= @song.genre %></p><br>
+
+  <label>Artist name</label><br>
+  <p><%= @song.artist_name %></p><br>
+</div>
+
+<div>
+  <%= link_to 'Edit', edit_song_path(song) %>
+  <%= link_to 'Delete', song, method: :delete, data: { confirm: 'For real?' } %>
+</div>
