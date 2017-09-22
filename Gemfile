@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
-
-gem 'rails', '4.2.5'
+gem 'rake', '<11.0'
+gem 'rails', '4.2.8'
 gem 'sqlite3'
 gem 'rspec-rails'
 gem 'sass-rails', '~> 5.0'
