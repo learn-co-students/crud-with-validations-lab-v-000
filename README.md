@@ -35,3 +35,7 @@ Use the `resource` generator, **not** the `scaffold` generator.
 1. Set the root route to the song index.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/crud-with-validations-lab' title='CRUD With Validations Lab'>CRUD With Validations Lab</a> on Learn.co and start learning to code for free.</p>
+
+
+rails console for validations
+http://www.xyzpub.com/en/ruby-on-rails/3.2/activerecord_validation.html
