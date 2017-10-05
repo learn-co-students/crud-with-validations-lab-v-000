@@ -1,0 +1,10 @@
+<ul>
+	<h2><%= @song.title %></h2>
+	<% @song.attributes.each_pair do |name, value| %>
+		<% unless name == "id" || name == "created_at" || name == "updated_at" || name == "title" %>
+			<li><%= "#{name}: #{value}" %></li>
+		<% end %>
+	<% end %>
+</ul>
+<%= link_to "Go Back", songs_path %>
+<%= link_to "Edit", edit_song_path(@song) %>
