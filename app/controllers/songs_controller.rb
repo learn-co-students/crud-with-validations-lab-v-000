@@ -1,3 +1,4 @@
+require 'pry'
 class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
 
@@ -34,7 +35,7 @@ class SongsController < ApplicationController
 
   def destroy
     @song.destroy
-    redirect_to songs_url
+    redirect_to songs_path
   end
 
   private

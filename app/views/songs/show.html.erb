@@ -2,5 +2,6 @@
 <h3><%= @song.artist_name %> </h3>
 <%= link_to 'edit', edit_song_path(@song)%> <br>
 <%= link_to 'delete', @song, method: :delete, data: { confirm: 'Are you sure?' } %> <br>
+<!-- <%= link_to("delete", @song, :method => :delete, :class => 'action') %> -->
 
 <%= link_to 'back to main page', songs_path %>

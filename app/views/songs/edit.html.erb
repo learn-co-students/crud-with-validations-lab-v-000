@@ -15,12 +15,7 @@
   Title: <%= f.text_field :title %><br />
   Artist: <%= f.text_field :artist_name %><br />
   Genre: <%= f.text_field :genre %><br />
-
-  Song is released? <%= f.radio_button :released, true, :checked => true %>
-             <%= label :released, 'Yes' %>
-
-             <%= f.radio_button :released, false %>
-             <%= label :released, 'No' %> <br />
+  Released <%= f.check_box :released%>
   Release year: <%= f.text_field :release_year %><br />
 
   <%= f.submit %>
