@@ -1,0 +1,6 @@
+<strong><%=@song.title %> <br /></strong>
+<%= @song.released %> <br />
+<%= @song.release_year %> <br />
+<%= @song.artist_name %> <br />
+<%= @song.genre %> <br /><br />
+<%= link_to 'Delete', @song, method: :delete, data: { confirm: 'Are you sure?' } %>
