@@ -2,16 +2,14 @@ class Song < ActiveRecord::Base
 
 	CURRENT_YEAR = 2017
 	validate :title, :has_repeats?
-	validate :release_year, :was_released?
 	validates :title, presence: true
 	validates :released, inclusion: {in: [true, false]}
-	validates :release_year, numericality: {less_than_or_equal_to: CURRENT_YEAR} :unless 
+	validates :release_year, presence: true, if: :was_released?
+	validates :release_year, numericality: {less_than_or_equal_to: CURRENT_YEAR}, if: :was_released?
 	validates :artist_name, presence: true
 
 	def was_released?
-		if self.released?
-			errors.add(:release_year, "If the song has been released, it must have a release year.") if release_year.nil?
-		end
+		released == true
 	end
 
 	def has_repeats?
