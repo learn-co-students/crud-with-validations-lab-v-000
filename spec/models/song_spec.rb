@@ -29,6 +29,7 @@ RSpec.describe Song, type: :model do
   end
 
   it "is valid without release year when released is false" do
+    
     expect(Song.new(unreleased)).to be_valid
   end
 
