@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
   
-  before_action :song_setter, only: [:show, :edit, :update, :delete]
+  before_action :song_setter, only: [:show, :edit, :update, :destroy]
 
   def index
     @songs = Song.all
@@ -17,7 +17,7 @@ class SongsController < ApplicationController
     @song = Song.new(song_params)
     if @song.valid?
       @song.save
-      redirect_to song_path(song)
+      redirect_to song_path(@song)
     else
       render :new
     end
@@ -29,13 +29,14 @@ class SongsController < ApplicationController
   def update
     @song.attributes = song_params
     if @song.valid?
+      @song.save
       redirect_to song_path
     else
-      render :new
+      render :edit
     end
   end
 
-  def delete
+  def destroy
     @song.destroy
     redirect_to songs_path
   end

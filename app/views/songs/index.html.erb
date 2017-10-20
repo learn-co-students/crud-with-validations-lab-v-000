@@ -1,8 +1,12 @@
 <h1>All Songs</h1>
-
-<%@songs.each do |song|%>
-	<div>
-		<p><%=song.title%></p>
-		<%= link_to "#{song.title}", song_path(song)%>
-	</div>
-<%end%>
+<table>
+	<tbody>
+		<%@songs.each do |song|%>
+			<tr>
+				<p><%=song.title%></p>
+				<%= link_to "#{song.title}", song_path(song)%>
+				<%= link_to "Delete", song, method: :delete, data: {confirm: "Really?"} %>
+			</tr>
+		<%end%>
+	</tbody>
+</table>
