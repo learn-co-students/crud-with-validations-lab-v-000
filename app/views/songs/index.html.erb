@@ -1,13 +1,3 @@
-<head>
-  <style>
-    thead {color:green;}
-    tbody {color:blue;}
-    table, th, td {
-        border: 1px solid black;
-    }
-  </style>
-</head>
-
 <h1>All Songs</h1>
 
 <ul>
@@ -16,6 +6,7 @@
     <tr>
       <th>Song Title</th>
       <th>Artist</th>
+      <th>Delete?</th>
     </tr>
     <thead>
     <tbody>
@@ -23,8 +14,11 @@
         <tr>
           <td><%=link_to song.title, song_path(song)%></td>
           <td><%=song.artist_name%></td>
+          <td style="text-align:center;"><%= link_to 'X', song, method: :delete, data: { confirm: 'Delete Song?' } %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </ul>
+
+<div><%=link_to "New Song", new_song_path %></div>
