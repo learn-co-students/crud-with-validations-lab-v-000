@@ -1,18 +1,45 @@
+<% if @song.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@song.errors.count, "error") %>
+      prohibited this song from being saved:
+    </h2>
+ 
+    <ul>
+    <% @song.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for(@song) do |f| %>
-  <%= f.label :title, "Title:" %>
-  <%= f.text_field :title %>
+  <div class="field">
+    <%= f.label :title, "Title:" %>
+    <%= f.text_field :title %>
+  </div>
 
-  <%= f.label :artist_name, "Artist:" %>
-  <%= f.text_field :artist_name %>
+  <div class="field">
+    <%= f.label :artist_name, "Artist:" %>
+    <%= f.text_field :artist_name %>
+  </div>
 
-  <%= f.label :genre, "Genre:" %>
-  <%= f.text_field :genre %>
+  <div class="field">
+    <%= f.label :genre, "Genre:" %>
+    <%= f.text_field :genre %>
+  </div>
 
-  <%= f.label :released, "Released?" %>
-  <%= f.check_box :released %>
+  <div class="field">
+    <%= f.label :released, "Released?" %>
+    <%= f.check_box :released %>
+  </div>
 
-  <%= f.label :release_year, "Release Year:" %>
-  <%= f.number_field :release_year %>
+  <div class="field">
+    <%= f.label :release_year, "Release Year:" %>
+    <%= f.number_field :release_year %>
+  </div>
 
- <%= f.submit %>
+  <div>
+    <%= f.submit %>
+  </div>
 <% end %>
