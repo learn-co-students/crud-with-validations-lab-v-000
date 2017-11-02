@@ -13,7 +13,7 @@ Songs have the following attributes and limitations:
 - `released`, a `boolean` describing whether the song was ever officially
   released.
   - Must be `true` or `false`
-- `release_year`, an `integer`
+- `released_year`, an `integer`
   - Optional if `released` is `false`
   - Must not be blank if `released` is `true`
   - Must be less than or equal to the current year
