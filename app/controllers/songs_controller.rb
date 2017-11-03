@@ -30,8 +30,13 @@ class SongsController < ApplicationController
     if @song.update(song_params)
       redirect_to song_path(@song)
     else
-      render :edit 
+      render :edit
     end
+  end
+
+  def destroy
+    Song.find(params[:id]).destroy
+    redirect_to songs_path
   end
 
   private
