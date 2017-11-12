@@ -16,12 +16,17 @@ class Song < ActiveRecord::Base
 
   #Must be less than or equal to the current year
   validate :release_year_less_than_or_equal_to_current_year
+  #validates :release_year_less_than_or_equal_to_current_year, numericality: true
+  #validates :release_year, less_than_or_equal_to: true
 
   #Must not be blank
   validates :artist_name, presence: true
 
-  def release_year_less_than_or_equal_to_current_year
-    if release_year <= Date.today.year
+    def release_year_less_than_or_equal_to_current_year
+      if release_year.present?
+        if release_year <= Date.today.year
+        else errors.add(:release_year, "must be less than or equal to the current year")
+        end
+      end
     end
   end
-end
