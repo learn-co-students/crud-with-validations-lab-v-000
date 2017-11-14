@@ -1,11 +1,15 @@
-<!--table>
+<h1>Songs</h1>
+<p><%= link_to 'Create Song', new_song_path %></p>
+
+<table>
+  <tbody>
   <% @songs.each do |song| %>
-    <tr><td><li><%= song.title %></li></td></tr>
+    <tr><td><%= song.title %></td>
+    <td><%= link_to 'Delete', song_path(song), method: :delete, data: { confirm: "Really?" } %></td></tr>
+ <!--%= link_to 'Delete Song', song, method: :delete, data: { confirm: "Really?" } %-->
+ <!--%= link_to 'Delete', @song, method: :delete, data: { confirm: "Really?" } %-->
+ <!--%= link_to "Delete Song", song_path %-->
+    </div>
   <% end %>
-</table-->
-<% @songs.each do |song| %>
-<div class="song">
-  <span><%= song.title %></span>
- <%= link_to "Delete", song, method: :delete, data: { confirm: "Really?" } %>
-</div>
-<% end %>
+</tbody>
+</table>

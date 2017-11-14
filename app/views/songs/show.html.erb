@@ -1,3 +1,9 @@
-<%= render 'form' %>
-<%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'Delete', song, method: :delete, data: { confirm: 'For real?' } %>
+
+<p><%= @song.title %></p>
+<p><%= @song.released %></p>
+<p><%= @song.release_year %></p>
+<p><%= @song.artist_name %></p>
+<p><%= @song.genre %></p>
+
+<!--%= link_to 'Edit', edit_song_path(@song) %> |
+<%= link_to 'Delete', song, method: :delete, data: { confirm: 'For real?' } %-->
