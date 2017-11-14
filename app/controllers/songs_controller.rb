@@ -54,9 +54,7 @@ class SongsController < ApplicationController
    # DELETE /songs/1
    # DELETE /songs/1.json
    def destroy
-     @song.destroy
-     
-
+     Song.find(params[:id]).destroy
      respond_to do |format|
        format.html { redirect_to songs_path, notice: 'Song was successfully destroyed.' }
        format.json { head :no_content }
