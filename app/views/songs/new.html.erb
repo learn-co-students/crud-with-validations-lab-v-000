@@ -1,10 +1,17 @@
 <h1>New Song</h1>
 
+<% if @song.errors.any? %>
+  Something went wrong:
+  <% @song.errors.full_messages.each do |message| %>
+    <%= message %><br>
+  <% end %>
+<% end %>
+
 <%= form_for(@song) do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %><br>
   <%= f.label :released %>
-  <%= f.text_field :released %><br>
+  <%= f.check_box :released %><br>
   <%= f.label :release_year %>
   <%= f.number_field :release_year %><br>
   <%= f.label :artist_name %>

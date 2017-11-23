@@ -1,5 +1,6 @@
 class SongsController < ApplicationController
 
+
   def index
     @songs = Song.all
   end
@@ -32,6 +33,11 @@ class SongsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    get_song.delete
+    redirect_to songs_path
   end
 
   private

@@ -1,10 +1,25 @@
 <h1>Songs List</h1>
 
-<% @songs.each do |song| %>
-  Title: <%= song.title %><br>
-  Artist: <%= song.artist_name %><br>
-  <% if song.released %>
-    Release Year: <%= song.release_year %><br>
-  <% end %>
-  Genre: <%= song.genre %>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Artist</th>
+      <th>Genre</th>
+      <th>Release Year</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <td><%= song.title %></td>
+        <td><%= song.artist_name %></td>
+        <td><%= song.release_year %></td>
+        <td><%= song.genre %></td>
+        <td><%= link_to "Delete Song", song, method: :delete, data: {confirm: "Are you sure?"} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
