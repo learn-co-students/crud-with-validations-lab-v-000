@@ -2,3 +2,7 @@
 <label>Release Year: </label> <%=@song.release_year%> <br>
 <label>Artist Name: </label> <%=@song.artist_name%> <br>
 <label>Genre: </label> <%=@song.genre%>
+
+<%= form_tag song_path(@song), method: "delete" %>
+	<%= submit_tag "Delete #{@song.name}" %>
+<% end %>
