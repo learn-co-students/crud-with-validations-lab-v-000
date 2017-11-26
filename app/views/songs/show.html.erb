@@ -1,0 +1,9 @@
+<%= javascript_include_tag "songs" %>
+<h1><%=@song.title%></h1>
+
+<p><%=@song.artist_name%></p>
+<p><%=@song.release_year%></p>
+<p><%=@song.genre%></p>
+
+<%= link_to 'Delete', @song,
+    data: { confirm: 'Are you sure?' }, :method => :delete %>
