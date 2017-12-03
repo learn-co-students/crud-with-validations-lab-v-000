@@ -1,0 +1,17 @@
+New Song Form
+
+<%= form_for @song do |s| %>
+  <% if @song.errors.any? %>
+    <ul>
+      <% @song.errors.full_messages.each do |message| %>
+        <li><%= message %>  </li>
+      <% end %>
+    </ul>
+  <% end %>
+<%= s.text_field :title %>
+<%= s.text_field :artist_name %>
+<%= s.text_field :genre %>
+<%= s.text_field :release_year %>
+<%= s.check_box :released %>
+<%= s.submit %>
+<% end %>
