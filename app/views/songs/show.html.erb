@@ -1,0 +1,14 @@
+<h2><%= @song.title %></h2>
+by <strong><%= @song.artist_name %></strong>
+<% if @song.released? %>
+    <p>
+        Release in <strong><%= @song.release_year %></strong>
+    </p>
+<% end %>
+
+<p>
+    <strong>Genre:</strong>
+    <%= @song.genre %> <!-- shouldn't strong tags surround this??? -->
+</p>
+
+<%= link_to 'Edit', edit_song_path(@song) %>
