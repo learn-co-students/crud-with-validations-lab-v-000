@@ -1,6 +1,48 @@
 class SongsController < ApplicationController
-  validates :title, presence: true, uniqueness: {scope: [:release_year, :artist_name]}
-  validates :artist_name, presence: :true
-  validates :released, inclusion: {in: [true, false]}
-  validates :release_year, numerically: {less_than_or_equal_to: Date.today.year}, if :released
+
+  def index
+    @songs = Song.all
+  end
+
+  def show
+    @song = Song.find(params[:id])
+  end
+
+  def new
+    @song = Song.new
+  end
+
+  def create
+    @song = Song.create(song_params)
+    if @song.save
+      redirect_to song_path(@song)
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @song = Song.find(params[:id])
+  end
+
+  def update
+    @song = Song.find(params[:id])
+    if @song.update(song_params)
+      redirect_to song_path(@post)
+    else
+      render :edit
+    end
+  end
+
+  def destrony
+    Song.find(params[:id]).destroy
+    redirect_to songs_path
+  end
+
+  private
+
+  def song_params
+    params.require(:song).permit(:title, :artist_name, :released, :release_year, :genre)
+  end
+
 end
