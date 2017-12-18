@@ -1,0 +1,1 @@
+Song.create(:title => "just do it", :released=> true, :release_year=>1999, :artist_name => "Eminem", :genre=>"pop")
