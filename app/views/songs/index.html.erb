@@ -1,6 +1,8 @@
 <h1>My Songs</h1>
-<ul>
-<% @songs.each {|s| %>
-<li><%= s.title %></li>
-<% } %>
-</ul>
+<table>
+    <tbody>
+        <% @songs.each {|s| %>
+        <tr><td><%= s.title %></td></tr>
+        <% } %>
+    </tbody>
+</table>
