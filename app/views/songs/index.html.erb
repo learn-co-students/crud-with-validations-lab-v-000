@@ -2,7 +2,7 @@
     <tbody>
         <% @songs.each do |song| %>
             <tr>
-             <td>song.title</td>
+             <td>song.title <%= link_to "Delete", song, method: :delete, data: { confirm: "Really?" } %></td>
              <td>song.artist_name</td>
             </tr>
         <%end %>
