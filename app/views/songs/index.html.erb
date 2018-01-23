@@ -1,0 +1,12 @@
+<table>
+<% @songs.each do |song| %>
+<div class="song">
+<tbody>
+  <tr>
+  <li><%= song %></li>
+  <%= link_to "Delete", song, method: :delete, data: { confirm: "Really?" } %>
+</tr>
+</tbody>
+</div>
+<% end %>
+</table>
