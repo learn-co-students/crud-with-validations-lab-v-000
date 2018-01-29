@@ -1,0 +1,7 @@
+<h2><%= @song.title %></h2>
+<% if @song.released == true%>
+  Release Year: <%= @song.release_year %><br>
+<% end %>
+Genre: <%= @song.genre %><br>
+Artist: <%= @song.artist_name %><br>
+<%= link_to "go back", songs_path, class: "button small radius secondary" %>
