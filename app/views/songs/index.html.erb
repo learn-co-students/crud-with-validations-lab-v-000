@@ -1,14 +1,16 @@
 <h1>Songs</h1>
 
-<ol>
+<table>
 <% @songs.each do |i| %>
-  <li>
-  Title: <%= i.title %><br>
-  <% if i.released == true%>
+<tbody>
+<tr>
+  <td>Title: <%= i.title %></td>
+  <td><% if i.released == true%>
     Release Year: <%= i.release_year %><br>
-  <% end %>
-  Genre: <%= i.genre %><br>
-  Artist: <%= i.artist_name %><br>
-  </li>
+  <% end %></td>
+  <td>Genre: <%= i.genre %></td>
+  <td>Artist: <%= i.artist_name %></td>
+</tr>
+</tbody>
 <% end %>
-</ol>
+</table>

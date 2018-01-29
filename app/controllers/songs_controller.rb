@@ -49,7 +49,6 @@ class SongsController < ApplicationController
       format.html { redirect_to songs_url, notice: 'Song was successfully destroyed.' }
       format.json { head :no_content }
     end
-    redirect_to songs_path
   end
 
   private
