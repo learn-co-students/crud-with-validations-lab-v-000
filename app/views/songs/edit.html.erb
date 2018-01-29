@@ -1,5 +1,5 @@
-
-<% form_for(@song) do |f| %>
+<h2>Edit Song</h2>
+<%= form_for(@song) do |f| %>
   <% if @song.errors.any? %>
      <div id="error_explanation">
        <h2><%= pluralize(@song.errors.count, "error") %> prohibited this song from being edited:</h2>
@@ -23,10 +23,6 @@
    <div class="field">
      <%= f.label :released %><br>
      <%= f.check_box :released, {}, true, false %>
-   </div>
-   <div class="field">
-     <%= f.label :body %><br>
-     <%= f.text_field :body %>
    </div>
    <div class="field">
      <%= f.label :genre %><br>

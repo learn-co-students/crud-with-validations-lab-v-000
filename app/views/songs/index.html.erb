@@ -1,0 +1,14 @@
+<h1>Songs</h1>
+
+<ol>
+<% @songs.each do |i| %>
+  <li>
+  Title: <%= i.title %><br>
+  <% if i.released == true%>
+    Release Year: <%= i.release_year %><br>
+  <% end %>
+  Genre: <%= i.genre %><br>
+  Artist: <%= i.artist_name %><br>
+  </li>
+<% end %>
+</ol>

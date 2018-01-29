@@ -1,7 +1,8 @@
+<h2>Create Song</h2>
 
-<% form_for(@song) do |f| %>
+<%= form_for @song do |f| %>
   <% if @song.errors.any? %>
-     <div id="error_explanation">
+     <div id="field_with_errors">
        <h2><%= pluralize(@song.errors.count, "error") %> prohibited this song from being saved:</h2>
 
        <ul>
@@ -18,15 +19,11 @@
    </div>
    <div class="field">
      <%= f.label :release_year %><br>
-     <%= f.text_field :release_year %>
+     <%= f.number_field :release_year %>
    </div>
    <div class="field">
      <%= f.label :released %><br>
-     <%= f.check_box :released, {}, true, false %>
-   </div>
-   <div class="field">
-     <%= f.label :body %><br>
-     <%= f.text_field :body %>
+     Check if true: <%= f.check_box :released, {}, true, false %>
    </div>
    <div class="field">
      <%= f.label :genre %><br>
@@ -39,5 +36,6 @@
    <div class="actions">
      <%= f.submit "Submit" %>
      <%= link_to "go back", songs_path, class: "button small radius secondary" %>
-   </div>
+</div>
+
 <% end %>
