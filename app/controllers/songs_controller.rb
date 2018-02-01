@@ -37,6 +37,13 @@ class SongsController < ApplicationController
     @song = Song.find(params[:id])
   end
 
+  def destroy
+    # binding.pry
+    @song = Song.find(params[:id])
+    @song.destroy
+    redirect_to songs_url
+  end
+
   private
 
   def song_params
