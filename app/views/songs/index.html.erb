@@ -1,9 +1,16 @@
 <h1> Songs Index </h1>
-
-<%@songs.each do |song|%>
-  <div>
-    <ul>
-      <li><%=song.title%></li>
-    </ul>
-  </div>
-  <%end%>
+<table>
+  <tbody>
+    <%@songs.each do |song|%>
+      <tr>
+        <td><%=song.title%></td>
+        <td><%=song.release_year%></td>
+        <td><%=song.genre%></td>
+        <td><%=song.artist_name%></td>
+          <%= link_to 'View', song %> |
+          <%= link_to 'Edit', edit_song_path(song) %> |
+          <%= link_to 'Delete', song, method: :delete, data:  {confirm: "For real?"} %>
+        </tr>
+        <%end%>
+      </tbody>
+</table>
