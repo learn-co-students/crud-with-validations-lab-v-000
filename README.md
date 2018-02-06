@@ -17,7 +17,7 @@ Songs have the following attributes and limitations:
   - Optional if `released` is `false`
   - Must not be blank if `released` is `true`
   - Must be less than or equal to the current year
-- `artist_name`, a `string`
+- `artist_name`, a  `string`
   - Must not be blank
 - `genre`, a `string`
 
@@ -35,3 +35,7 @@ Use the `resource` generator, **not** the `scaffold` generator.
 1. Set the root route to the song index.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/crud-with-validations-lab' title='CRUD With Validations Lab'>CRUD With Validations Lab</a> on Learn.co and start learning to code for free.</p>
+
+
+rails console for validations
+http://www.xyzpub.com/en/ruby-on-rails/3.2/activerecord_validation.html
