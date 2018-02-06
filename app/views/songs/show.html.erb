@@ -1,0 +1,9 @@
+show.html.erb
+
+<h1><%= @song.title %></h1>
+<div>
+	Artist Name: <%= @song.artist_name%>
+	Genre: <%= @song.genre %><br>
+	<%= button_to 'Destroy', @song, data: {confirm:'Are you sure?'}, method: :delete %>
+</div>
+
