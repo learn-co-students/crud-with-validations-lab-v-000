@@ -1,0 +1,61 @@
+<h2>Edit Song</h2>
+
+<%= form_for @song do |f| %>
+<% if @song.errors.any? %>
+    <div id="error_explanation">
+      <h2>There were some errors:</h2>
+      <ul>
+        <% @song.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if @song.errors[:title].empty? %>
+    <div class="field">
+  <% else %>
+    <div class="field_with_errors">
+  <% end %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <% if @song.errors[:released].empty? %>
+    <div class="field">
+  <% else %>
+    <div class="field_with_errors">
+  <% end %>
+    <%= f.label "Released (check if released)" %>
+    <%= f.check_box :released, {}, "true", "false"  %>
+  </div>
+
+  <% if @song.errors[:released_year].present? %>
+  <div class="field_with_errors">
+<% else %>
+  <div class="field">
+<% end %>
+  <%= f.label :release_year %>
+  <%= f.text_field :release_year %>
+</div>
+
+<% if @song.errors[:artist_name].present? %>
+<div class="field_with_errors">
+<% else %>
+<div class="field">
+<% end %>
+<%= f.label :artist_name %>
+<%= f.text_field :artist_name %>
+</div>
+
+<% if @song.errors[:genre].present? %>
+  <div class="field_with_errors">
+<% else %>
+  <div class="field">
+<% end %>
+  <%= f.label :genre %>
+  <%= f.text_field :genre %>
+</div>
+
+  <%= f.submit %>
+<% end %>
