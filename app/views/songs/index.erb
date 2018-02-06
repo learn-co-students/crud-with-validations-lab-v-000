@@ -1,0 +1,10 @@
+<h1>Songs Index</h1>
+<table>
+<tbody>
+ <% @songs.each do |song| %>
+  <tr>
+    <td><%= link_to song.title, song %></td>
+  </tr>
+ <% end %>
+ </tbody>
+</table>
