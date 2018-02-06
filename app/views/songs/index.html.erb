@@ -1,0 +1,10 @@
+Index Songs
+<table>
+
+
+<%@songs.each do |s| %>
+<tr>
+<td><%= link_to "#{s.title}", song_path(s)%></td>
+</tr>
+<%end%>
+</table>
