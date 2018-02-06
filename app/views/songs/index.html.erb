@@ -1,0 +1,13 @@
+<table>
+  <thead>
+    <th>Title</th>
+  </thead>
+  <tbody>
+    <% @songs.each do |song| %>
+    <tr><%= link_to song.title, song_path(song) %></tr>
+    <% end %>
+  </tbody>
+</table>
+<% @songs.each do |song| %>
+<%= link_to song.title, song_path(song) %>
+<% end %>
