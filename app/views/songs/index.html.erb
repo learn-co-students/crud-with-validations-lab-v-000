@@ -1,0 +1,7 @@
+<h1 style="text-decoration: underline;">All Songs</h1>
+
+<tbody>
+  <% @songs.each do |song| %>
+    <tr><%= song.title %></tr>
+  <% end %>
+</tbody>
