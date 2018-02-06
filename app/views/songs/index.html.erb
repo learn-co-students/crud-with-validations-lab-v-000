@@ -1,0 +1,12 @@
+<h1>Songs</h1>
+
+<table>
+<thead>
+<tr><th>Title</th></tr>
+</thead>
+<tbody>
+<%@songs.each { |song| %>
+<tr><td><%=song.title%></td></tr>
+<%}%>
+</tbody>
+</table>
