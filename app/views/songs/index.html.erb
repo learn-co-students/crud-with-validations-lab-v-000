@@ -1,0 +1,8 @@
+<h1>All Songs</h1>
+<% @songs.each do |song| %>
+  <table>
+    <tbody>
+      <tr><%= song.title %> • <a href="<%= edit_song_path(song) %>">Edit</a></tr>  
+    </tbody>
+  </table>
+<% end %>
