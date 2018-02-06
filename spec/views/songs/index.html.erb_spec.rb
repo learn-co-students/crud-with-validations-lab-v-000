@@ -28,3 +28,4 @@ RSpec.describe "songs/index", type: :feature do
     expect(all("tbody > tr").size).to eq(2)
   end
 end
+
