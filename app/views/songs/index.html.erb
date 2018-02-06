@@ -1,0 +1,46 @@
+<%= link_to "New Song", new_song_path %>
+<h1>Song List</h1>
+
+<table style="width: 80%">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Released</th>
+      <th>Released Year</th>
+      <th>Artist</th>
+      <th>Genre</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+<% @songs.each do |song| %>
+  <tr>
+    <td><%= link_to song.title, song_path(song) %></td>
+    <td><%= song.released %></td>
+    <td><%= song.release_year %></td>
+    <td><%= song.artist_name %></td>
+    <td><%= song.genre %></td>
+    <td><%= link_to "Edit", edit_song_path(song) %></td>
+    <td><%= form_tag song_path(song.id), method: "delete" %>
+      <%= submit_tag "Delete #{song.title}" %>
+    </td>
+  </tr>
+<% end %>
+  </tbody>
+</table>
+
+
+
+
+<!-- <h1>Songs</h1>
+
+<% @songs.each do |song| %>
+<h3><%= link_to song.title, song_path(song) %> | <%= song.artist_name %></h3>
+  <p>Released: <%= song.release_year %>, <%= song.genre %></p>
+  <%= link_to 'View', song %> |
+  <%= link_to 'Edit', edit_song_path(song) %> |
+  <%= link_to 'Delete', song, method: :delete, data: { confirm: 'For real?' } %>
+<% end %>
+
+<h4><%= link_to 'Create Song', new_song_path %></h4> -->
