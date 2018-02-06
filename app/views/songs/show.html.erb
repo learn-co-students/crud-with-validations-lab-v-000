@@ -1,0 +1,13 @@
+<div class="song">
+  <span><%= @song.title %></span>
+  |
+  <span><%= @song.artist_name %></span>
+  |
+  <span><%= @song.release_year %></span>
+  |
+  <span><%= @song.released %></span>
+  |
+  <span><%= @song.genre %></span>
+
+  <%= link_to 'Edit', edit_song_path(@song) %>
+</div>
