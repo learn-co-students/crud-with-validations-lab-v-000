@@ -19,3 +19,7 @@
   background-color: red;
   display: table;
 }
+
+tr {
+  display: block;
+}
