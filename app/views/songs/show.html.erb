@@ -1,0 +1,13 @@
+<table>
+  <tbody>
+    <tr>
+      <td><%= @song.title %></td>
+      <td><%= @song.release_year %></td>
+      <td><%= @song.artist_name %></td>
+      <td><%= @song.genre %></td>
+
+      <%= link_to "Edit", edit_song_path(@song) %><br>
+      <%= link_to "Delete", song_path(@song), method: :delete, data: { confirm: "Really? Want to proceed with the delete?" } %>
+    </tr>
+  </tbody>
+</table>
