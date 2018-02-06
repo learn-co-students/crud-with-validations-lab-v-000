@@ -1,0 +1,11 @@
+<h1> Specific song/show page <h1>
+
+   <h2><%= @song.title %></h2>
+   <p><%= @song.release_year %></p>
+   <p><%= @song.artist_name %></p>
+   <p><%= @song.genre %></p>
+
+  <%= form_tag song_path(@song.id), method: "delete" %>
+    <%= submit_tag "Delete #{@song.title}" %>
+   <% end %>
+  
