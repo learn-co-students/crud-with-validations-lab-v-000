@@ -1,0 +1,22 @@
+ <h1>Song Library</h1>
+
+ <thead>
+   <th>Song Name:</th>
+   <th>Artist Name:</th>
+   <th>Genre:</th>
+   <th>Released?</th>
+   <th>Release Year:</th>
+ </thead>
+ <tbody>
+ <% @songs.each do |song|%>
+ <tr>
+   <th><%=song.title%></th>
+   <th><%=song.artist_name%></th>
+   <th><%=song.genre%></th>
+   <th><%=song.released%></th>
+   <th><%=song.release_year%></th>
+ </tr>
+ <% end %>
+ </tbody>
+
+
