@@ -1,0 +1,4 @@
+<h1>Title: <%= @song.title %></h1>
+<%= form_tag song_path(@song.id), method: "delete" %>
+  <%= submit_tag "Delete #{@song.title}" %>
+<% end %>
