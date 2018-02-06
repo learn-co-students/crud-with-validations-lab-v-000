@@ -1,0 +1,14 @@
+<h1>New Song</h1>
+<%= form_for(@song) do |song| %>
+  <%= song.label :title %>
+  <%= song.text_field :title %><br>
+  <%= song.label :released %>
+  <%= song.check_box :released %><br>
+  <%= song.label :release_year %>
+  <%= song.number_field :release_year %><br>
+  <%= song.label :artist_name %>
+  <%= song.text_field :artist_name %><br>
+  <%= song.label :genre %>
+  <%= song.text_field :genre %><br>
+  <%= song.submit %>
+<% end %>
