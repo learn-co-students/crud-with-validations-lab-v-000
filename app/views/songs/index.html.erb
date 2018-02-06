@@ -1,0 +1,8 @@
+<tbody>
+  <% @songs.each do |song| %>
+    <tr>
+      <td><%= link_to song.title, song %></td>
+      <td><%= link_to "Delete Song", song, method: :destroy, data: { confirm: "This will delete the entry." }%></td>
+    </tr>
+  <% end %>
+</tbody>
