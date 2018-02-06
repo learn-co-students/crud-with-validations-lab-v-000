@@ -1,0 +1,30 @@
+<%= link_to "New Song", new_song_path %>
+<h1>Song List</h1>
+<table style="width: 25%">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Released</th>
+      <th>Released Year</th>
+      <th>Artist</th>
+      <th>Genre</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+<% @songs.each do |song| %>
+  <tr>
+    <td><%= link_to song.title, song_path(song) %></td>
+    <td><%= song.released %></td>
+    <td><%= song.release_year %></td>
+    <td><%= song.artist_name %></td>
+    <td><%= song.genre %></td>
+    <td><%= link_to "Edit", edit_song_path(song) %></td>
+    <td><%= form_tag song_path(song.id), method: "delete" %>
+      <%= submit_tag "Delete #{song.title}" %>
+    </td>
+  </tr>
+<% end %>
+  </tbody>
+</table>
