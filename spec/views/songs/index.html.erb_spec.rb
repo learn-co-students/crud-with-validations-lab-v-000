@@ -25,6 +25,7 @@ RSpec.describe "songs/index", type: :feature do
 
   it "renders a list of songs" do
     visit songs_path
-    expect(all("tbody > tr").size).to eq(2)
+    expect(page).to have_content(song_attributes_1[:title])
+    expect(page).to have_content(song_attributes_2[:title])
   end
 end
