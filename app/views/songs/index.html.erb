@@ -1,0 +1,32 @@
+<style>
+thead {color:green;}
+tbody {color:blue;}
+tfoot {color:red;}
+
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Release Year</th>
+      <th>Released</th>
+      <th>Artist Name</th>
+      <th>Genre</th>
+    </tr>
+  </thead>
+  <% @songs.each do |song| %>
+  <tbody>
+    <tr>
+      <td><%= song.title %></td>
+      <td><%= song.release_year %></td>
+      <td><%= song.released %></td>
+      <td><%= song.artist_name %></td>
+      <td><%= song.genre %></td>
+      <td><%= button_to "Delete", song, method: :delete, data: { confirm: "Really?" } %></td>
+    </tr>
+   <% end %>       
+  </tbody>
+</table>
