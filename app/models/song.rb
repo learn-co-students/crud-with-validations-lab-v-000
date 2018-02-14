@@ -1,16 +1,23 @@
 class Song < ActiveRecord::Base
-  validates :title, presence: true
+  validates :title, presence: true, uniqueness: true
   validates :artist_name, presence: true
+  validate :release_check
+  validate :year_check
+
+  def release_check
+    if released == true
+      if release_year == nil
+        errors.add(:released, "needs a release year")
+      end
+    end
+  end
+
+  def year_check
+    if release_year != nil
+      if Date.today.year < release_year
+        errors.add(:release_year, "can't be in the future")
+      end
+    end
+  end
+
 end
-# title, a string
-# Must not be blank
-# Cannot be repeated by the same artist in the same year
-# released, a boolean describing whether the song was ever officially released.
-# Must be true or false
-# release_year, an integer
-# Optional if released is false
-# Must not be blank if released is true
-# Must be less than or equal to the current year
-# artist_name, a string
-# Must not be blank
-# genre, a string
