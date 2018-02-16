@@ -1,0 +1,7 @@
+<% @songs.each do |s| %>
+  <h1>Title<%= s.title %></h1>
+  <h1>Released?<%= s.released %></h1>
+  <h1>Release year, if released<%= s.release_year %></h1>
+  <h1>Artist<%= s.artist_name %></h1>
+  <h1>genre, if noted<%= s.genre %></h1>
+  <% end %>
