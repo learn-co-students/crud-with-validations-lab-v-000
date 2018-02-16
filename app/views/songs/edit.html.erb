@@ -1,10 +1,3 @@
-<h2>Edit Song Form</h2>
+<h2>Edit <%= @song.title %></h2>
 
-<%= form_for @song do |f| %>
-    Title:<%= f.text_field :title %><br></br>
-    Released:<%= f.text_field :released %><br></br>
-    Release Year:<%= f.text_field :release_year %><br></br>
-    Artist Name:<%= f.text_field :artist_name %><br></br>
-    Genre:<%= f.text_field :genre %><br></br>
-    <%= f.submit %>
-<% end %>
+<%= render 'form' %>

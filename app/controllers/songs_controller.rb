@@ -33,12 +33,13 @@ class SongsController < ApplicationController
         end
     end
     
-    private
-    
     def destroy
-       Song.find(params[:id]).destroy
-       redirect_to :index
+       @song = Song.find(params[:id])
+       @song.destroy
+       redirect_to songs_url
     end
+    
+    private
     
     def song_params(*args)
        params.require(:song).permit(*args)
