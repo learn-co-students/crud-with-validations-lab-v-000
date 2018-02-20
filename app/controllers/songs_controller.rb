@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-
+  before_action :song
   def index
     @songs = Song.all
   end
@@ -9,7 +9,7 @@ class SongsController < ApplicationController
   end
 
   def edit
-    song
+    # song
   end
 
   def create
