@@ -1,0 +1,23 @@
+<h1>Below is info about the song you selected:</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Genre</th>
+      <th>Artist name</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @song.title %></td>
+        <td><%= @song.release_year %></td>
+        <td><%= @song.released %></td>
+        <td><%= @song.artist_name %></td>
+        <td><%= @song.genre %></td>
+      </tr>
+  </tbody>
+</table>
