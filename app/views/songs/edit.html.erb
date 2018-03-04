@@ -12,9 +12,9 @@
     </div>
   <% end %>
   
-  <div class="field<%= ' field_with_errors' if @song.errors[:title].any? %>">
-    <%= label_tag "title", "Title" %>
-    <%= text_field_tag "title", @song.title %>
+ <div class="field<%= ' field_with_errors' if @song.errors[:title].any? %>">
+    <%= label_tag "song[title]", "Song Title" %>
+    <%= text_field_tag "song[title]", @song.title %>
   </div>
   
    <div class="field<%= ' field_with_errors' if @song.errors[:artist_name].any? %>">
@@ -35,9 +35,9 @@
   </div>
 
   <div class="field<%= ' field_with_errors' if @song.errors[:release_year].any? %>">
-    <%= label_tag "release_year", "Release_Year" %>
+    <%= label_tag "song_release_year", "Song Release Year" %>
     <br />
-    <%= text_area_tag "release_year", @song.release_year %>
+    <%= text_area_tag "song_release_year", @song.release_year %>
   </div>
   <%= submit_tag "Update" %>
 <% end %>
