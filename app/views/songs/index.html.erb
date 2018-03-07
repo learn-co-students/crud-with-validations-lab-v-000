@@ -1,0 +1,20 @@
+<%= div_for(@songs, class: "songs-index-page") do |song| %>
+  <thead>
+    <tr>
+      <td>Title</td>
+      <td>Release Year</td>
+      <td>Released</td>
+      <td>Genre:</td>
+      <td>Artist Name:</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= song.title %></td>
+      <td><%= song.release_year %></td>
+      <td><%= song.released %></td>
+      <td><%= song.genre %></td>
+      <td><%= song.artist_name %></td>
+    </tr>
+  </tbody>
+<% end %>
