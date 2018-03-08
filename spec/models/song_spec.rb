@@ -33,6 +33,7 @@ RSpec.describe Song, type: :model do
   end
 
   it "is invalid when the release year is in the future" do
+    #binding.pry
     expect(Song.new(future_release_year)).to be_invalid
   end
 
