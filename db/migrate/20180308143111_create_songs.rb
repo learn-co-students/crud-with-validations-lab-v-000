@@ -2,8 +2,8 @@ class CreateSongs < ActiveRecord::Migration
   def change
     create_table :songs do |t|
       t.string :title
-      t.string :release_year
-      t.string :integer
+      t.boolean :released, default:false
+      t.integer :release_year
       t.string :artist_name
       t.string :genre
 

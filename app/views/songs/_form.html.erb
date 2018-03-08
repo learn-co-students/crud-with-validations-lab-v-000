@@ -16,13 +16,14 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+    <%= f.label :released %><br>
+    <%= f.check_box :released %>
+  </div>
+  <div class="field">
     <%= f.label :release_year %><br>
     <%= f.text_field :release_year %>
   </div>
-  <div class="field">
-    <%= f.label :integer %><br>
-    <%= f.text_field :integer %>
-  </div>
+
   <div class="field">
     <%= f.label :artist_name %><br>
     <%= f.text_field :artist_name %>

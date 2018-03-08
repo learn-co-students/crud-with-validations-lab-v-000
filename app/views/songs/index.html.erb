@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th>Title</th>
+      <th>Released</th>
       <th>Release year</th>
-      <th>Integer</th>
       <th>Artist name</th>
       <th>Genre</th>
       <th colspan="3"></th>
@@ -18,8 +18,8 @@
     <% @songs.each do |song| %>
       <tr>
         <td><%= song.title %></td>
+        <td><%= song.released %></td>
         <td><%= song.release_year %></td>
-        <td><%= song.integer %></td>
         <td><%= song.artist_name %></td>
         <td><%= song.genre %></td>
         <td><%= link_to 'Show', song %></td>
