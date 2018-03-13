@@ -5,6 +5,10 @@ class SongsController < ApplicationController
     @songs = Song.all
   end
 
+  def new
+    @song = Song.new
+  end
+
   def create
     song = Song.new(strong_params)
     return render :new unless song.save
