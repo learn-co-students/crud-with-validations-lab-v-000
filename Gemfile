@@ -15,3 +15,6 @@ end
 
 group :development do
 end
+
+# Added at 2018-03-13 19:08:36 +0000 by urizaraj:
+gem "jquery-rails", "~> 4.3"
