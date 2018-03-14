@@ -5,3 +5,7 @@ song_list = [
   {title: "my Gf", released: true, release_year: 2018, artist_name: "Runkus", genre: "Reggae"},
   {title: "JA", released: true, release_year: 2010, artist_name: "Protoje", genre: "Reggae"}
 ]
+
+song_list.each do |seed|
+  Song.create(seed)
+end
