@@ -2,9 +2,10 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Year</th>
-      <th>Genre</th>
+      <th>Released?</th>
+      <th>Release Year</th>
       <th>Artist name</th>
+      <th>Genre</th>
       <th></th>
     </tr>
   </thead>
@@ -13,19 +14,11 @@
 <% Song.all.each do |s| %>
 <tr>
   <td><%= s.title %></td>
-</tr>
-<tr>
   <td><%= s.released %></td>
-</tr>
-<tr>
   <td><%= s.release_year %></td>
-</tr>
-<tr>  
   <td><%= s.artist_name %></td>
-</tr>
-<tr>  
   <td><%= s.genre %></td>
-</tr>  
-</tbody>
+</tr>
 <% end %>
+</tbody>
 </table>
