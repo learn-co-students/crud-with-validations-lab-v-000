@@ -1,7 +1,19 @@
 <% Song.all.each do |s| %>
-  <%= s.title %>
-  <%= s.released %>
-  <%= s.release_year %>
-  <%= s.artist_name %>
-  <%= s.genre %>
+<table>
+<tr>
+  <td><%= s.title %></td>
+</tr>
+<tr>
+  <td><%= s.released %></td>
+</tr>
+<tr>
+  <td><%= s.release_year %></td>
+</tr>
+<tr>  
+  <td><%= s.artist_name %></td>
+</tr>
+<tr>  
+  <td><%= s.genre %></td>
+</tr>  
+</table>
 <% end %>
