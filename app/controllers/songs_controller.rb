@@ -1,4 +1,5 @@
 class SongsController < ApplicationController
+  
   def index
     @songs = Song.all
   end
@@ -40,10 +41,4 @@ class SongsController < ApplicationController
   end
 
 end
-
-
-
-
-
-# private
 

@@ -1,19 +1,19 @@
 class Song < ActiveRecord::Base
+
   validates :title, uniqueness: {
     scope: [:artist_name, :release_year], message: "can't be by the same artist in the same year"
-  }
-  validates :released, inclusion: {in: %w(true false), message: "must be true or false"}
+  }, presence: true
+  validates :released, inclusion: {in: [true, false], message: "must be true or false"}
   validates :artist_name, presence: true
 
+  with_options if: :released? do |song|
+    song.validates :release_year, presence: true
+    song.validates :release_year, numericality: {less_than_or_equal_to: Date.today.year }
+  end
 
-  
+  def released?
+    released
+  end
+
 end
 
-
-
-# validates :title, presence: true
-# validates :content, length: {minimum: 100}
-# validates :category, inclusion: {in: %w(Fiction Non-Fiction)}
-
-# validates :size, inclusion: { in: %w(small medium large),
-#   message: "%{value} is not a valid size" }
