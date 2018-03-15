@@ -9,7 +9,7 @@
     </tr>
   </thead>
 
-
+<tbody>
 <% Song.all.each do |s| %>
 <tr>
   <td><%= s.title %></td>
@@ -26,6 +26,6 @@
 <tr>  
   <td><%= s.genre %></td>
 </tr>  
-
+</tbody>
 <% end %>
 </table>
