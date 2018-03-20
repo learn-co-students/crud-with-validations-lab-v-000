@@ -1,0 +1,13 @@
+<h1>Show</h1>
+Title: <%=@song.title%><br></br>
+Released: <%=@song.released%><br></br>
+release Year:<%=@song.release_year%><br></br>
+Artist Name: <%=@song.artist_name%><br></br>
+Genre: <%=@song.genre%><br></br>
+<!-- <%= form_for @song , method:'delete' do |f| %>
+  <%= f.submit "Delete"%>
+<% end %> -->
+<%= link_to 'Delete',
+              song_path(@song),
+              method: :delete,
+              data: {confirm: "Are you sure?"} %> 
