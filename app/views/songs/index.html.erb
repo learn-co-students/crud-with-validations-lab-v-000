@@ -1,4 +1,9 @@
 <h1>Songs</h1>
-<%@songs.each do |song|%>
-<p><%=link_to song.title, song_path(song)%></p>
-<%end%>
+<tbody>
+  <%@songs.each do |song|%>
+    <tr>
+      <td><%=link_to song.title, song_path(song)%></td>
+      <td><%=song.artist_name%></td>
+    </tr>
+  <%end%>
+</tbody>

@@ -24,7 +24,3 @@ ActiveRecord::Schema.define(version: 20180323221658) do
   end
 
 end
-
-#s = Song.new(title: "Yeah!", released: true, release_year: 2005, artist_name: "Usher", genre: "pop")
-#a = Song.new(title: "Yeah!", released: "false", artist_name: "Usher")
-#b = Song.new(title: "Yo!", released: "yes", release_year: "while ago", artist_name: "CB")
