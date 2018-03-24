@@ -1,0 +1,23 @@
+<%if @song.errors.any?%>
+<ul>
+  <div class="" id="error_explanation">
+    <%@song.errors.full_messages.each do |message|%>
+    <li><%=message%></li>
+    <%end%>
+  </div>
+</ul>
+<%end%>
+<%=form_for @song do |f|%>
+Song Title: <%=f.text_field :title%><br>
+Artist: <%=f.text_field :artist_name%><br>
+Genre: <%=f.text_field :genre%><br></br>
+<p>Released?:</p>
+<%=f.radio_button :released, true%>
+<%=label :released_true, "Yes"%><br>
+<%=f.radio_button :released, false%>
+<%=label :released_false, "No"%><br></br>
+<%=label :release_year, "If released, in what year?"%>
+<%=f.text_field :release_year%><br></br>
+<%=f.submit%>
+
+<%end%>
