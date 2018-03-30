@@ -7,6 +7,5 @@
 <% if @song.released %>
   <p>release year: <%= @song.release_year %></p>
 <% end %>
-<%= form_tag people_path(@song.id), method: "delete" %>
-  <%= submit_tag "Delete #{@song.title}" %>
-<% end %>
+<%= form_tag song_path(@song), method: "delete" %>
+<%= submit_tag "Delete #{@song.title}" %>
