@@ -1,12 +1,3 @@
-class SongValidator < ActiveModel::EachValidator
-  def validate_each(record, attribute, value)
-
-    # unless value =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
-    #   record.errors[attribute] << (options[:message] || "is not an email")
-    # end
-  end
-end
-
 class Song < ActiveRecord::Base
   validates :title, presence: true
   validate :title_cannot_be_repeated_in_same_year
