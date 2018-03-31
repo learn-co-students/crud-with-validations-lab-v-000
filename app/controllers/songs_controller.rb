@@ -37,11 +37,7 @@ class SongsController < ApplicationController
     def destroy
         @song = Song.find(params[:id])
         @song.destroy
-        
-        respond_to do |format|
-            format.html { redirect_to songs_path }
-            format.xml { head :ok }
-        end
+        redirect_to songs_path
     end
     
     private

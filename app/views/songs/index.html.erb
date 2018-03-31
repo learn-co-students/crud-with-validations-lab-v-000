@@ -10,7 +10,7 @@
     <tbody>
         <% @songs.each do |song| %>
         <tr>
-            <td><%= song.title %></td>
+            <td><%= link_to song.title, song_path(song) %></td>
             <td><%= song.artist_name %></td>
             <td><%= song.release_year if song.released %></td>
             <td><%= song.genre if song.genre %></td>
@@ -18,3 +18,6 @@
         <% end %>
     </tbody>
 </table>
+
+<br></br>
+<%= link_to "Add New Song", new_song_path %>
