@@ -5,28 +5,23 @@ class SongsController < ApplicationController
     @songs = Song.all
   end
 
-  def show
-	end
-
   def new
     @song = Song.new
   end
 
-  def edit
-  end
-
   def create
     @song = Song.new(song_params)
-
-    respond_to do |format|
-      if @song.save
-        format.html { redirect_to @song, notice: 'Song was successfully created.' }
-        format.json { render :show, status: :created, location: @song }
-      else
-        format.html { render :new }
-        format.json { render json: @song.errors, status: :unprocessable_entity }
-      end
+    if @song.save
+      redirect_to song_path(@song)
+    else
+      render :new
     end
+  end
+
+  def show
+	end
+
+  def edit
   end
 
   def update
@@ -41,12 +36,19 @@ class SongsController < ApplicationController
     end
   end
 
+  def destroy
+    if @song
+      @song.destroy
+    end
+      redirect_to songs_path
+  end
+
   private
   def set_song
     @song = Song.find(params[:id])
   end
 
   def song_params
-    params.permit(:title, :artist_name, :genre, :released, :release_year)
+    params.require(:song).permit(:title, :released, :release_year, :artist_name, :genre)
   end
 end
