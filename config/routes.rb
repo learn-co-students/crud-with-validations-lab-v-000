@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  resources :songs, only: [:index, :new, :create, :edit, :update]
+  resources :songs
+
+  get 'songs/index' => 'songs#index'
+  get 'songs/:id' => 'songs#show'
 
 end
