@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'pry'
 gem 'rails', '~> 4.2'
 gem 'sqlite3'
 gem 'rspec-rails'
