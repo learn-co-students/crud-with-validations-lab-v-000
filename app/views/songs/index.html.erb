@@ -1,5 +1,11 @@
-<ul>
+<tbody>
   <% @songs.each do |song|%>
-    <li>song.title song.released song.release_year song.artist_name song.genre</li>
+    <tr>
+      <td>song.title</td>
+      <td>song.released</td>
+      <td>song.release_year</td>
+      <td>song.artist_name</td>
+      <td>song.genre</td>
+    </tr>
   <%end%>
-</ul>
+</tbody>
