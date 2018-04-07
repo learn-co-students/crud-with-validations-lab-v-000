@@ -2,6 +2,7 @@ class Song < ActiveRecord::Base
   validates :title, presence: true
   validates :artist_name, presence: true
   validates :released, inclusion: {in: [true, false]}
+  validate :released_twice?
 
 
   with_options if: :released? do |song|
@@ -14,6 +15,8 @@ class Song < ActiveRecord::Base
   end
 
   def released_twice?
-    
+    if Song.all.find_by(title: title, release_year: release_year)
+      errors.add(:title, "can't be released twice in the same year")
+    end
   end
 end
