@@ -1,0 +1,16 @@
+<%= @song %>
+
+<% @song.each do |song| %>
+<div class="song">
+  <span><%= song.title %></span>
+  <%= link_to "Delete", song, method: :delete, data: { confirm: "Really?" } %>
+  <span><%= song.release_year %></span>
+  <%= link_to "Delete", song, method: :delete, data: { confirm: "Really?" } %>
+  <span><%= song.released %></span>
+  <%= link_to "Delete", song, method: :delete, data: { confirm: "Really?" } %>
+  <span><%= song.artist_name %></span>
+  <%= link_to "Delete", song, method: :delete, data: { confirm: "Really?" } %>
+  <span><%= song.genre %></span>
+  <%= link_to "Delete", song, method: :delete, data: { confirm: "Really?" } %>
+</div>
+<% end %>
