@@ -1,6 +1,26 @@
 <h1>Song List</h1>
-<ul>
-  <% @songs.each do |s| %>
-    <li><%= link_to s.name + " - " s.artist, s %></li>
-  <% end %>
-</ul>
+<table>
+  <thead>
+    <th>Title</th>
+    <th>Artist</th>
+    <th>Genre</th>
+    <th>Release</th>
+  </thead>
+
+  <tbody>
+    <% @songs.each do |s| %>
+      <tr>
+        <td><%= link_to s.title, s %></td>
+        <td><%= s.artist_name %></td>
+        <td><%= s.genre %></td>
+        <td>
+          <% if s.released %>
+            <%= s.release_year %>
+          <% else %>
+            n/a
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
