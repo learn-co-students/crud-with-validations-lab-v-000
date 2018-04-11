@@ -1,7 +1,9 @@
-<p><%= @song.title %></p>
-<p><%= @song.released %></p>
-<p><%= @song.release_year %></p>
-<p><%= @song.artist_name %></p>
-<p><%= @song.genre %></p>
-<p><%= @song.created_at %></p>
-<p><%= @song.updated_at %></p>
+<div class="song">
+<p>Song Title: <%= @song.title %></p>
+<p>Artist Name: <%= @song.artist_name %></p>
+<p>Released? <%= @song.released %></p>
+<p>Year Released: <%= @song.release_year %></p>
+<p>Genre: <%= @song.genre %></p>
+<%= link_to "Delete", @song, method: :delete, data: { confirm: "Really?" } %>
+<%= link_to "Edit", edit_song_path(@song) %>
+</div>
