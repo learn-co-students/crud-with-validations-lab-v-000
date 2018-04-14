@@ -1,22 +1,22 @@
 require 'rails_helper'
 
-RSpec.describe "songs/edit", type: :feature do
+RSpec.describe 'songs/edit', type: :feature do
   let(:song_attributes) do
     {
-      title: "Rhythms Which I Played",
+      title: 'Rhythms Which I Played',
       release_year: 2000,
       released: true,
-      genre: "Normcore",
-      artist_name: "Man With Instruments"
+      genre: 'Normcore',
+      artist_name: 'Man With Instruments'
     }
   end
 
   let(:song) { Song.create!(song_attributes) }
 
-  it "renders the edit song form" do
+  it 'renders the edit song form' do
     visit edit_song_path(song)
 
-    form = find("form")
+    form = find('form')
 
     expect(form[:action]).to eq(song_path(song))
     expect(form.find('input#song_title').value).to eq(song.title)
