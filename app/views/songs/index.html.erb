@@ -1,0 +1,27 @@
+<h1>All Songs</h1>
+
+<ul>
+	<%@songs.each do |song|%>
+	<li><%= link_to song.title, song_path(song)%></li>
+	<a href="/songs/<%= song.id %>" data-method="delete" rel="nofollow">Delete this entry</a>
+	<%end%>
+</ul>
+
+<table>
+	<thead>
+		<tr>
+			<th>Song Title</th>
+			<th>Song Release Year</th>
+			<th>Artist Name</th>
+			<th>Genre</th>
+		</tr>
+	</thead>
+	<tbody>
+		
+			<%@songs.each do |song|%>
+	<tr><%= link_to song.title, song_path(song)%><a href="/songs/<%= song.id %>" data-method="delete" rel="nofollow">Delete this entry</a></tr>
+	<%end%>
+		
+	</tbody>
+</table>
+
