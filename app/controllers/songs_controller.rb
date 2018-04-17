@@ -33,6 +33,7 @@ class SongsController < ApplicationController
 
   def update
     @song = Song.find_by(params[:id])
+    @song.update(post_params)
     if @song.valid?
         @song.save
         redirect_to song_path(@song)
@@ -41,8 +42,9 @@ class SongsController < ApplicationController
     end
   end
 
-  def delete
-    @song = Song.find_by(params[:id])
+  def destroy
+    @song = Song.destroy(params[:id])
+    redirect_to songs_path
   end
 
   def post_params

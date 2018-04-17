@@ -25,10 +25,8 @@
   <%= f.text_field :artist_name %>
 <br/>
 <br/>
-  <%= f.label :released, 'Song Released', :value => 'true'%> &nbsp; &nbsp; &nbsp;
-  <%= f.radio_button :released, "true", :checked =>true %><br/>
-  <%= f.label :released, 'Song Not Released', :value => 'false' %> &nbsp; &nbsp; &nbsp;
-  <%= f.radio_button :released, "false" %>
+  <%= f.label :released, 'released', :value => 'true'%> &nbsp; &nbsp; &nbsp;
+  <%= f.check_box :released %><br/>
 <br/>
   <br/>
   <%= f.label :release_year, "release_year"%>
