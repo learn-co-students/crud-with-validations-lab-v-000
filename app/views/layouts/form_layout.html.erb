@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CrudWithValidationsLab</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <!-- Header -->
+  <%= yield %>
+
+  <% if !@song.errors.empty? %>
+  <ul>
+    <% @song.errors.full_messages.each do | error | %>
+        <li><%= error %></li>
+    <% end %>
+  </ul>
+  <% end %>
+<%= form_for @song, method: @http_method do |f| %>
+  <%= f.label :title, "title" %>
+  <%= f.text_field :title %>
+  <br/>
+<br/>
+  <%= f.label :artist_name, "artist_name"%>
+  <%= f.text_field :artist_name %>
+<br/>
+<br/>
+  <%= f.label :released, 'released', :value => 'true'%> &nbsp; &nbsp; &nbsp;
+  <%= f.check_box :released %><br/>
+<br/>
+  <br/>
+  <%= f.label :release_year, "release_year"%>
+  <%= f.text_field :release_year %>
+  <br/>
+  <br/>
+  <%= f.label :genre, "genre"%>
+  <%= f.text_field :genre %>
+  <%= f.submit%>
+<% end %>
+
+</body>
+</html>
