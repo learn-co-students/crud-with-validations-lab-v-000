@@ -1,0 +1,9 @@
+<% if @song.errors.any?%>
+  <div id="error_explanation">
+    <ul>
+      <% @song.errors.full_messages.each do |message|%>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

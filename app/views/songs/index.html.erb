@@ -18,6 +18,11 @@
         <td><%= song.release_year%></td>
         <td><%= song.genre%></td>
         <td><%= song.artist_name%></td>
+        <td>
+          <%= link_to "View", song %> | 
+          <%= link_to "Edit", edit_song_path(song) %> |
+          <%= link_to 'Delete', song, method: :delete, data: { confirm: 'For real?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>

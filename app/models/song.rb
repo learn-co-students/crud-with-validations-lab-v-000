@@ -4,7 +4,6 @@ class Song < ActiveRecord::Base
   validates :release_year, numericality: {less_than_or_equal_to: Time.now.year}, allow_nil: true
   validates :title, uniqueness: true, if: :not_duplicate?
 
-  private 
 
   def released?
     self.released 
