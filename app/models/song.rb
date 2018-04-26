@@ -1,6 +1,4 @@
 class Song < ActiveRecord::Base
-
-  binding.pry
   validates :title, presence: true
   validates :artist_name, presence: true
   validates :release_year, presence: true, if: :release_year?
@@ -10,6 +8,7 @@ class Song < ActiveRecord::Base
 
   #song is valid without a release_year when release is false
   def release_year_check?
+      binding.pry
     if released == true
       if !release_year #if there is no release year and it has been released
         errors.add(:release_year, "must have a release year")
