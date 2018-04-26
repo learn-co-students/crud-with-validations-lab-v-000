@@ -14,11 +14,11 @@ class Song < ActiveRecord::Base
     end
 
     if released == true
-      if !release_year
+      if !release_year #if there is no release year
         @return_value = false
+        self.release_year = 0
       end
     end
-    binding.pry
     @return_value
   end #end release_year_check?
 
