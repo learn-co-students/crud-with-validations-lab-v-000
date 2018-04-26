@@ -15,7 +15,7 @@ class Song < ActiveRecord::Base
     if released == true
       if !release_year #if there is no release year
         @return_value = false
-        self.release_year = 0
+        errors.add(:release_year, "must have a release year")
       else
         @return_value = true
       end
