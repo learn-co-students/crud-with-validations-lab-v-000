@@ -1,24 +1,20 @@
 class Song < ActiveRecord::Base
   validates :title, presence: true
   validates :artist_name, presence: true
-  validates :release_year, absence: true, if: :not_released?
-  validates :released, presence: true
-  validate :release_year_check?
-
-  #song is valid without release year when released is false
+  validates :release_year, presence: true, if: :released?
+  validates :released, inclusion: { in: [true, false] }
+  validate :future_release_year?
 
 
-  #song is invalid without a release_year when released is true
-  def release_year_check?
-    if released == true #released is true
-      if !release_year #there is no release year
-        errors.add(:release_year, "must have a release year")
-      end
+  def future_release_year?
+    if release_year > 2018
+      errors.add(:release_year, "must not be in the future")
     end
-  end #end release_year_check?
-
-  def not_released? #returns false if released is false and true if released is true
-    released == false
   end
+
+  def released?
+    released
+  end
+
 
 end
