@@ -18,7 +18,7 @@ class Song < ActiveRecord::Base
   end #end release_year_check?
 
   def not_released? #returns false if released is false and true if released is true
-    released
+    released == false
   end
 
 end
