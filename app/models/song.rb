@@ -20,7 +20,7 @@ class Song < ActiveRecord::Base
         @return_value = true
       end
     end
-    @return_value
+    #@return_value
   end #end release_year_check?
 
 end
