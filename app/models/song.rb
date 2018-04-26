@@ -1,13 +1,12 @@
 class Song < ActiveRecord::Base
   validates :title, presence: true
   validates :artist_name, presence: true
-  validates :release_year, presence: true
+  #validates :release_year, presence: true
   validates :released, presence: true
-  #validate :release_year_check?
+  validate :release_year_check?
 
   #song is valid without a release_year when release is false
   def release_year_check? #if this returns true the attribute is validated
-
     @return_value = true
     if released == false
       @return_value = true
@@ -17,6 +16,8 @@ class Song < ActiveRecord::Base
       if !release_year #if there is no release year
         @return_value = false
         self.release_year = 0
+      else
+        @return_value = true
       end
     end
     @return_value
