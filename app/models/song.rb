@@ -7,7 +7,6 @@ class Song < ActiveRecord::Base
 
   #release_year is optional if released is false
   #release_year must be less than or equal to the current year
-  binding.pry
   def release_year_check? #if this returns true the attribute is validated
     return_value = false
     if released
