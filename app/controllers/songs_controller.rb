@@ -23,8 +23,7 @@ class SongsController < ApplicationController
     end
   end
 
-  def edit
-    binding.pry
+  def ed
     @song = Song.find(params[:id])
   end
 
