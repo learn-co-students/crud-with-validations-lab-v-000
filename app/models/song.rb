@@ -7,11 +7,18 @@ class Song < ActiveRecord::Base
   validates :released, inclusion: { in: [true, false] }
   validate :future_release_year?
 
-  #invalid if artist has same song in same year
+=begin
+  with_options if: :released? do |song|
+    song.validates :release_year, presence: true
+    song.validates :release_year, numericality: {
+      less_than_or_equal_to: Date.today.year
+    }
+  end
+=end
 
   def future_release_year?
     if release_year
-      if release_year > 2018
+      if release_year > Date.today.year
         errors.add(:release_year, "must not be in the future")
       end
     end
