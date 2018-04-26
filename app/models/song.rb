@@ -1,7 +1,7 @@
 class Song < ActiveRecord::Base
   validates :title, presence: true
   validates :artist_name, presence: true
-  validates :release_year, presence: false, if: :release_year?
+  validates :release_year, presence: true, if: :released?
   validates :released, presence: true
   validate :release_year_check?
 
@@ -15,8 +15,9 @@ class Song < ActiveRecord::Base
     end
   end #end release_year_check?
 
-  def release_year?
-    !!release_year
+  def released?
+    binding.pry
+    released
   end
 
 end
