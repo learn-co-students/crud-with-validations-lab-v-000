@@ -6,6 +6,7 @@ class SongsController < ApplicationController
   end
 
   def new
+    @song = Song.new
   end
 
   def show
@@ -13,15 +14,23 @@ class SongsController < ApplicationController
   end
 
   def create
+    @song = Song.create(song_params)
   end
 
   def edit
+    @song = Song.find(params[:id])
   end
 
   def update
   end
 
   def delete
+  end
+
+  private
+
+  def song_params
+    params.permit(:song, :title, :released, :release_year, :artist_name, :genre)
   end
 
 
