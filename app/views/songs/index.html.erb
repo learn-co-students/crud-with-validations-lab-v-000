@@ -1,9 +1,7 @@
 
-<ul>
-<% songs.each do |song| %>
-  <li> <%=song.title %> </li>
-  <li> <%=song.artist %> </li>
-  <li> <%=song.genre %> </li>
-  <li> <%=song.release_year %> </li>
+<% @songs.each do |song| %>
+  <div> <%=song.title %> </div>
+  <div> <%=song.artist_name %> </div>
+  <div> <%=song.genre %> </div>
+  <div> <%=song.release_year %> </div>
 <% end %>
-</ul>
