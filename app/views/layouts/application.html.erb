@@ -6,8 +6,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= javascript_include_tag "songs" %>
+
+<nav>
+  <%= link_to_unless_current("all songs", { action: "index" }) %><br>
+  <%= link_to_unless_current("Create a New Song", { action: "new" }) %>
+</nav>
 
 <%= yield %>
+
 
 </body>
 </html>
