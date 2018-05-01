@@ -1,5 +1,10 @@
-<% form_for @ do |f| %>
-    <label> f.label :title </label><br>
+<% form_tag song_path(@song), method: "patch" do %>
+    <div class="field">
+    <%= label_tag "title", "Title" %>
+    <%= text_field_tag "title, @post.title" %>
+
+
+    <label> label :title </label><br>
     <%= f.text_field :title %><br>
 
     <label> f.label :artist_name </label><br>
@@ -15,5 +20,6 @@
     <%= f.text_field :genre %><br>
 
     <%= submit_tag "Edit Song" %>
+    </div>
 
 <% end %>
