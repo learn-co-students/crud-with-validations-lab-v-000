@@ -1,9 +1,8 @@
 class Song < ActiveRecord::Base
-  validates :title, presence: true
-  validates :title, uniqueness: {scope: [:artist_name, :release_year] }
+  validates :title, presence: true, uniqueness: {scope: [:artist_name, :release_year] }
   # validate :unique_song?
   validates :released, inclusion: { in: [true, false]}
-  validate :release_info_valid?
+  # validate :release_info_valid?
   validates :release_year, numericality: { less_than_or_equal_to: 2018}
   validates :artist_name, presence: true
 
@@ -18,10 +17,10 @@ class Song < ActiveRecord::Base
   #     end
   # end
 
-  def release_info_valid?
-    unless self.released == true && self.release_year == nil
-    end
-  end
+  # def release_info_valid?
+  #   unless self.released == true && self.release_year == nil
+  #   end
+  # end
 
 
 end
