@@ -1,10 +1,20 @@
+
 class Song < ActiveRecord::Base
   validates :title, presence: true, uniqueness: {scope: [:artist_name, :release_year] }
   # validate :unique_song?
   validates :released, inclusion: { in: [true, false]}
-  # validate :release_info_valid?
-  validates :release_year, numericality: { less_than_or_equal_to: 2018}
   validates :artist_name, presence: true
+  with_options if: :released? do |song|
+    #binding.pry
+    song.validates :release_year, presence: true
+    song.validates :release_year, numericality: { less_than_or_equal_to: 2018}
+  end
+
+
+  def released?
+    !!released
+  end
+
 
 # custom validations to semantically represent the VALID CASE. for example if a
 # song is valid if it is unique, then name song_unique? and describe valid
