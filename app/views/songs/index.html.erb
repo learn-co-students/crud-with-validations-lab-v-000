@@ -3,24 +3,25 @@
 <table>
   <thead>
     <tr>
-      <th>Song Title</th>
-      <th>Artist</th>
-      <th>Released</th>
-      <th>Release Year</th>
-      <th>Genre</th>
+      <th style = "text-align: left;">Song Title&nbsp;</th>
+      <th style = "text-align: left;">Artist&nbsp;</th>
+      <th style = "text-align: left;">Released&nbsp;</th>
+      <th style = "text-align: left;">Release Year&nbsp;</th>
+      <th style = "text-align: left;">Genre&nbsp;</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <% @songs.each do |song| %>
-        <div class="song">
-          <td> <%= song.title %> </td>
-          <td> <%= song.artist_name %> </td>
-          <td> <%= song.released %> </td>
-          <td> <%= song.release_year %> </td>
-          <td> <%= song.genre %> </td>
-           <%= link_to "Delete", song_path(song), method: :delete, data: {confirm: "Are you sure you want to delete this song?"} %> </span></p>
-        </div>
-      <% end %>
-    </tr>
+  <% @songs.each do |song| %>
+    <div class="song">
+      <tbody>
+        <tr>
+          <td> <%= song.title %> &nbsp;</td>
+          <td> <%= song.artist_name %> &nbsp;</td>
+          <td> <%= song.released %> &nbsp;</td>
+          <td> <%= song.release_year %> &nbsp;</td>
+          <td> <%= song.genre %> &nbsp;</td>
+          <td> <%= link_to 'destroy', song_path(song), method: :delete, data: {confirm: "Are you sure you want to delete this song?"} %> </td>
+        </tr>
+      </tbody>
+    </div>
+  <% end %>
 </table>
