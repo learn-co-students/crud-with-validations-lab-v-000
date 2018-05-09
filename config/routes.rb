@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  resources :songs
+  resources :songs  
+  # get '/', to: 'songs#index', :as 'songs'
 end
