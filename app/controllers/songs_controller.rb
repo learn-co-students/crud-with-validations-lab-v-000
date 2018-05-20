@@ -23,7 +23,11 @@ class SongsController < ApplicationController
   def update
     @song = Song.find(params[:id])
     @song.update(song_params(:title, :artist_name, :release_year, :released ))
-    redirect_to song_path(@song)
+    if @song.valid?
+      redirect_to song_path(@song)
+    else
+      render :edit
+    end
   end
 
   def show
