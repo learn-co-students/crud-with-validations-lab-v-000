@@ -7,3 +7,8 @@
   delete "/songs/:id", to: "songs#destroy"
 
   root "songs#index"
+
+
+        <% if f.radio_button_tag.checked? == true %>
+            <>
+            

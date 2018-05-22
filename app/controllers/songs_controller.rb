@@ -13,12 +13,18 @@ class SongsController < ApplicationController
 
     def show
         @song = Song.find(params[:id])
+        # raise params.inspect
     end
 
     def create
         @song = Song.create(song_params)
-        @song.save
-        redirect_to songs_path(@song)
+        # binding.pry
+        if @song.valid?
+            @song.save
+            redirect_to song_path(@song)
+        else
+            render :new
+        end
     end
 
     def update
