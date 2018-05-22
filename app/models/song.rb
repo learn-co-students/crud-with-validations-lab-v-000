@@ -6,7 +6,7 @@ class Song < ActiveRecord::Base
   validates :artist_name, presence: true
 
     def release_year_cannot_be_in_the_past
-        if release_year < Time.current.year
+        if release_year < Time.now.year
 
           errors.add(:release_year, "can't be in the past")
         end
