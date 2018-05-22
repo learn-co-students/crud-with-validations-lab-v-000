@@ -1,0 +1,14 @@
+<%= form_for(@song) do |f| %>
+<%= f.label @song.title %>
+<%= f.text_field :title %>
+<%= f.label @song.released %>
+<%= f.radio_button_tag 'song_released', 'yes', true %>
+<%= f.label @song.release_year %>
+<%= f.text_field :release_year %>
+<%= f.label @song.artist_year %>
+<%= f.text_field :artist_year %>
+<%= f.label @song.genre %>
+<%= f.text_field :genre %>
+<%= f.submit "Create Song"%>
+<% end %>
+
