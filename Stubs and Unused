@@ -9,6 +9,5 @@
   root "songs#index"
 
 
-        <% if f.radio_button_tag.checked? == true %>
-            <>
+<%= link_to "Delete", song, method: delete, data: { confirm: "Really?" } %>
             
