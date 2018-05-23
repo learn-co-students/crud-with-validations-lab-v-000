@@ -30,24 +30,4 @@ class Song < ActiveRecord::Base
     end
 end
 
-    # def release_year_not_same_year_same_song_released
-    #     @songs = Song.all
-    #     @songs.map do |song| 
-            
-    #         map songs
-    #     sortgroup_by over array
-    #     if the array includes artists are  same and years are same and titles are same then make an error 
-    #     if the rlease years of two songs match and the titles of the songs match then invalid
-    #     if release years are same and 
-        
-    #     if @songs 
-    #         release_year
-    #         if release_year == song.release_year && 
-    #             @song.title
-    #             Song 
-    #             refers to a song among all records
-    #             an artist 
-    #             isn't important
-    #             only one of the same song title in the same year
-
 # Validate that age is an integer at least 13 and less than 150 validates :age, numericality: {only_integer: true, greater_than_or_equal_to: 13, less_than: 150}
