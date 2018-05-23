@@ -1,0 +1,18 @@
+<tbody>
+  <% @songs.each do |song| %>
+
+  <tr>
+    <td>Title: <%= song.title %>
+    <td>Released: <%= song.released %>
+    <td>Year released: <%= song.release_year %>
+    <td>Artist: <%= song.artist_name %>
+    <td>Genre: <%= song.genre %>
+      <td>
+        <%= link_to "View", song_path(song) %>
+        <%= link_to "Edit", edit_song_path(song) %>
+        <%= link_to "Delete", song, method: :delete, data: {confirm: "Are you sure?"} %>
+      </td>
+  <% end %>
+  </tr>
+
+</tbody>
