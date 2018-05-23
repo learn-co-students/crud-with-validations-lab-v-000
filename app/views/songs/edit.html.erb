@@ -6,9 +6,12 @@
 <%= f.text_field :artist_name %><br>
 
 <%= f.label :released %>
-<%= f.text_field :released%><br>
+<%= f.check_box :released%><br>
 
 <%= f.label :release_year %>
 <%= f.text_field :release_year %><br>
+
+<%= f.label :genre %>
+<%= f.text_field :genre %><br>
 <%= f.submit %>
 <%end%>
