@@ -11,3 +11,88 @@
 
 <%= link_to "Delete", song, method: delete, data: { confirm: "Really?" } %>
             
+DISPLAYING ALL ERRORS WITH ERRORS.FULL_MESSAGES
+When a model fails validation, its errors attribute is filled with information about what went wrong. Rails creates an ActiveModel::Errorsobject to carry this information.
+The simplest way to show errors is to just spit them all out at the top of the form by iterating over @person.errors.full_messages. But first, we'll have to check whether there are errors to display with @person.errors.any?.
+<% if @person.errors.any? %>
+ <div id="error_explanation">
+   <h2>There were some errors:</h2>
+   <ul>
+     <% @person.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+     <% end %>
+   </ul>
+ </div>
+<% end %>
+If the model has two errors, there will be two items in full_messages, which could result in the following HTML:
+<div id="error_explanation">
+ <h2>There were some errors:</h2>
+ <ul>
+   <li>Name does not allow numbers</li>
+   <li>Email is already taken</li>
+ </ul>
+</ul>
+This is nice, but it's not very helpful from a user interface standpoint. It would be much better if the incorrect fields themselves were highlighted somehow.
+DISPLAYING PRE-FIELD ERRORS WITH ERRORS[]
+ActiveModel::Errors has much more than just a list of full_message error strings. It can also be used to access field-specific errors by interacting with it like a hash. If the field has errors, they will be returned in an array of strings:
+@person.errors[:name] #=> ["does not allow numbers"]
+@person.errors[:email] #=> []
+With this in mind, we can conditionally "error-ify" each field in the form, targeting the divs containing each field:
+<div class="field">
+ <%= label_tag "name", "Name" %>
+ <%= text_field_tag "name", @person.name %>
+</div>
+And conditionally adding a class if there are errors:
+<div class="field<%= ' field_with_errors' if @person.errors[:name].any? %>">
+ <%= label_tag "name", "Name" %>
+ <%= text_field_tag "name", @person.name %>
+</div>
+THE WHOLE PICTURE
+By now, our full form has grown quite a bit:
+<%= form_tag("/people") do %>
+ <% if @person.errors.any? %>
+   <div id="error_explanation">
+     <h2>There were some errors:</h2>
+     <ul>
+       <% @person.errors.full_messages.each do |message| %>
+         <li><%= message %></li>
+       <% end %>
+     </ul>
+   </div>
+ <% end %>
+ 
+
+ With this in mind, we can use the invalid @person object to "re-fill" the usually-empty new form with the user's invalid entries. This way they don't have to re-type anything.
+(You wouldn't always want to do this –– for example, with credit card numbers –– because you want to minimize the amount of times sensitive information travels back and forth over the internet.)
+Now, let's plug the information back into the form:
+<!-- app/views/people/new.html.erb //-->
+ 
+<%= form_tag "/people" do %>
+ Name: <%= text_field_tag "name", @person.name %><br>
+ Email: <%= text_field_tag "email", @person.email %>
+ <%= submit_tag "Create Person" %>
+<% end %>
+As you can see from the docs, the second argument to text_field_tag, as with most form tag helpers, is the "default" value. The HTML for the two field inputs used to look like this:
+Name: <input type="text" name="name" id="name" /><br>
+Email: <input type="text" name="email" id="email" />
+But now it will look like this:
+Name: <input type="text" name="name" id="name" value="Jane Developer" /><br />
+Email: <input type="text" name="email" id="email" value="jane@developers.fake" />
+When the browser renders those inputs, they'll be pre-filled with the data in their value attributes.
+This is the same technique used to create edit/update forms.
+We can also use the same form code for empty and pre-filled forms because @person = Person.new will create an empty model object whose attributes are all nil.
+
+ 
+ <div class="field<%= ' field_with_errors' if @person.errors[:name].any? %>">
+   <%= label_tag "name", "Name" %>
+   <%= text_field_tag "name", @person.name %>
+ </div>
+ 
+ <div class="field<%= ' field_with_errors' if @person.errors[:email].any? %>">
+   <%= label_tag "email", "Email" %>
+   <%= text_field_tag "email", @person.email %>
+ </div>
+ 
+ <%= submit_tag "Create" %>
+<% end %>
+
