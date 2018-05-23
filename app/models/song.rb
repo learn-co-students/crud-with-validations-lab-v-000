@@ -5,7 +5,8 @@ class Song < ActiveRecord::Base
     # HERE multiple attributes for the same key are grouped in brackets, WHICH GENERALLY GROUP THINGS TOGETHER
         message: "Song may only be released by artist once in the same year" 
     }
-    #:scope is for constraining the uniqueness of certain attributes in relation to a main attribute AMONG RECORDS IN A DATABASE
+    #:scope is for constraining the uniqueness of certain attributes in relation to a main attribute AMONG RECORDS 
+    #IN A DATABASE
     validates_presence_of :released if :released == true
     # validates :release_year, numericality: {less_than_or_equal_to: 2018}
     validate :release_year_true
@@ -30,4 +31,5 @@ class Song < ActiveRecord::Base
     end
 end
 
-# Validate that age is an integer at least 13 and less than 150 validates :age, numericality: {only_integer: true, greater_than_or_equal_to: 13, less_than: 150}
+# Validate that age is an integer at least 13 and less than 150 validates :age, numericality: {only_integer: true, 
+#greater_than_or_equal_to: 13, less_than: 150}
