@@ -16,11 +16,11 @@ ActiveRecord::Schema.define(version: 20180522222508) do
   create_table "songs", force: :cascade do |t|
     t.string   "title"
     t.boolean  "released"
-    t.integer  "released_year"
+    t.integer  "release_year"
     t.string   "artist_name"
     t.string   "genre"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end
