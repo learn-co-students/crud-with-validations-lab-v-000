@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180521032205) do
+ActiveRecord::Schema.define(version: 20180523023234) do
 
   create_table "songs", force: :cascade do |t|
     t.string   "title"

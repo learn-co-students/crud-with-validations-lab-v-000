@@ -12,11 +12,12 @@
 <%end%>
 
 <%=form_for @song do |f| %>
-<%= f.text_field :title %>
-<%= f.text_field :artist_name %>
-<%= f.text_field :genre %>
-<%= f.text_field :released %>
-<%= f.text_field :release_year %>
+<h2>Title:<%= f.text_field :title %></h2>
+<h2>Artist Name:<%= f.text_field :artist_name %></h2>
+<h2>Genre:<%= f.text_field :genre %></h2>
+    <%= f.label :released %><br>
+    <%= f.check_box :released %>
+<h2>Release Year:<%= f.text_field :release_year %></h2>
 <%= f.submit %>
 <% end %>
 
