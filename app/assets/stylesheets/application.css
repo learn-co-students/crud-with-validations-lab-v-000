@@ -19,3 +19,14 @@
   background-color: red;
   display: table;
 }
+
+form input {
+  display: block;
+}
+
+div.radio {
+  display: block;
+}
+div.radio input {
+  display: inline;
+}
