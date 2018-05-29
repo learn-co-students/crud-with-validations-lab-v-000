@@ -67,8 +67,6 @@ end
 
 # rspec spec/controllers/songs_controller_spec.rb
 
-
-
 # Referenced Labs #
 # validations-in-controller-actions-rails-lab-v-000
 # validations-with-form_for-rails-v-000

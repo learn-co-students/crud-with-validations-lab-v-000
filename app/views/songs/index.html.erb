@@ -1,7 +1,9 @@
 
 <h3>Show All Songs</h3>
-<ul>
+<table>
+  <tr>
   <% @songs.each do |song| %>
-    <li><%= link_to song.title, song_path(@song)%></li>
+    <td><%= link_to song.title, song_path(song)%><td>
   <% end %>
-</ul>
+</tr>
+</table>
