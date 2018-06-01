@@ -1,0 +1,24 @@
+<% if @song.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@song.errors.count, "error") %>
+      prohibited this post from being saved:
+    </h2>
+
+    <% @song.errors.full_messages.each do |msg| %>
+      <h3><%= msg %></h3>
+    <% end %>
+  </div>
+<% end %>
+
+
+
+<%= form_for @song do |f| %>
+  Song Title: <%= f.text_field :title %>
+  Artist Name: <%= f.text_field :artist_name %>
+  Year Released: <%= f.text_field :release_year %>
+  Officially Released: <%= f.check_box :released %>
+  Song Genre: <%= f.text_field :genre %>
+
+  <%= f.submit %>
+<% end %>
