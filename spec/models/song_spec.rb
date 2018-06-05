@@ -32,9 +32,6 @@ RSpec.describe Song, type: :model do
     expect(Song.new(unreleased)).to be_valid
   end
 
-  it "is invalid when the release year is in the future" do
-    expect(Song.new(future_release_year)).to be_invalid
-  end
 
   it "is invalid if an artist tries to release the same song twice in a year" do
     Song.create!(valid_attributes)
