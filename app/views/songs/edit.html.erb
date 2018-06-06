@@ -1,0 +1,9 @@
+<h1>Edit a Song</h1>
+<%= form_for @song do |f| %>
+  <%= f.text_field :title %>
+  <%= f.check_box :released, id: "song_released" %> <%= f.label :released, "Yes" %>
+  <%= f.number_field :release_year %>
+  <%= f.text_field :artist_name %>
+  <%= f.text_field :genre %>
+  <%= f.submit %>
+<% end %>
