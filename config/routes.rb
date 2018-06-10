@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get 'songs/destroy'
   get 'songs/index'
   get 'songs/show'
+  get 'songs/edit'
 
 end
