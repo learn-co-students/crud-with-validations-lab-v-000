@@ -1,2 +1,32 @@
-<h1>Songs#new</h1>
-<p>Find me in app/views/songs/new.html.erb</p>
+<h1>Create A Song</h1>
+<%= form_for @song do |f| %>
+<% if @song.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@song.errors.count, "error") %>
+      prohibited this post from being saved:
+    </h2>
+
+    <ul>
+    <% @song.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %>
+
+  <%= f.label :released %><br>
+  <%= f.check_box :released %>
+
+  <%= f.label :release_year %><br>
+  <%= f.number_field :release_year %>
+
+  <%= f.label :artist_name %><br>
+  <%= f.text_field :artist_name %>
+
+  <%= f.label :genre %><br>
+  <%= f.text_field :genre %>
+  <%= f.submit %>
+<% end %>
