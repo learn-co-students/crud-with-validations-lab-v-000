@@ -1,0 +1,23 @@
+
+<h2>Editing "<%= @song.title %>"</h2>
+<%= form_tag song_path(@song), method: "patch" do %>
+
+  <% if @song.errors.any? %>
+    <div id="error_explanation">
+      <h2>There were some errors:</h2>
+      <ul>
+        <% @song.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field<%= ' field_with_errors' if @song.errors[:title].any? %>">
+    <%= label_tag "title", "Title" %>
+    <%= text_field_tag "title", @song.title %>
+  </div>
+
+
+  <%= submit_tag "Update" %>
+<% end %>
