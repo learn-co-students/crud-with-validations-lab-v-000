@@ -1,23 +1,21 @@
+<h1>Update Song Form</h1>
 
-<h2>Editing "<%= @song.title %>"</h2>
-<%= form_tag song_path(@song), method: "patch" do %>
+<%= form_for(@song) do |f|	%>
+  <label>Title</label>  
+   <%= f.text_field :title	%>
+   
+  <label>Released?</label>
+  <%= f.check_box :released %>
+  
+  <label>Release Year</label>
+  <%= f.text_field :release_year	%>
+  
+  <label>Artist Name</label>
+  <%= f.text_field :artist_name	%>
 
-  <% if @song.errors.any? %>
-    <div id="error_explanation">
-      <h2>There were some errors:</h2>
-      <ul>
-        <% @song.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <label >Genre</label>
+  <%= f.text_field :genre	%>
+  
+  <%= f.submit	%>
 
-  <div class="field<%= ' field_with_errors' if @song.errors[:title].any? %>">
-    <%= label_tag "title", "Title" %>
-    <%= text_field_tag "title", @song.title %>
-  </div>
-
-
-  <%= submit_tag "Update" %>
 <% end %>
