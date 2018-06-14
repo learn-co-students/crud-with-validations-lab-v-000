@@ -1,0 +1,20 @@
+Description:
+    Generates empty view files for model. If no arguments passed, will generate index, new, show, and edit. If passed arguments will create ONLY those specified.
+
+Example 1:
+    rails generate view song index show
+
+    This will create:
+        app/views/songs
+        app/views/songs/index.rb
+        app/views/songs/show.rb
+        
+Example 2:
+    rails generate view song
+
+    This will create:
+        app/views/songs
+        app/views/songs/index.rb
+        app/views/songs/new.rb
+        app/views/songs/show.rb
+        app/views/songs/edit.rb
