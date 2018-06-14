@@ -15,6 +15,7 @@ RSpec.describe Song, type: :model do
   let(:missing_release_year) { valid_attributes.except(:release_year) }
   let(:unreleased) { missing_release_year.merge(released: false) }
   let(:future_release_year) { valid_attributes.merge(release_year: Date.today.year + 1) }
+  let(:missing_artist_name) { valid_attributes.except(:artist_name) }
 
   it "is valid when expected" do
     expect(Song.new(valid_attributes)).to be_valid
@@ -40,4 +41,13 @@ RSpec.describe Song, type: :model do
     Song.create!(valid_attributes)
     expect(Song.new(valid_attributes)).to be_invalid
   end
+  
+  # proposing the following test, as line 21 in the readme for this lab is not be tested for allowing passing solution without fullfilling requirement. (line 20 :artist_name - Must not be blank) 
+  it "is invalid without artist name" do
+    expect(Song.new(missing_artist_name)).to be_invalid
+  end
+  
+  # also although we are using checkboxes for the released form field, I believe there should also be a test for (line 15 :released - Must be `true` or `false`). Currently could also pass without released inclusion validation in the model.
+  
+  # im not too sure how to test but thought worth a mention 
 end
