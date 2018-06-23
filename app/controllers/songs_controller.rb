@@ -38,7 +38,6 @@ class SongsController < ApplicationController
   end
 
   def destroy
-    #binding.pry
     @song.destroy
     redirect_to songs_path
   end
