@@ -5,7 +5,7 @@ class Song < ActiveRecord::Base
   validates :title, uniqueness: { scope: [:release_year, :artist_name]}
 
   def release_year_cannot_be_future
-    if !release_year < Date.current.year
+    if release_year.to_i > Date.current.year
       errors.add(:release_year, "Release year can't be in the future")
     end
   end
