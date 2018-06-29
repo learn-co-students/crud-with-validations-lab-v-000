@@ -1,14 +1,24 @@
 class SongsController < ApplicationController
+  before_action :current_song, only: [:show, :edit, :update, :destroy]
+
   def show
   end
 
   def index
+    @songs = Song.all
   end
 
   def new
+    @song = Song.new
+  end
+
+  def create
   end
 
   def edit
+  end
+
+  def update
   end
 
   private
