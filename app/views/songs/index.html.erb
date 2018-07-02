@@ -1,9 +1,13 @@
-<h1>Song List</h1>
+<h1>Song Index</h1> 
 
-<ol>
+<tbody>
 <% @songs.each do |song| %>
-    <li><%= link_to song.title, song_path(song.id) %>
-    <%= link_to 'Delete', song, method: :delete, data: {confirm: 'Really?'} %></li>
-
+    <tr>
+    <%= song.title %>
+    <%= song.release_year %>
+    <%= song.artist_name %>
+    <%= song.genre %>
+    <%= link_to "Delete", song, method: :delete, data: {confirm: "Really?"} %>
+    </tr>
 <% end %>
-</ol>
+</tbody>
