@@ -1,6 +1,17 @@
 class Song < ActiveRecord::Base
-  validates :title, presence: true, uniqueness: {scope: [:artist_name, :release_year]} #need column index?
-  validates :released, inclusion: {in: %w(true, false)}
-  validates :release_year,presence: true, numericality: {less_than_or_equal_to: Date.today.year}, if: :released#maybe need to be something else
+  validates :title, presence: true
+  validates :title, uniqueness: {scope: [:artist_name, :release_year]} #need column index?
+  validates :released, inclusion: {in: [true, false]}
   validates :artist_name, presence: true
+
+  with_options if: :released? do |song|
+    song.validates :release_year, presence: true
+    song.validates :release_year, numericality: {
+      less_than_or_equal_to: Date.today.year
+    }
+  end
+
+  def released?
+    released
+  end
 end
