@@ -7,10 +7,12 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'rake'
 
 group :development, :test do
   gem 'capybara'
   gem 'pry'
+  gem 'tux'
 end
 
 group :development do
