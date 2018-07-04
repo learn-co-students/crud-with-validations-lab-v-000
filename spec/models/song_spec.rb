@@ -5,7 +5,7 @@ RSpec.describe Song, type: :model do
     {
       title: "Talisman",
       artist_name: "Air",
-      release_year: 2007,
+      release_year: 2018,
       released: true,
       genre: "Post-Rock"
     }
