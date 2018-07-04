@@ -1,5 +1,37 @@
 <h1>Songs</h1>
 
-<% @songs.each do |song| %>
-    <p><%=link_to song.title, song_path(song)%></p>
-<% end %>
+<table>
+  <thead>
+  <tr>
+     <th>Title</th>
+     <th>Artist</th>
+     <th>Genre</th>
+     <th>Released</th>
+     <th>Release Year</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @songs.each do |song| %>
+    <tr>
+      <td><%= link_to song.title, song_path(song) %></td>
+      <td><%= song.artist_name %></td>
+      <td><%= song.genre %></td>
+      <td><%= song.released %></td>
+      <td><%= song.release_year %></td>
+      <td>
+        <form method="get"action="/songs/<%=song.id%>/edit">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="submit"value="Edit">
+        </form>
+      </td>
+      <td>
+        <form method="post"action="/songs/<%=song.id%>">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input id="hidden" type="hidden" name="_method" value="delete">
+        <input type="submit"value="Delete">
+        </form>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -7,3 +7,9 @@
 <% else %>
 <p>Unreleased</p>
 <% end %>
+
+<form method="post"action="/songs/<%=@song.id%>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit"value="delete">
+</form>
