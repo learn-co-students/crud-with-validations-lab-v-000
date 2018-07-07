@@ -1,0 +1,6 @@
+<%= table_for @song do -%>
+  <% columns :title, :released, :release_year, :artist_name, :genre %>
+<% end %>
+<%= form_tag song_path(@song), method: "delete" do %>
+  <%= submit_tag "Delete #{@song.title}" %>
+<% end %>

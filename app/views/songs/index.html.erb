@@ -1,0 +1,4 @@
+<h1>All Songs</h1>
+<%= table_for @songs do -%>
+  <% columns :title, :released, :release_year, :artist_name, :genre %>
+<% end %>
