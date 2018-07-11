@@ -18,9 +18,7 @@ class Song < ActiveRecord::Base
   end
 
   def same_song_twice_in_year
-    #binding.pry
     Song.all.each do |song|
-      #binding.pry
       if song.artist_name == self.artist_name && song.title == self.title && song.release_year == self.release_year
         errors.add(:release_year, "same song released in same yer")
       end
