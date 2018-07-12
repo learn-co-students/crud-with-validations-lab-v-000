@@ -4,7 +4,7 @@ RSpec.describe "songs/edit", type: :feature do
   let(:song_attributes) do
     {
       title: "Rhythms Which I Played",
-      release_year: 2000,
+      release_year: 2018,
       released: true,
       genre: "Normcore",
       artist_name: "Man With Instruments"
