@@ -1,0 +1,12 @@
+<h1>Editing <%=@song.title%></h1>
+<%if @song.errors.any?%>
+  <% @song.errors.full_messages.each do |msg|%>
+    <div id="error_messages">
+      <p>
+        <%=msg%>
+      </p>
+    </div>
+  <%end%>
+<%end%>
+
+<%= render "form" %>
