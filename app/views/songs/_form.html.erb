@@ -25,11 +25,17 @@
 
     <br><br>
     <%= f.label :released %><br>
+    <%= f.check_box :released %><br>
+
+    <!-- <%= f.label :released %><br>
     <%= f.label :released, "Yes", :value => true  %>
     <%= f.radio_button :released, true %>
     <%= f.label :released, "No", :value => false  %>
-    <%= f.radio_button :released, false, :checked => true %>
+    <%= f.radio_button :released, false, :checked => true %> -->
+
+
     <br><br>
+
     <%= f.label :release_year %><br>
     <%= f.number_field :release_year %>
   </div>

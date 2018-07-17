@@ -38,12 +38,8 @@ class SongsController < ApplicationController
 
   def destroy
     @song = Song.find(params[:id])
-    if @song == @song.id
-      @song.destroy
-      redirect_to songs_url
-    else
-      render :edit
-    end
+    @song.destroy
+    redirect_to songs_url
   end
 
   private
