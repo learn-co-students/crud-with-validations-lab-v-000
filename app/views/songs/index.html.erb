@@ -1,0 +1,31 @@
+<h1>Songs</h1>
+
+<% @songs.each do |song| %>
+  <% if @songs.empty? %>
+    <%= link_to "Create Song", new_song_path(song) %>
+  <% else %>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Artist Name</th>
+          <th>Genre</th>
+          <th>Year</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><%= song.title %></td>
+          <td><%= song.artist_name %></td>
+          <td><%= song.genre %></td>
+          <td><%= song.release_year %></td>
+          <td><%= link_to "Show", song %></td>
+          <td><%= link_to "Edit", edit_song_path(song) %></td>
+          <td><%= link_to "Delete", song, method: :delete, data: { confirm: "Are you sure?" } %></td>
+        </tr>
+      </tbody>
+    </table>
+  <% end %>
+<% end %>
