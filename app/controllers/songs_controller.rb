@@ -3,6 +3,10 @@ class SongsController < ApplicationController
   def index
   end
 
+  def new
+    @song = Song.new
+  end
+
   def show
     @song = Song.find_by(params[:id])
   end
