@@ -1,21 +1,13 @@
 class Song < ActiveRecord::Base
   validates :title, :artist_name, :genre, presence: true
   validates :title, uniqueness: true
-  validate  :clikbate
+  validate  :release_validation
 
-    def clikbate
-#binding.pry
+    def release_validation
         if (released && release_year) && (Date.today.year > release_year  unless release_year == nil) || (!released && release_year.nil?)
         else
-              errors[:released] << "does not compute"
+              errors[:released] << "errors in release status and year occured"
        end
     end
-#  validates :released, inclusion: {in: ["true","false"]}
-
-   # def validate_year
-   #   if release_year.blank? || Time.now.year < release_year
-   #     errors[:base] << "The release year is invalid"
-   #   end
-   # end
 
 end
