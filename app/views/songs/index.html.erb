@@ -1,0 +1,10 @@
+<h3>Index Page</h3>
+
+<table>
+<tbody>
+
+<% @songs.each do |s| %>
+    <tr><p><%= link_to s.title, song_path(s) %></p></tr>
+  <% end %>
+</tbody>
+</table>
