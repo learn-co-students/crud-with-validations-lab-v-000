@@ -1,5 +1,5 @@
 class Song < ActiveRecord::Base
-  validates :title, presence: true]7
+  validates :title, presence: true
   validates :released, inclusion: { in: [ true, false ] }
   validates :artist_name, presence: true
   validates :release_year, :length => {is: 4 }
@@ -8,7 +8,7 @@ class Song < ActiveRecord::Base
   validate :is_year_valid?
 
   def is_good_title?
-    if songs.find( :title => self.title, :released_year => this.released_year)
+    if Song.find( :title => self.title, :released_year => this.released_year)
       errors.add(:title, "Title was already released in the same year")
     end
   end
