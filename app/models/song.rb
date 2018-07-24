@@ -8,7 +8,7 @@ class Song < ActiveRecord::Base
   validate :is_year_valid?
 
   def is_good_title?
-    if Song.find( :title => self.title, :released_year => this.released_year)
+    if Song.where(:title => self.title, :released_year => self.release_year)
       errors.add(:title, "Title was already released in the same year")
     end
   end
@@ -23,7 +23,8 @@ class Song < ActiveRecord::Base
 
   def is_year_valid?
     # note: 1800 arbitrary choice for minimum year.  Better check would probably be something later
-    if self.year > Date.today.year || self.year < "1800"
+    binding.pry
+    if self.release_year > Date.today.year || self.release_year < "1800"
       errors.add(:release_year, "Invalid Year")
     end
   end
