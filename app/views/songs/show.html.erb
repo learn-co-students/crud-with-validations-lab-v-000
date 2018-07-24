@@ -4,11 +4,11 @@
   <h3><%= @song.genre %></h3>
 <% end %>
 <% if @song.released %>
-  <h3>Released <%= @song.released_year %></h3>
+  <h3>Released <%= @song.release_year %></h3>
 <% else %>
   <h3>Not Officially released
-    <% if @song.released_year %>
-       - <%= @song.released_year %>
+    <% if @song.release_year %>
+       - <%= @song.release_year %>
     <% end %>
   </h3>
 <% end %>
