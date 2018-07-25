@@ -1,13 +1,13 @@
 <h1>Songs</h1>
 
-<% @songs.each do |song| %>
-	<div class="song">
-	 <span><h3><%= song.title %></h3></span>
-	 <span><p><%= song.released %></p></span>
-	 <span><p><%= song.release_year %></p></span>
-	 <span><p><%= song.artist_name %></p></span>
-	 <span><p><%= song.genre %></p></span>
-	  <%= link_to "Delete", song, method: :delete, data: { confirm: "Really?" } %>
-	</div>
-<% end %>
+<table>
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <td><%= link_to song.title, song_path(song) %></td>
+        <td>  <%= link_to "Delete", song, method: :delete, data: { confirm: "Really?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
