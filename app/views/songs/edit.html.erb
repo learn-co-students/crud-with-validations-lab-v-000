@@ -1,0 +1,34 @@
+<h2>Update a Song</h2>
+
+<% if @song.errors.any? %>
+  <div id="error_explanation">
+    <h2>There were some errors:</h2>
+    <ul>
+      <% @song.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+<%= form_tag songs_path, method: "patch" do %>
+
+  <div class="field<%= ' field_with_errors' if @song.errors[:title].any? %>">
+    <%= label_tag "title", "Title" %>
+    <%= text_field_tag "title", @song.title %>
+  </div>
+
+
+  <div class="field<%= ' field_with_errors' if @song.errors[:release_year].any? %>">
+    <%= label_tag "release_year", "Release_year" %>
+    <%= text_field_tag "release_year", @song.release_year %>
+  </div>
+
+  <div class="field<%= ' field_with_errors' if @song.errors[:artist_name].any? %>">
+    <%= label_tag "artist_name", "Artist_name" %>
+    <%= text_field_tag "artist_name", @song.artist_name %>
+  </div>
+  
+  <%= submit_tag "Update" %>
+<% end %>
