@@ -8,7 +8,7 @@ class Song < ActiveRecord::Base
   validates :release_year, numericality: { only_integer: true, less_than_or_equal_to: Date.current.year.to_i }
   # validates :release_year, presence: true
   
-  validates :artist_name, presence: true 
-  validates :artist_name, format: { with: /\A[a-zA-Z]+\z/ }
-  validates :genre, presence: true 
+  # validates :artist_name, presence: true 
+  # validates :artist_name, format: { with: /\A[a-zA-Z]+\z/ }
+  # validates :genre, presence: true 
 end
