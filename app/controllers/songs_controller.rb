@@ -1,7 +1,12 @@
 class SongsController < ApplicationController
-    def show
+    def index
         @songs = Song.all
     end
+
+    def show
+        @song = Song.find(params[:id])
+    end
+
     def new
         @song = Song.new
     end
@@ -29,10 +34,15 @@ class SongsController < ApplicationController
 
      end
 
+     def destroy
+        Song.find(params[:id]).destroy
+        redirect_to songs_url
+     end
+
     private
 
     def song_params
-       params.permit(:title, :releaded, :release_year, :artist_name, :gender)
+       params.require(:song).permit(:title, :released, :release_year, :artist_name, :gender)
     end
 
 end

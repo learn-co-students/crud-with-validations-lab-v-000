@@ -1,4 +1,12 @@
-<% @songs.each do |song| %>
-    <p><%= song.tile %> by <%= song.artist_name %></p>
+<h1>Songs</h1>
+
+<table>
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <td><%= link_to song.title, song_path(song) %></td>
+        <td>  <%= link_to "Delete", song, method: :delete, data: { confirm: "Really?" } %></td>
+      </tr>
     <% end %>
-    
+  </tbody>
+</table>
