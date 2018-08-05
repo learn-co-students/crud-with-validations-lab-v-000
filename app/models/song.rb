@@ -6,14 +6,8 @@ class Song < ActiveRecord::Base
   validate :check_release_year
 
   def same_artist_year
-    artist_songs = []
-    Song.all.each do |song|
-      if song.artist_name == artist_name
-        artist_songs << song
-      end
-    end
-    if artist_songs.detect{|s| s.release_year == release_year}
-      errors.add(:title, "Error message")
+    if id == nil && Song.all.detect{|s| s.release_year == release_year} && Song.all.detect{|s| s.title == title} && Song.all.detect{|s| s.artist_name == artist_name}
+      errors.add(:title, "Artist cannot release more than one song per year")
     end
   end
 

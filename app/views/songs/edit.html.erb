@@ -1,4 +1,4 @@
-<h1> Song Form: </h1>
+<h1> Update Song: </h1>
 
 <% if @song.errors.any? %>
   <div id="error_explanation">
@@ -20,10 +20,8 @@
   <%= f.text_field :title %>
   <br />
   <br />
-  <%= f.radio_button :released, true %>
-  <%= f.label :released, "Released", :value => true %>
-  <%= f.radio_button :released, false %>
-  <%= f.label :released, "Not yet released", :value => false %>
+  <%= f.label :released, "Released" %>
+  <%= f.check_box :released %>
   <br />
   <br />
   <%= f.label :release_year %>

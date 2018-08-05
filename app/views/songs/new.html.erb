@@ -20,10 +20,8 @@
   <%= f.text_field :title %>
   <br />
   <br />
-  <%= f.radio_button :released, true %>
-  <%= f.label :released, "Released", :value => true %>
-  <%= f.radio_button :released, false %>
-  <%= f.label :released, "Not yet released", :value => false %>
+  <%= f.label :released %>
+  <%= f.check_box :released %>
   <br />
   <br />
   <%= f.label :release_year %>
