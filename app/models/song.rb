@@ -13,11 +13,12 @@ class Song < ActiveRecord::Base
 
   def check_release_year
     if released
-      "yes, released"
-      # this_year = Date.today.year
-      # if release_year > this_year
-      #   errors.add(:release_year, "Error message")
-      # end
+      if !release_year || release_year == ""
+        errors.add(:release_year, "Release year cannot be blank")
+      end
+      if release_year > Date.today.year
+        errors.add(:release_year, "Release year cannot be greater than current year")
+      end
     end
   end
 
