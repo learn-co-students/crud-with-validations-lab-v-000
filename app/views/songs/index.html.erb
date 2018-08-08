@@ -1,16 +1,16 @@
-<!-- <h1>Songs</h1>
+<h1>Songs List</h1>
 
 <div><%= link_to 'Create Song', new_song_path %></div>
-<br />
 
-<table>
+<br>
+
+<table border="1">
   <thead>
     <tr>
       <th>Title</th>
-      <th>Year</th>
+      <th>Release Year</th>
+      <th>Artist Name</th>
       <th>Genre</th>
-      <th>Artist name</th>
-      <th></th>
     </tr>
   </thead>
 
@@ -19,32 +19,15 @@
       <tr>
         <td><%= song.title %></td>
         <td><%= song.release_year %></td>
-        <td><%= song.genre %></td>
         <td><%= song.artist_name %></td>
+        <td><%= song.genre %></td>
         <td>
-          <%= link_to 'View', song %> |
-          <%= link_to 'Edit', edit_song_path(song) %> |
-          <%= link_to 'Delete', song, method: :delete, data: { confirm: 'For real?' } %>
+          <%= link_to 'View', song %>
+          <%= link_to 'Edit', edit_song_path(song) %>
+          <%= link_to 'Delete', song, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
+
     <% end %>
   </tbody>
-</table> -->
-
-<!-- <h1>Songs List</h1>
-
-<div>
-  <% @songs.each do |song| %>
-    <ul>
-      <li>
-        <%= @song.title %><br>
-        <%= @song.release_year %><br>
-        <%= @song.artist_name %><br>
-        <%= @song.genre %><br>
-      </li>
-    </ul>
-    <%= link_to 'View', song %>
-    <%= link_to 'Edit', edit_song_path(song) %>
-    <%= link_to 'Delete', song, method: delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
-</div> -->
+</table>
