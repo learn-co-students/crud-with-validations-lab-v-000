@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180808133631) do
+ActiveRecord::Schema.define(version: 1) do
 
   create_table "songs", force: :cascade do |t|
-    t.text     "title"
+    t.string   "title"
     t.boolean  "released"
     t.integer  "release_year"
     t.string   "artist_name"
