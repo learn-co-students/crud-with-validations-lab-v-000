@@ -1,11 +1,8 @@
 <h2>List of Songs</h2>
 
-<ol>
 <% @songs.each do |song| %>
-  <div class="song">
-    <li><%= song.title %></li>
+  <tbody class="song">
+    <tr><%= song.title %></tr>
     <%= link_to "Delete", song, method: :delete, data: { confirm: "Really?" } %>
-  </div>
-</ol>
-
+  </tbody>
 <% end %>
