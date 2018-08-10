@@ -1,2 +1,11 @@
-<h1>Songs#index</h1>
-<%= link_to 'New Song', songs_new_url %>
+<tbody>
+  <% @songs.all.each do |song| %>    
+    <tr>
+       <td>Title: <%= song.title %></td>
+       <td>Release Year: <%= song.release_year %></td>
+       <td>Released: <%= song.released %></td>
+       <td>Genre: <%= song.genre %></td>
+       <td>Artist Name: <%= song.artist_name %></td>
+    </tr>
+  <% end %>
+</tbody>
