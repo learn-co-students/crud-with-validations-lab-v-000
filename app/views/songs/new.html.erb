@@ -1,0 +1,21 @@
+
+<!-- Create your form here -->
+ <h3>Song Form</h3>
+ 
+<%= form_tag songs_path do %>
+
+  <label>song artist_name:</label><br>
+  <%= text_field_tag :artist_name %><br>
+
+  <label>song title:</label><br>
+  <%= text_area_tag :title %><br>
+
+   <label>song genre:</label><br>
+  <%= text_area_tag :genre %><br>
+
+   <label>song release_year:</label><br>
+  <%= text_area_tag :release_year %><br>
+
+
+  <%= submit_tag "Submit Song" %>
+<% end %>

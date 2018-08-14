@@ -21,19 +21,23 @@ class SongsController < ApplicationController
 
 
     def update
-        @song = Song.find(params[:id])
-        @song.update(song_params)
-        redirect_to song_path(@song)
+        
+        if @song.update(song_params) 
+            redirect_to song_path(@song)
+          else
+           render :edit    # simply send them back to the edit page... OF what they submited didnt work.
+        end
+
     end
     
     def create
         @song = Song.new(song_params)
-        #  if @song.valid?  #true
-        #   @song.save
-        #  redirect_to song_path(@song)
-        # else
+         if @song.valid?  #true
+            @song.save
+          redirect_to song_path(@song)
+         else
            render :new
-        # end
+         end
     end
     
   
@@ -43,8 +47,10 @@ class SongsController < ApplicationController
     private
 
     def song_params
-        params.permit(:artist_name, :title, :genre,:released, :release_year)
-
+        params.require(:song).permit(:artist_name, :title, :genre,:released, :release_year)
+       #strong sanitizing what is sent through in params...making sure it the data that we want.....
     end
+
+    #read of strong params basics......
 
 end

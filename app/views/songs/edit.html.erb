@@ -1,0 +1,30 @@
+<h2>Song "<%= @song.title %>"</h2>
+
+
+<%= form_tag post_path(@song), method: "patch" do %>
+
+  <div class="field">
+    <%= label_tag "title", "Title" %>
+    <%= text_field_tag "title", @song.title %>
+  </div>
+
+ <div class="field">
+    <%= label_tag "artist_name", "Artist_name" %>
+    <%= text_field_tag "artist_name", @song.artist_name %>
+  </div>
+
+
+  <div class="field">
+    <%= label_tag "released", "Released" %>
+    <p>Must be either "Released" or "Non-Released".</p>
+    <%= text_field_tag "released", @song.released %>
+  </div>
+
+  <div class="field">
+    <%= label_tag "title", "Title" %>
+    <br />
+    <%= text_area_tag "title", @song.title %>
+  </div>
+  <%= submit_tag "Update" %>
+<% end %>
+
