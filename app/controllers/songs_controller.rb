@@ -6,9 +6,7 @@ class SongsController < ApplicationController
     end
 
     def new
-    
      @song = Song.find(params[:id])
-    
     end
 
     def show
@@ -21,13 +19,13 @@ class SongsController < ApplicationController
 
 
     def update
+        @song = Song.find(params[:id])
         
         if @song.update(song_params) 
             redirect_to song_path(@song)
           else
            render :edit    # simply send them back to the edit page... OF what they submited didnt work.
         end
-
     end
     
     def create

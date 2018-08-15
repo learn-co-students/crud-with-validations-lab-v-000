@@ -20,6 +20,13 @@
     <%= text_field_tag "released", @song.released %>
   </div>
 
+
+  <div class="field">
+    <%= label_tag "released_year", "Released_year" %>
+    <p>Must be either "Released_year" or "Non-Released_year".</p>
+    <%= text_field_tag "released_year", @song.released_year %>
+  </div>
+
   <div class="field">
     <%= label_tag "title", "Title" %>
     <br />
