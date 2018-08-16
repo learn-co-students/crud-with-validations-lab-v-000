@@ -4,37 +4,22 @@ class Song < ActiveRecord::Base
     validates :artist_name, presence: true
     validates :artist_name, uniqueness: true
     validates :released, inclusion: { in: [ true, false ] }
-
     validates :release_year, inclusion: {in: [ true, false]}
-
-#   costume validator
-
-    def release_year_is_integer
-            # release_year, an integer
-            release_year.integer?
-
-    end
-
-    def Optional_if_released_is_false
-        Optional if released is false
+    
+    with_options if: :optional_if_released_is_true? do |song|
+      song.validates :release_year, presence: true 
+      song.validates :release_year, numericality: {less_than_or_equal_to: Date.today.year }
     end
 
 
-    def  must_not_be_blank_if_released_is_true
-        # Must not be blank if released is true
-        #must be blank if released is false
-        if released = true
-          !release_year.blank?  # release_year cant be blank
-        end
-    end
-        
-    def  must_be_less_than_or_equal_to_the_current_year
-        if release_year.present? && release_year < Date.current.year
-            errors.add(:release_year, "can't be in the past")
-        end
+    def optional_if_released_is_true?
+         released 
     end
 
 end
 
 
-
+# release_year, an integer
+# Optional if released is false
+# Must not be blank if released is true
+# Must be less than or equal to the current year
