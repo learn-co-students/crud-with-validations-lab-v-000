@@ -1,22 +1,24 @@
-<h2>Song "<%= @song.title %>"</h2>
 
 
 <%= form_for @song do |f| %>
 
-
     <%= f.label     :title %>
-    <%= f.text_area :title %>
+    <%= f.text_field :title %>
 
 
     <%= f.label     :artist_name %>
     <%= f.text_field :artist_name%>
 
     <%= f.label :released %>
-    <%= f.text_field :released %>
+    <%= f.check_box :released %>
  
 
     <%= f.label :release_year %>
     <%= f.text_field :release_year %>
+
+     <%= f.label     :genre %>
+    <%= f.text_field :genre%>
+
 
   <%= f.submit %>
 

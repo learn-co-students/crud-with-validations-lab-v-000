@@ -1,8 +1,8 @@
 class Song < ActiveRecord::Base
     validates :title, presence: true
     validates :title, uniqueness: true
-    validates :artist_name, presence: true
-    validates :artist_name, uniqueness: true
+    # validates :artist_name, presence: true
+    # validates :artist_name, uniqueness: true
     validates :released, inclusion: { in: [ true, false ] }
     
     with_options if: :optional_if_released_is_true? do |song|
