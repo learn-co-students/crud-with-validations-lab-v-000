@@ -1,37 +1,24 @@
 <h2>Song "<%= @song.title %>"</h2>
 
 
-<%= form_tag song_path(@song), method: "patch" do %>
-
-  <div class="field">
-    <%= label_tag "song_title", "song_Title" %>
-    <%= text_field_tag "song_title", @song.title %>
-  </div>
-
- <div class="field">
-    <%= label_tag "artist_name", "Artist_name" %>
-    <%= text_field_tag "artist_name", @song.artist_name %>
-  </div>
+<%= form_for @song do |f| %>
 
 
-  <div class="field">
-    <%= label_tag "song_released", "song_released" %>
-    <p>Must be either "Released" or "Non-Released".</p>
-    <%= text_field_tag "song_released", @song.released %>
-  </div>
+    <%= f.label     :title %>
+    <%= f.text_area :title %>
 
 
-  <div class="field">
-    <%= label_tag "song_release_year", "song_release_year" %>
-    <p>Must be either "Release_year" or "Non-Release_year".</p>
-    <%= text_field_tag "song_release_year", @song.release_year %>
-  </div>
+    <%= f.label     :artist_name %>
+    <%= f.text_field :artist_name%>
 
-  <div class="field">
-    <%= label_tag "title", "Title" %>
-    <br />
-    <%= text_area_tag "title", @song.title %>
-  </div>
-  <%= submit_tag "Update" %>
+    <%= f.label :released %>
+    <%= f.text_field :released %>
+ 
+
+    <%= f.label :release_year %>
+    <%= f.text_field :release_year %>
+
+  <%= f.submit %>
+
 <% end %>
 
