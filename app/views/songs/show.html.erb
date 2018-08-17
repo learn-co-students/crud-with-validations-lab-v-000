@@ -1,0 +1,13 @@
+<div class="song_show" align="center">
+<h1><%= @song.title %></h1>
+<h3>by: <%= @song.artist_name %></h3>
+
+  <% if @song.released %>
+    <p> Released: <%= @song.release_year %></p>
+  <% else %>
+      <p> Unreleased </p>
+  <% end %>
+
+<p>Genre: <%= @song.genre %> </p>
+
+</div>
