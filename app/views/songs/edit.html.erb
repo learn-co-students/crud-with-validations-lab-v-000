@@ -1,44 +1,35 @@
 <h2>Editing "<%= @song.title %>"</h2>
-<%= form_tag post_path(@song), method: "patch" do %>
-<% if @song.errors.any? %>
-  <div id="error_explanation">
-    <h2>Womp womp. There were some errors:</h2>
-    <ul>
-      <% @song.errors.full_messages.each do |m|  %>
-      <li><%= m %> </li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= form_for @song do |f| %>
+  <% if @song.errors.any? %>
+    <div id="error_explanation">
+      <h2>Womp womp. There were some errors:</h2>
+      <ul>
+        <% @song.errors.full_messages.each do |m|  %>
+        <li><%= m %> </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-  <div class="field<%=' field_with_errors' if @song.errors[:title].any? %>">
-    <%= label_tag "title", "Title" %>
-    <%= text_field_tag "title", @song.title %>
-  </div>
-
-  <div class="field<%=' field_with_errors' if @song.errors[:released].any? %>">
-    <%= label_tag "released", "Released" %>
-    <p>Must be either "True" or "False".</p>
-    <%= text_field_tag "released", @song.released %>
+  <div class="field">
+    <%= f.text_field :title %>
   </div>
 
-  <div class="field<%=' field_with_errors' if @song.errors[:release_year].any? %>">
-    <%= label_tag "release_year", "Release Year" %>
-    <br />
-    <%= text_field_tag "release_year", @song.release_year %>
+  <div class="field">
+    <%= f.check_box :released %>
   </div>
 
-  <div class="field<%=' field_with_errors' if @song.errors[:artist_name].any? %>">
-    <%= label_tag "artist_name", "Artist Name" %>
-    <br />
-    <%= text_field_tag "artist_name", @song.artist_name %>
+  <div class="field">
+    <%= f.text_field :release_year %>
   </div>
 
-  <div class="field<%=' field_with_errors' if @song.errors[:genre].any? %>">
-    <%= label_tag "genre", "Genre" %>
-    <br />
-    <%= text_field_tag "genre", @song.genre %>
+  <div class="field">
+    <%= f.text_field :artist_name %>
   </div>
 
-  <%= submit_tag "Update" %>
+  <div class="field">
+    <%= f.text_field :genre %>
+  </div>
+
+  <%= f.submit %>
 <% end %>

@@ -40,7 +40,8 @@ class SongsController < ApplicationController
   end
 
   def destroy
-    find_me.destroy
+    find_me
+    @song.destroy
     redirect_to songs_path
   end
 
