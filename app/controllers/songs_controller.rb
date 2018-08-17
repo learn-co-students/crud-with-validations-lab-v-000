@@ -50,9 +50,7 @@ class SongsController < ApplicationController
 
     def song_params
         params.require(:song).permit(:artist_name, :title, :genre,:released, :release_year)
-       #strong sanitizing what is sent through in params...making sure it the data that we want.....
     end
 
-    #read of strong params basics......
 
 end
