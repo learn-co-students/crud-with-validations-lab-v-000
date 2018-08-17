@@ -1,0 +1,16 @@
+<tbody>
+   <% @songs.each do |s| %>
+    <tr>
+     <div class="song">
+       <span><%= s.title %></span>
+       <%= link_to "Delete", songs_path, method: :delete, data: { confirm: "You sure about that?" } %>
+     </div>
+    <%= s.released %>
+    <%= s.release_year %>
+    <%= s.genre %>
+    <%= s.artist_name %>
+    </tr>
+  <% end %>
+
+
+</tbody>
