@@ -1,8 +1,11 @@
 
 class Song < ActiveRecord::Base
   
-  validates :title, presence: true 
-  validate :unique_title_per_artist_per_year
+  validates :title, presence: true, uniqueness: {
+    scope: [:release_year, :artist_name]
+  }
+  
+  #validate :unique_title_per_artist_per_year
   # Cannot be repeated by the same artist in the same year
   
   validates :released, inclusion: { in: [true, false] }
@@ -12,11 +15,5 @@ class Song < ActiveRecord::Base
   validates :artist_name, presence: true
   
   private
-  
-    def unique_title_per_artist_per_year
-      if title && artist_name
-        
-      end 
-    end
-  
+
 end
