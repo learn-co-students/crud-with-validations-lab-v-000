@@ -15,16 +15,22 @@ class SongsController < ApplicationController
   
   def create
     @song = Song.new(song_params(:title, :released, :release_year, :artist_name))
-    @song.save
-    redirect_to song_path(@song)
+    if @song.save
+      redirect_to song_path(@song)
+    else 
+      render :new 
+    end
   end
   
   def edit 
   end
   
   def update
-    @song.update(song_params(:title, :released, :release_year, :artist_name))
-    redirect_to song_path(@song)
+    if @song.update(song_params(:title, :released, :release_year, :artist_name))
+      redirect_to song_path(@song)
+    else 
+      render :edit
+    end
   end
   
   private
