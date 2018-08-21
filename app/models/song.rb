@@ -9,8 +9,18 @@ class Song < ActiveRecord::Base
   
   validates :release_year, presence: true, if: -> { released } 
   
-  # release_year && release_year <= DateTime.now.year }  
-  
   validates :artist_name, presence: true
+  
+  validate :no_future_release
+  
+  private
+    
+    def no_future_release
+      if release_year
+        unless release_year <= DateTime.now.year }
+          errors.add(:release_year, "Songs can't be released in the future, they can only be unreleased!")
+        end
+      end
+    end
   
 end
