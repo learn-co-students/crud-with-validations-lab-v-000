@@ -1,1 +1,18 @@
-<% # has to display through a table %>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Artist name</th>
+      <th></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <td><%= song.title %></td>
+        <td><%= song.artist_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
