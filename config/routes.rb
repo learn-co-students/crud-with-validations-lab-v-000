@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  resources :songs
+  resources :songs, except: :destroy
+  delete 'songs/:id' => 'songs#destroy', :as => :destroy
 end

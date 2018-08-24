@@ -1,3 +1,24 @@
-<%@songs.each do |song|%>
-<p>Title: <%=song.title%> - Released: <%=song.released%> - Release Year: <%=song.release_year%> - Artist: <%=song.artist_name%> - Genre: <%=song.genre%></p>
-<%end%>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>title</th>
+    <th>Released</th>
+    <th>Release Year</th>
+    <th>Artist Name</th>
+    <th>Genre</th>
+    <th>View Song</th>
+  </tr>
+  <tbody>
+  <%@songs.each do |song|%>
+  <tr>
+    <td><%=song.id%></td>
+    <td><%=song.title%></td>
+    <td><%=song.released%></td>
+    <td><%=song.release_year%></td>
+    <td><%=song.artist_name%></td>
+    <td><%=song.genre%></td>
+    <td><%=link_to("Click Here", song_path(song))%></td>
+  </tr>
+  <%end%>
+  </tbody>
+</table>
