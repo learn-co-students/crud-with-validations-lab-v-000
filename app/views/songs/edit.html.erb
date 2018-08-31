@@ -1,14 +1,4 @@
 <h1>Edit Song</h1>
-<%= form_for(@song) do |s| %>
-    <%= s.label :title  %>
-    <%= s.text_field :title %>
-    <%= s.label :released  %>
-    <%= s.text_field :released %>
-    <%= s.label :release_year  %>
-    <%= s.text_field :release_year %>
-    <%= s.label :artist_name  %>
-    <%= s.text_field :artist_name %>
-    <%= s.label :genre  %>
-    <%= s.text_field :genre %>
-    <%= s.submit %>
-<% end %>
+
+<%= render 'form' %>
+ <%= link_to 'Cancel Edit', @song %>

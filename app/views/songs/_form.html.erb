@@ -1,0 +1,23 @@
+
+<%= form_for(@song) do |s| %>
+    <% if @song.errors.any? %>
+        <div id "errors">
+            <ul>
+                <% @song.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    <%= s.label :title  %>
+    <%= s.text_field :title %>
+    <%= s.label :released  %>
+    <%= s.check_box :released %>
+    <%= s.label :release_year  %>
+    <%= s.text_field :release_year %>
+    <%= s.label :artist_name  %>
+    <%= s.text_field :artist_name %>
+    <%= s.label :genre  %>
+    <%= s.text_field :genre %>
+    <%= s.submit %>
+<% end %>
