@@ -12,7 +12,11 @@ class SongsController < ApplicationController
   end
 
   def create
-
+    if Song.create(song_params).valid?
+      redirect_to song_path(@song)
+    else
+      render :new
+    end
   end
 
   def edit
