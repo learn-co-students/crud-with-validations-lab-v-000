@@ -8,5 +8,13 @@ validates :title, uniqueness: {
 validates :released, inclusion: { in: [true, false] }
 validates :artist_name, presence: true
 
+with_options if: :released? do |song|
+  song.validates :release_year, numericality: { less_than_or_equal_to: 2018 }
+  song.validates :release_year, presence: true
+  end
+
+   def released?
+     released
+   end
 
 end
