@@ -1,5 +1,27 @@
 <h3>Songs Index</h3>
 
-<% @songs.each do |song| %>
-  <p><%= @song.title %></p>
-<% end %>
+<table>
+
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Released</th>
+      <th>Release Year</th>
+      <th>Artist</th>
+      <th>Genre</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <th><%= song.title %></th>
+        <th><%= song.released %></th>
+        <th><%= song.release_year %></th>
+        <th><%= song.artist_name %></th>
+        <th><%= song.genre %></th>
+      </tr>
+    <% end %>
+  </tbody>
+  
+</table>
