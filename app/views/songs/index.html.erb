@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Song Index</title>
+  </head>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Genre</th>
+        <th>Artist</th>
+        <th>Released</th>
+        <th>Release Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @songs.each do |song| %>
+      <tr>
+        <td>song.title</td>
+        <td>song.genre</td>
+        <td>song.artist_name</td>
+        <% if song.released %>
+          <td>"Yes"</td>
+        <% else %>
+          <td>"No"</td>
+        <% end %>
+        <td>song.release_year</td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</html>
