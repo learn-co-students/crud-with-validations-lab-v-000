@@ -2,9 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Song Index</title>
   </head>
   <body>
-
+    <% @songs.each do |song| %>
+      <div><%= link_to song.title, song_path(song) %></div>
   </body>
 </html>
