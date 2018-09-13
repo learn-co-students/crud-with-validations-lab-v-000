@@ -2,3 +2,17 @@
 
 <%= link_to 'Edit', edit_song_path(@song) %> |
 <%= link_to 'Back', songs_path %>
+by <strong><%= @song.artist_name %></strong>
+<% if @song.released? %>
+  <p>
+    Released in
+    <strong><%= @song.release_year %></strong>
+  </p>
+<% end %>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @song.genre %>
+</p>
+
+<%= link_to 'Edit', edit_song_path(@song) %>
