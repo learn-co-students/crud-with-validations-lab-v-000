@@ -1,0 +1,18 @@
+<h1><%= @song.title %></h1>
+
+<h3>Artist</h3>
+<p><%= @song.artist_name %></p>
+<br>
+<h3>Released</h3>
+<p><%= @song.released %></p>
+<br>
+<h3>Release Year</h3>
+<p><%= @song.release_year %></p>
+<br>
+<h3>Genre</h3>
+<p><%= @song.genre %></p>
+<br>
+<br>
+<%= form_tag song_path(@song), method: "delete" do %>
+  <%= submit_tag "Delete" %>
+<% end %>
