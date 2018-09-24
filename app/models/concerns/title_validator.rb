@@ -1,7 +1,9 @@
 class TitleValidator < ActiveModel::Validator
   def validate(record)
-    if Song.find(relaese_year: record.release_year, author_name: record.author_name, title: record.title).exists?
-      record.errors[:title] << 'song already exists.'
+    if record[:artist_name]
+      if !Song.where("release_year = ? AND artist_name = ? AND title = ?", record[:release_year], record[:artist_name], record[:title]).empty?
+        record.errors[:title] << 'song already exists.'
+      end
     end
   end
 end
