@@ -1,0 +1,21 @@
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Artist</th>
+		<th>Genre</th>
+		<th>Released?</th>
+		<th>Release_year</th>
+	</tr>
+	<tr>
+		<td><%=@song.title %></td>
+		<td><%=@song.artist_name %></td>
+		<td><%=@song.genre %></td>
+		<td><%=@song.released %></td>
+		<td><%=@song.release_year %></td>
+	</tr>
+	</table>
+
+	<%= form_tag song_path(@song.id), method: "delete" do %>
+    <%= submit_tag "Delete #{@song.title}" %>
+  <% end %>
+
