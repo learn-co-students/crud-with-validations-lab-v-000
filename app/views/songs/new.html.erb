@@ -1,0 +1,16 @@
+<h1>Add New Song</h1>
+
+
+ <% if @song.errors.any? %>
+  <div id="error_explanation">
+     <%= pluralize(@song.errors.count, "error") %>
+   <ul>
+     <% @song.errors.full_messages.each do |message| %>
+      <li> <%= message %></li>
+
+     <% end %>
+   </ul>
+ </div>
+ <% end %>
+
+ <%= render 'form' %>
