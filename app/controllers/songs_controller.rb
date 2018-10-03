@@ -6,6 +6,14 @@ class SongsController < ApplicationController
 
   def create
     binding.pry
+    @song = Song.new(song_params)
+
+    if @song.valid?
+      @song.save
+      redirect_to song_path(@song)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -22,5 +30,12 @@ class SongsController < ApplicationController
   end
 
   def show
+    @song = Song.find(params[:id])
+  end
+
+  private
+
+  def song_params
+    params.require(:song)
   end
 end
