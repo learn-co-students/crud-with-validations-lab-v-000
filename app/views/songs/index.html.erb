@@ -1,2 +1,9 @@
 <h1>Songs#index</h1>
 <p>Find me in app/views/songs/index.html.erb</p>
+
+<div>
+  <% @songs.each do |song| %>
+    <div><%= song.name %></div>
+    <!-- <div><%= link_to coupon.coupon_code, coupon_path(coupon) %></div> -->
+  <% end %>
+</div>
