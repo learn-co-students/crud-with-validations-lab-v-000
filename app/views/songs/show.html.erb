@@ -1,0 +1,6 @@
+<h1>Songs#show</h1>
+<p>Find me in app/views/songs/show.html.erb</p>
+<h2><%= @song.title %></h2>
+<%= form_tag song_path(@song.id), method: "delete" do %>
+  <%= submit_tag "Delete #{@song.title}" %>
+<% end %>

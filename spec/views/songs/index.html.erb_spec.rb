@@ -1,3 +1,4 @@
+require 'pry'
 RSpec.describe 'songs/index', type: :feature do
   let(:song_attributes_1) do
     {
@@ -19,6 +20,7 @@ RSpec.describe 'songs/index', type: :feature do
     }
   end
 
+  #binding.pry
   before { Song.create!([song_attributes_1, song_attributes_2]) }
 
   it 'renders a list of songs' do
