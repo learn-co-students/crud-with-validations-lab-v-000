@@ -8,4 +8,5 @@ class Song < ActiveRecord::Base
   def rel_true?
     released == true
   end
+  
 end
