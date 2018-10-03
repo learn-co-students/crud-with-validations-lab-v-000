@@ -1,15 +1,27 @@
 
-<!-- <ul>
-  <%= @songs.each do |song| %>
-  <li><%= link_to song.title, song_path(song)%></li>
-  <li><%= link_to "Delete", song, method: :delete %></li>
-  <% end %>
-</ul> -->
-
-<tbody>
-  <%= @songs.each do |song| %>
-  <tr>
-    <%= link_to song.title, song_path(song)%> | <%= link_to "Delete", song, method: :delete %>
-  </tr>
-  <% end %>
-</tbody>
+<h1>All Songs</h1>
+<p><%= link_to "Create Song", new_song_path %></p>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Artist</th>
+      <th>Release Year</th>
+      <th>Genre</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @songs.each do |s| %>
+    <tr>
+      <td><%= s.title %></td>
+      <td><%= s.artist_name %></td>
+      <td><%= s.release_year %></td>
+      <td><%= s.genre %></td>
+      <td>
+        <%= link_to "View", song_path(s) %> | <%= link_to "Edit", edit_song_path(s) %> | <%= link_to 'Delete', s, method: :delete %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
