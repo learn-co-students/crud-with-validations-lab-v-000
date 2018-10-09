@@ -1,0 +1,8 @@
+<h1><%= @song.title %></h1>
+<ul class="song__details">
+  <li>Artist: <%= @song.artist_name %></li>
+  <li><%= @song.release_year if @song.released %></li>
+  <li>Genre: <%= @song.genre %></li>
+  <li><%= link_to "Edit Song", edit_song_path(@song) %> |  <%= link_to 'Delete', @song, method: :delete, data: { confirm: 'For real?' } %> </li>  
+  <li><%= link_to "All Songs", songs_path %></li>
+</ul>
