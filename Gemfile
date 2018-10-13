@@ -15,3 +15,7 @@ end
 
 group :development do
 end
+
+gem "jquery-rails", "~> 4.3"
+
+gem "rails-ujs", "~> 0.1.0"
