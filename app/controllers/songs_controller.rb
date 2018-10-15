@@ -4,6 +4,10 @@ class SongsController < ApplicationController
         @songs = Song.all
     end
 
+    def show
+        @song = Song.find(params[:id])
+    end
+
     def new
         @song = Song.new
     end
@@ -31,7 +35,8 @@ class SongsController < ApplicationController
     end
 
     def delete
-        
+        Song.find(params[:id]).delete
+        redirect_to song_path
     end
 
     private
