@@ -3,6 +3,13 @@ class Song < ActiveRecord::Base
   validates :title, uniqueness: { scope: :release_year }
   validates :artist_name, presence: true
   validates :released, inclusion: { in: [true, false] }
-  validates :release_year, presence: true, if: Proc.new { |a| a.released == true }
-  validates :release_year, length: { maximum: 2018 }
+
+  with_options if: :is_released do |a|
+    a.validates :release_year, presence: true
+    a.validates :release_year, numericality: { less_than_or_equal_to: 2018 }
+  end
+
+  def is_released
+    attributes["released"]
+  end
 end
