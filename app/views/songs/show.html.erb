@@ -1,0 +1,5 @@
+Title: <%= @song.title %>
+Released: <%= @song.released ? "Yes" : "No" %>
+<%= "Release date: #{@song.release_date}" if @song.release_date %>
+Artist: <%= @song.artist_name %>
+Genre: <%= @song.genre %>
