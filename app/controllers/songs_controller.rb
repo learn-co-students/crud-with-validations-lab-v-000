@@ -38,9 +38,9 @@ class SongsController < ApplicationController
     redirect_to songs_url
   end
 
-  private 
+  private
 
-  def song_params
+  def song_params  #strong params, must contain song, may have the other keys 
     params.require(:song).permit(
       :title, :release_year, :released, :genre, :artist_name
     )
