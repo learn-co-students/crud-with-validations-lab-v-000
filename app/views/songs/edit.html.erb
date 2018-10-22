@@ -1,0 +1,21 @@
+<h1>SongsController#edit</h1>
+<p>Find me in app/views/songs_controller/edit.html.erb</p>
+
+<%= form_tag songs_path do %>
+  <label>Title:</label><br>
+  <%= text_field_tag :title %><br>
+
+  <label>Release Year</label><br>
+  <%= text_field_tag :release_year %><br>
+
+  <label>Released</label><br>
+  <%= text_field_tag :released %><br>
+
+  <label>Genre</label><br>
+  <%= text_field_tag :genre %><br>
+
+  <label>Artist Name</label><br>
+  <%= text_field_tag :artist_name %><br>
+
+  <%= submit_tag "Submit Post" %>
+<% end %>
