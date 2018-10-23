@@ -1,0 +1,6 @@
+<div id="error_explanation">
+  <h2>There was an error when submitting this form.</h2>
+  <% object.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</div>
