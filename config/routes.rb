@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # resources :songs
+
   get '/songs', to: 'songs#index'
   get '/songs/new', to: 'songs#new', as: 'new_song'
   post '/songs', to: 'songs#create'
@@ -8,4 +10,5 @@ Rails.application.routes.draw do
   delete '/songs/:id', to: 'songs#destroy'
 
   root 'songs#index'
+  # get '/', to: "songs#index", as: 'root'
 end
