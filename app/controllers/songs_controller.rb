@@ -1,7 +1,7 @@
 class SongsController < ApplicationController
 
   def show
-    @song = Song.find(song_params)
+    @song = Song.find(params[:id])
   end
 
   def index
@@ -22,11 +22,11 @@ class SongsController < ApplicationController
   end
 
   def edit
-    @song = Song.find(song_params)
+    @song = Song.find(params[:id])
   end
 
   def update
-    @song = Song.find(song_params)
+    @song = Song.find(params[:id])
     if @song.update(song_params)
       redirect_to @song
     else
@@ -35,7 +35,7 @@ class SongsController < ApplicationController
   end
 
   def destroy
-    @song = Song.find(song_params)
+    @song = Song.find(params[:id])
     @song.destroy
     redirect_to songs_url
   end
