@@ -1,0 +1,16 @@
+<h2>Create a Song</h2>
+<%= form_for(@song) do |f| %>
+<%= f.label 'Title' %>
+<%= f.text_field :title%><br>
+<%= f.label 'Released', "Released", :value => "true" %>
+<%= f.radio_button :released, true %>
+<%= f.label :released, "Not Released", :value => "false" %>
+<%= f.radio_button :released, false, :checked => true %><br>
+<%= f.label 'Release Year' %>
+<%= f.text_field :release_year %><br>
+<%= f.label 'Genre' %>
+<%= f.text_field :genre%><br>
+<%= f.label 'Artist Name' %>
+<%= f.text_field :artist_name%><br>
+<%= f.submit %>
+<% end %>
