@@ -10,17 +10,18 @@ class SongsController < ApplicationController
   end
 
   def create
-    @song = Song.new
+    @song = Song.new(song_params)
     if @song.invalid?
       render :new
     else
-      @song = Song.create!(post_params(:title,:released, :release_year, :genre, :artist_name))
+      @song = Song.create!(song_params)
     redirect_to song_path(@song)
     end
   end
 
   def show
     @song = Song.find_by_id(:id)
+    binding.pry
   end
 
   def edit
@@ -28,7 +29,7 @@ class SongsController < ApplicationController
   end
   private
 
-    def post_params(*args)
-      params.require(:song).permit(*args)
+    def song_params
+      params.require(:song).permit(:title,:released, :release_year, :genre, :artist_name)
     end
 end
