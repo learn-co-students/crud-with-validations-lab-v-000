@@ -22,6 +22,7 @@ class Song < ActiveRecord::Base
   }
   validates :released, inclusion: { in: [true, false] }
   validates :artist_name, presence: true
+  validates :release_year, absence: true, :unless => :released?
 
   with_options if: :released? do |song|
     song.validates :release_year, presence: true

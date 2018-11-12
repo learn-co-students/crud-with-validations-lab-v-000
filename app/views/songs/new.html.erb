@@ -2,9 +2,9 @@
 <%= form_for(@song) do |f| %>
 <%= f.label 'Title' %>
 <%= f.text_field :title%><br>
-<%= f.label 'Released', "Released", :value => "true" %>
-<%= f.radio_button :released, true %>
-<%= f.label :released, "Not Released", :value => "false" %>
+<%= f.label 'released', "Released" %>
+<%= f.radio_button :released, true, options = {id: "song_released"} %>
+<%= f.label 'released', "Not Released" %>
 <%= f.radio_button :released, false, :checked => true %><br>
 <%= f.label 'Release Year' %>
 <%= f.text_field :release_year %><br>

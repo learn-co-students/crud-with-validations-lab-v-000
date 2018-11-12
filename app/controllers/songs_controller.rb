@@ -2,7 +2,7 @@ class SongsController < ApplicationController
 
   def index
 
-    @song = Song.all
+    @songs = Song.all
   end
 
   def new
@@ -10,6 +10,7 @@ class SongsController < ApplicationController
   end
 
   def create
+
     @song = Song.new(song_params)
     if @song.invalid?
       render :new
@@ -20,13 +21,28 @@ class SongsController < ApplicationController
   end
 
   def show
-    @song = Song.find_by_id(:id)
-    binding.pry
+    @song = Song.find(params[:id])
   end
 
   def edit
-      @song = Song.find_by_id(:id)
+      @song = Song.find(params[:id])
   end
+
+  def update
+    @song = Song.find(params[:id])
+    if @song.update(song_params)
+      redirect_to song_path(@song)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+
+    @song = Song.find(params[:id]).destroy
+    redirect_to songs_path
+  end
+
   private
 
     def song_params

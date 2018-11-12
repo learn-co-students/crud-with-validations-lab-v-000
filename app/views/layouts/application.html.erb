@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%= javascript_include_tag "application" %>
+  <%= javascript_include_tag :songs %>
   <title>CrudWithValidationsLab</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
@@ -8,6 +10,6 @@
 <body>
 
 <%= yield %>
-
+<noscript>YOU DON'T HAVE JAVASCRIPT AND THAT OFFENDS ME</noscript>
 </body>
 </html>
