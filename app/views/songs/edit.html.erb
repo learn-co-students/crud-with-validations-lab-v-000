@@ -1,0 +1,17 @@
+<h2>Edit a Song</h2>
+<%= form_for(@song) do |f| %>
+<%= f.label 'Title' %>
+<%= f.text_field :title%><br>
+<%= f.label 'Released', "Released" %>
+<%= f.radio_button :released, true, options = {id: "song_released"} %>
+<%# f.check_box :released,"ture","false" %>
+<%= f.label "Released", "Not Released" %>
+<%= f.radio_button :released, false ,:checked => true %><br>
+<%= f.label 'Release Year' %>
+<%= f.text_field :release_year %><br>
+<%= f.label 'Genre' %>
+<%= f.text_field :genre%><br>
+<%= f.label 'Artist Name' %>
+<%= f.text_field :artist_name%><br>
+<%= f.submit "Update" %>
+<% end %>

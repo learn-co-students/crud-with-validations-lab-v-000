@@ -1,0 +1,10 @@
+<h1><%= @song.title %></h1>
+  <li><%= @song.released %></li>
+  <li><%= @song.release_year %></li>
+  <li><%= @song.artist_name %></li>
+  <li><%= @song.genre %></li>
+<p>
+  <%= link_to "Edit", edit_song_path(@song) %>
+  <%= link_to "Delete",song_path(@song), method: :delete, data: { confirm: 'For real?' }%>
+  <%= link_to "Index", songs_path %>
+</p>
