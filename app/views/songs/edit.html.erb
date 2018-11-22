@@ -1,0 +1,6 @@
+<h1>Editing: <%= @song.title %> by <%= @song.artist_name %></h1>
+
+<%= render 'form' %>
+
+<%= link_to "Cancel", @song %>
+<%= link_to "Delete", @song, method: :delete, data: { confirm: 'Are you sure?' } %>
