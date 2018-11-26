@@ -19,3 +19,11 @@
   background-color: red;
   display: table;
 }
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th {
+	width: 150px;
+}
