@@ -1,0 +1,22 @@
+<table>
+	<h1> Songs Index </h1>
+	<th>Title</th>
+	<th>Artist</th>
+	<th>Release Year</th>
+	<th>Released</th>
+	<th>Genre</th>
+	<th>Remove Song </th>
+	<% @songs.each do |song| %>
+	<tbody>
+		<tr>
+			<td>  <%= link_to song.title, song_path(song) %>  </td>
+			<td>  <%= song.artist_name %>  </td>
+			<td>  <%= song.release_year %>  </td>
+			<td>  <%= song.released %>  </td>
+			<td>  <%= song.genre %>  </td>
+			<td> <%= link_to("Delete", song, method: :delete, data: { confirm: "Are you sure you want to delete this song?" } )%></td>
+
+		</tr>
+		<% end %>
+	</tbody>
+</table>
