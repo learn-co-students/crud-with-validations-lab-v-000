@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20181203160734) do
 
   create_table "songs", force: :cascade do |t|
-    t.string   "name"
+    t.string   "title"
     t.boolean  "released"
     t.integer  "release_year"
     t.string   "artist_name"
