@@ -1,0 +1,30 @@
+<h2>Edit a Song</h2>
+<%= form_for @song do |f| %>
+  <% if @song.errors.any? %>
+    <div id="error_explanation">
+      <h1>There were some errors:</h1>
+      <ul>
+        <% @song.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+     
+      <%= f.label 'Title' %>
+      <%= f.text_field :title %>
+     
+      <%= f.label 'Artist Name' %>
+      <%= f.text_field :artist_name %>
+   
+      <%= f.label 'Release Year' %>
+      <%= f.text_field :release_year %>
+  
+      <%= f.label 'Released' %>
+      <%= f.check_box :released %>
+    
+      <%= f.label 'Genre' %>
+      <%= f.text_field :genre %>
+  
+     <%= submit_tag "Edit" %>
+<% end %> 
