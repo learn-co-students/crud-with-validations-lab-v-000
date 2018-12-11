@@ -1,5 +1,9 @@
-<ul>
-    <% @songs.each do |song| %>
-        <li><%= song.title %></li>
-    <% end %>
-</ul>
+<table>    
+    <tbody>
+        <% @songs.each do |song| %>
+            <tr>           
+                <th><%= song.title %></th>            
+            </tr>
+        <% end %>
+    </tbody>
+</table>
