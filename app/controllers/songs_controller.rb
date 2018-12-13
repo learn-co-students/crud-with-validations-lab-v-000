@@ -4,6 +4,10 @@ class SongsController < ApplicationController
     @songs = Song.all
   end
 
+  def new
+    @song = Song.new
+  end
+
   def show
     @song = Song.find(params[:id])
   end
@@ -29,10 +33,6 @@ class SongsController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def new
-    @song = Song.new
   end
 
   def destroy
