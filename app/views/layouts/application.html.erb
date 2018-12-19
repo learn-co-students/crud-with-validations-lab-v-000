@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CrudWithValidationsLab</title>
+  <title>Songs Lab</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= yield %>
+
+<% unless current_page?(controller: "songs", action: "index") %>
+  <hr />
+  <%= link_to "View All Songs", songs_path %>
+<% end %>
 
 </body>
 </html>
