@@ -40,6 +40,7 @@ RSpec.describe SongsController, type: :controller do
   end
 
   context "creating a valid song" do
+    
     before { post(:create, { song: valid_attributes }) }
 
     it "creates a new Song" do
