@@ -1,10 +1,47 @@
+<<<<<<< HEAD
 <h1>Song Index Page</h1>
 <table>
   <tbody>
     <% @songs.each do |song| %>
       <tr>
         <%= song.title %>
+=======
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Songs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Released</th>
+      <th>Release year</th>
+      <th>Artist name</th>
+      <th>Genre</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <td><%= song.title %></td>
+        <td><%= song.released %></td>
+        <td><%= song.release_year %></td>
+        <td><%= song.artist_name %></td>
+        <td><%= song.genre %></td>
+        <td><%= link_to 'Show', song %></td>
+        <td><%= link_to 'Edit', edit_song_path(song) %></td>
+        <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+>>>>>>> 333f89375305086a140d6e5edb3424c106af40dc
       </tr>
     <% end %>
   </tbody>
 </table>
+<<<<<<< HEAD
+=======
+
+<br>
+
+<%= link_to 'New Song', new_song_path %>
+>>>>>>> 333f89375305086a140d6e5edb3424c106af40dc

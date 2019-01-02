@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Song Show Page</h1>
 <h2><%= @song.title %></h2>
 <%= @song.artist_name %>
@@ -5,3 +6,34 @@
 <%= form_tag song_path(@song.id), method: "delete" do %>
   <%= submit_tag "Delete #{@song.title}" %>
 <% end %>
+=======
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @song.title %>
+</p>
+
+<p>
+  <strong>Released:</strong>
+  <%= @song.released %>
+</p>
+
+<p>
+  <strong>Release year:</strong>
+  <%= @song.release_year %>
+</p>
+
+<p>
+  <strong>Artist name:</strong>
+  <%= @song.artist_name %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @song.genre %>
+</p>
+
+<%= link_to 'Edit', edit_song_path(@song) %> |
+<%= link_to 'Back', songs_path %>
+>>>>>>> 333f89375305086a140d6e5edb3424c106af40dc
