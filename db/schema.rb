@@ -14,8 +14,6 @@
 
 ActiveRecord::Schema.define(version: 20190102165222) do
 
-ActiveRecord::Schema.define() do
-
   create_table "songs", force: :cascade do |t|
     t.string   "title"
     t.boolean  "released"
