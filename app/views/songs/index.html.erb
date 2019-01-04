@@ -1,0 +1,25 @@
+require 'pry'
+
+<table>
+  <tr>
+      <th> Title </th>
+      <th> Artist </th>
+      <th> Release Year </th>
+      <th> Genre </th>
+  </tr>
+
+  <tbody>
+
+      <% @songs.each do |song| %>
+        <tr>
+        <td> <%= song.title %> </td>
+        <td> <%= song.artist_name %></td>
+        <td><%= song.release_year %></td>
+        <td><%= song.genre %></td>
+        </tr>
+        <% end %>
+
+    </tbody>
+</table>
+
+<%= link_to 'Create New Song', new_song_path(@song) %>
