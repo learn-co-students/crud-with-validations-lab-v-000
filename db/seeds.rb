@@ -1,0 +1,1 @@
+Song.create(title: 'My Way', released: true, release_year: 1969, artist_name: 'Frank Sinatra', genre: 'Traditional pop')
