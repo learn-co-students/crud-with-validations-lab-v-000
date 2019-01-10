@@ -1,14 +1,14 @@
 <h2><%= @song.title %></h2>
-by <strong><%= @song.artist_name %></strong>
+by <%= @song.artist_name %>
 <% if @song.released? %>
   <p>
     Released in
-    <strong><%= @song.release_year %></strong>
+    <%= @song.release_year %>
   </p>
 <% end %>
 
 <p>
-  <strong>Genre:</strong>
+  Genre:
   <%= @song.genre %>
 </p>
 
