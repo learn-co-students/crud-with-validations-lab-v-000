@@ -1,0 +1,14 @@
+<% @songs.each do |song| %>
+<tbody>
+    <tr>
+        <td><%= song.title %></td>
+        <td><%= song.release_year %></td>
+        <td><%= song.genre %></td>
+        <td><%= song.artist_name %></td>
+        <td>
+            <%= link_to 'View', song %>
+        </td>
+        </tr>
+</tbody>
+   
+<% end %>
