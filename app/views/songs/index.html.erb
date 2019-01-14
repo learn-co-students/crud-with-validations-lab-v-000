@@ -1,0 +1,20 @@
+<h1>Songs Index Page</h1>
+
+<%if !@songs.empty?%>
+  <tbody>
+    <%@songs.each do |song|%>
+      <tr>
+        <td>
+          <%=song.title %>
+        </td>
+        <td>
+          <%=link_to 'Link', song_path(song)%>
+        </td>
+      </tr>
+    <%end%>
+  </tbody>
+<%else%>
+  <p>No songs at this moment. Click <%=link_to 'Here', new_song_path%> to add a song.</p>
+<%end%>
+<br>
+<%= link_to "Add Song", new_song_path %>

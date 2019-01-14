@@ -1,0 +1,24 @@
+<h1>New Song</h1>
+
+<%=form_for(@song) do |f|%>
+<%if @song.errors.any?%>
+  <div>
+    <h3>There were some errors with the form</h3>
+    <ul>
+      <%@song.errors.full_messages.each do |message|%>
+          <li>
+            <%=message%>
+          </li>
+      <%end%>
+    </ul>
+  </div>
+<%end%>
+  Title:<%=f.text_field :title%><br>
+  Artist Name:<%=f.text_field :artist_name%><br>
+  Release Year:<%=f.number_field :release_year%><br>
+  Released:
+  <%=f.text_field :released%>
+
+  Genre:<%=f.text_field :genre%>
+  <%=f.submit%>
+<%end%>
