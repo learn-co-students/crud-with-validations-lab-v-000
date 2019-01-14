@@ -1,0 +1,6 @@
+<% @song.each do |song| %>
+<div class="song">
+  <span> <%= song.title %> </span>
+  <%= link_to "Delete", song, method: :delete, destroy: {id: song.id} %>
+</div>
+<% end %>
