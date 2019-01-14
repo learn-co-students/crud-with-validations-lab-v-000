@@ -1,0 +1,21 @@
+<h1><%=@song.title%></h1>
+
+ <div>
+   <ul>
+     <li>
+       Artist: <%=@song.artist_name%>
+     </li>
+     <%if @song.released %>
+      <li>
+        Year Released: <%=@song.release_year%>
+      </li>
+    <%end%>
+    <li>
+      Genre: <%=@song.genre%>
+    </li>
+  </ul>
+</div>
+
+<%=button_to("Delete Song", @song, method: :delete, remote: true, data: {confirm: 'Are you sure?', disable_with: 'loading...'})%>
+<%=link_to "Edit Song", edit_song_path(@song)%>
+<%=link_to "Back to Songs", songs_path%>
