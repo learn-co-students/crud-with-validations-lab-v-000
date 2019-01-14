@@ -1,8 +1,8 @@
-<%= form_tag "/songs" do %>
-  Title <%= text_field_tag "title", @song.title %> <br>
-  Artist Name <%= text_field_tag "artist_name", @song.artist_name %> <br>
-  Release Year <%= text_field_tag "release_year", @song.release_year %><br>
-  Released <%= text_field_tag "released", @song.released %> <br>
-  Genre <%= text_field_tag "genre", @song.genre %> <br>
-   <%= submit_tag "Create Song" %>
+<%= form_for @song do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_field :artist_name %>
+  <%= f.text_field :release_year %>
+  <%= f.text_field :released %>
+  <%= f.text_field :genre %>
+  <%= f.submit %>
 <% end %>

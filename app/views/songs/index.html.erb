@@ -1,3 +1,7 @@
 <% @songs.each do |song| %>
-  Title: <%= song.title %>
+  <%= song.title %>
+  <%= song.artist_name %>
+  <%= song.release_year %>
+  <%= song.released %>
+  <%= song.genre %>
 <% end %>

@@ -1,10 +1,8 @@
-<h2> <"edit"><%= @song.title %>" </h2>
-
-<%= form_tag "/song" do %>
-  Title: <%= text_field_tag "title", @song.title %><br>
-  Artist Name: <%= text_field_tag "artist_name", @song.artist_name %>
-  Release Year: <%= text_field_tag "release_year", @song.release_year %><br>
-  Released: <%= text_field_tag "released", @song.released %>
-  Genre: <%= text_field_tag "genre", @song.genre %><br>
-  <%= submit_tag "Edit" %>
+<% form_for @song do |f| %>
+<%= f.text_field :title %>
+<%= f.text_field :artist_name %>
+<%= f.text_field :release_year %>
+<%= f.text_field :released %>
+<%= f.text_field :genre %>
+<%= button_to "Edit" %>
 <% end %>
