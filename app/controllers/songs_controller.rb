@@ -19,13 +19,9 @@ class SongsController < ApplicationController
     end
   end
 
-
-
   def show
     @song = Song.find(params[:id])
   end
-
-
 
   def edit
     @song = Song.find(params[:id])
