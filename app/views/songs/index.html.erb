@@ -1,0 +1,10 @@
+
+<% @songs.each do |song| %>
+  <ul>
+    <li>Title: <%= song.title %>
+    <li>Released Yet? <%= song.released.to_s %>
+    <li>Release Year: <%= song.release_year %>
+    <li>Artist: <%= song.artist_name %>
+    <li>Genre: <%= song.genre %>
+  </ul>
+<% end %>
