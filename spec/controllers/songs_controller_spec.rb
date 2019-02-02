@@ -25,6 +25,7 @@ RSpec.describe SongsController, type: :controller do
 
     it "lists all songs" do
       get :index
+      #binding.pry
       expect(assigns(:songs)).to eq([song])
     end
 
