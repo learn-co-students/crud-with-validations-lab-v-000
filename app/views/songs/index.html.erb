@@ -1,0 +1,8 @@
+<h1> Here are all the songs </h1>
+
+
+<<tbody>
+  <% @songs.each do |song| %>
+  <tr> <%=song.title%> </tr>
+  <%end%>
+</tbody>
