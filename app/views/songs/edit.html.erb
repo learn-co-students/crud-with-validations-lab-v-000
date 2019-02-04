@@ -2,5 +2,13 @@
 
 <%= render 'form' %>
 
+<p></p>
 <%= link_to "Cancel", @song %>
 <%= link_to "Delete", @song, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+
+<p></p>
+<%= button_to "Cancel", @song, method: :get, data: { disable_with: 'Canceling' } %>
+
+<%= button_to "Delete", @song, method: :delete, data: { confirm: 'Are you sure you would like delete this post?' } %>
+
