@@ -7,6 +7,10 @@ class SongsController < ApplicationController
     @song = Song.new(song_params)
   end
 
+  def show
+    @song = Song.find(params[:id])
+  end
+
   def create
     @song = Song.new(song_params)
 
@@ -30,7 +34,6 @@ class SongsController < ApplicationController
     else 
       render :edit
     end
-    
   end
 
   def destroy
