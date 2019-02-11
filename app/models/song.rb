@@ -1,7 +1,7 @@
 class Song < ActiveRecord::Base
   validates :title, presence: true
-  validates :title, uniqueness: {scope: [:release_year, :artist_name]}
-  validates :released, inclusion: {in: %w(True False)}
+  validates :title, uniqueness: {scope: %i[:release_year, :artist_name]}
+  validates :released, inclusion: {in: [True, False]}
   validates :artist_name, presence: true
 
   with_options if: :released? do |song|
