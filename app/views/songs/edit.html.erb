@@ -1,8 +1,7 @@
 <% if @song.errors.any? %>
   <div id="error_explanation">
     <h2>
-      <%= pluralize(@song.errors.count, "error") %>
-      prohibited this post from being saved:
+      Some errors prohibited this song from being updated:
     </h2>
 
     <ul>
@@ -19,9 +18,9 @@
   <label>Artist Name:</label><br>
   <%= f.text_field :artist_name %><br>
   <label>Released? (True or False)</label><br>
-  <%= f.text_field :released %><br>
+  <%= f.check_box :released %><br>
   <label>Release Year:</label><br>
-  <%= f.text_field :release_year %><br>
+  <%= f.number_field :release_year %><br>
   <label>Genre:</label><br>
   <%= f.text_field :genre %><br>
   <%= f.submit %>
