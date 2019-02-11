@@ -5,10 +5,15 @@ class Song < ActiveRecord::Base
   validates :artist_name, presence: true
   validate :optional_release_year
 
-  def optional_release_year
-    if self.released == "true"
-      validates_presence_of :release_year
-    end
+  with_options if: :released? do |song|
+    song.validates :release_year, presence: true
+    song.validates :release_year, numericality: {
+      less_than_or_equal_to: Date.today.year
+    }
+  end
+
+  def released?
+    released
   end
 
 end
