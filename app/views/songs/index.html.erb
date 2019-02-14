@@ -1,0 +1,10 @@
+
+<h1>Songs</h1>
+
+<ul>
+<% @songs.each do |song| %>
+	<tbody>
+		<tr><%= song.title %></tr>
+	</tbody>
+<% end %>
+</ul>
