@@ -26,14 +26,28 @@ class SongsController < ApplicationController
     set_song
   end
 
-  
+  def update
+    set_song
+    if @song.update(song_params)
+      redirect_to song_path(@song)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    Song.find(params[:id]).destroy
+    redirect_to action: "index"
+  end
+
+
 
 
 
   private
 
   def song_params
-    params.require(:song).permit(:title, :artist_name, :released)
+    params.require(:song).permit(:title, :artist_name, :released, :release_year)
   end
 
   def set_song
