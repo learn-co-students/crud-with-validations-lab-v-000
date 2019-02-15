@@ -4,10 +4,10 @@ class Song < ActiveRecord::Base
   validates :released, inclusion: { in: [ true, false ] }
   validates :release_year, presence: true, numericality: { less_than_or_equal_to: Time.current.year}, if: :released
   validates :artist_name, presence: true
-  # validate :same_year?
+  validates :title, uniqueness: true if : :same_year?
 
-  # def same_year?
-  #   # binding.p
+  def same_year?
+    binding.pry
 
 
   #   if Song.all.any? {|song| self.title.include?(song)}
@@ -15,7 +15,7 @@ class Song < ActiveRecord::Base
   #   else
   #     errormessage
   #   end
-  # end
+  end
 
 end
 
