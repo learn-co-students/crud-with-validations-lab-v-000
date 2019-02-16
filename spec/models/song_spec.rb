@@ -38,6 +38,7 @@ RSpec.describe Song, type: :model do
 
   it "is invalid if an artist tries to release the same song twice in a year" do
     Song.create!(valid_attributes)
+    # binding.pry
     expect(Song.new(valid_attributes)).to be_invalid
   end
 end
