@@ -1,4 +1,72 @@
-<% @songs.each do |song| %>
-<h1> <%= song %></h1>
+<!--
 
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<table>
+  <tr>
+    <th> Title </th>
+    <th> Artist </th>
+    <th> ID </th>
+  </tr>
+<% @songs.each do |song| %>
+  <tr>
+    <td> <%= song.title %> </td>
+    <td> <%= song.artist_name %> </td>
+    <td> <%= song.id %> </td>
+    <td> <%= link_to 'Delete', song, method: :delete, data: { confirm: 'For real?' } %> </td>
+  </tr>
 <% end %>
+
+</table>
+
+</body> -->
+<!--
+<table>
+  <tr>
+    <th> Title </th>
+    <th> Artist </th>
+    <th> ID </th>
+ </tr>
+
+<% @songs.each do |song| %>
+  <tr>
+    <td> <%= song.title %> </td>
+    <td> <%= song.artist_name %> </td>
+    <td> <%= song.id %> </td>
+    <td>   <%= link_to 'Delete', song, method: :delete, data: { confirm: 'For real?' } %> </td>
+    </tr>
+<% end %>
+
+</table> -->
+
+
+<%# end %>
+
+
+<table>
+  <thead>
+  <tr>
+    <th> Title </th>
+    <th> Artist </th>
+    <th> ID </th>
+ </tr>
+  </thead>
+  <tbody>
+<% @songs.each do |song| %>
+  <tr>
+    <td> <%= song.title %> </td>
+    <td> <%= song.artist_name %> </td>
+    <td> <%= song.id %> </td>
+    <td>   <%= link_to 'Delete', song, method: :delete, data: { confirm: 'For real?' } %> </td>
+    </tr>
+<% end %>
+</tbody>
+
+</table>

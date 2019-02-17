@@ -3,3 +3,8 @@
 <%= @song.release_year %>
 <%= @song.artist_name %>
 <%= @song.genre %>
+
+<!-- link_to("Destroy", /songs/:id, method: :delete) -->
+
+<%#= link_to("destroy", song_path(@song), method: :delete) %>
+<%= link_to 'Delete', @song, method: :delete, data: { confirm: 'For real?' } %>

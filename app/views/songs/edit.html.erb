@@ -1,24 +1,29 @@
-<% if @post.errors.any? %>
+<% if @song.errors.any? %>
   <div id="error_explanation">
     <h2>
-      <%= pluralize(@post.errors.count, "error") %>
-      prohibited this post from being saved:
+      <%= pluralize(@song.errors.count, "error") %>
+      prohibited this song from being saved:
     </h2>
 
     <ul>
-    <% @post.errors.full_messages.each do |msg| %>
+    <% @song.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>
   </div>
 <% end %>
+
 <%= form_for(@song) do |f| %>
   <label>Title </label>
   <%= f.text_field :title %>
   <br>
 
   <label>Released </label>
-  <%= f.text_field :released %>
+  <%#= f.text_field :released %>
+  <%= f.check_box :released %>
+
+  <!-- <input type="checkbox" name="song_released" value="song_released"> -->
+
   <br>
 
   <label>Release Year </label>
@@ -28,6 +33,7 @@
   <label>Artist Name </label>
   <%= f.text_field :artist_name %>
   <br>
+
 
   <label> Genre </label>
   <%= f.text_field :genre %>

@@ -22,33 +22,35 @@ class SongsController < ApplicationController
 
   def show
     # binding.pry
-    @song = Song.find_by(params[:id])
+    @song = Song.find(params[:id])
   end
+
 
   def edit
-    @song = Song.find_by(params[:id])
+    @song = Song.find_by(id: params[:id])
   end
+
 
   def update
-    # want to find the song instance with params, and update it. but it should be validated
-    # and protected by strong params
     @song = Song.find(params[:id])
-    if @song.valid?
-      @song.update(song_params(params[:song].keys))
-      # binding.pry
-      redirect_to song_path(@song)
-      # binding.pry
+    if @song.update(song_params(params[:song].keys))
+      redirect_to @song
     else
       render :edit
-
-      # render edit_song_path(@song)
     end
-
   end
 
-  def delete
 
+
+  def destroy
+    # binding.pry
+    @song = Song.find(params[:id])
+    @song.destroy
+    redirect_to songs_path
   end
+# if we render the index, it won't work because it would just take you to the view itself and
+# you wouldn't access the list of songs. it would probably just show an
+
 
 
 
