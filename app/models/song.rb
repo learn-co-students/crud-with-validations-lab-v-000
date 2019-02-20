@@ -20,9 +20,8 @@ class Song < ActiveRecord::Base
     songs = Song.all
     songs.each do | s |
       if s.release_year == release_year && s.title == title && s.artist_name == artist_name
-        binding.pry
-        # errors.add(:release_year, “cannot put out the same song the same year”)
-        # binding.pry
+        # errors.add(:release_year, ‘cannot put out the same song the same year’)
+        errors.add(base: "cannot put out the same song the same year")
       end
     end
   end
