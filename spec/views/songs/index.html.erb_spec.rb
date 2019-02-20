@@ -1,3 +1,4 @@
+require 'rails_helper'
 RSpec.describe 'songs/index', type: :feature do
   let(:song_attributes_1) do
     {
