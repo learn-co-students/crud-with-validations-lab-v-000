@@ -1,13 +1,13 @@
-<%= form_tag songs_path do %>
+<%= form_for @song do |s| %>
     <label>Song Title:</label><br/>
-    <%= text_field_tag :'song[title]' %><br/>
+    <%= s.text_field :title %><br/>
     <label>Artist:</label><br/>
-    <%= text_field_tag :'song[artist]' %><br/>
+    <%= s.text_field :artist_name %><br/>
     <label>Genre:</label><br/>
-    <%= text_field_tag :'song[genre]' %><br/>
+    <%= s.text_field :genre %><br/>
     <label>Released: </label>
-    <%= check_box_tag :'song[released]' %><br/>
+    <%= s.check_box :released %><br/>
     <label>Release Year: </label>
-    <%= number_field_tag :'song[release_year]' %><br/>
-    <%= submit_tag "Submit Song" %>
+    <%= s.number_field :release_year %><br/>
+    <%= s.submit "Submit Song" %>
 <% end %>
