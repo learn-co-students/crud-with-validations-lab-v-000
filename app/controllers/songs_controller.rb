@@ -12,8 +12,9 @@ class SongsController < ApplicationController
         @song = Song.find_by(:id => params[:id])
     end
 
+
     def create
-        @song = Song.new(song_params)
+        @song = Song.new(song_params(:title, :artist_name, :genre, :released))
         if @song.valid?
             @song.save
             redirect_to song_path(@song)
@@ -23,12 +24,13 @@ class SongsController < ApplicationController
     end
 
     def edit
-        @song = Song.find_by(params[:id])
+        @song = Song.find_by(:id => params[:id])
     end
 
     def update
-        @song = Song.find_by(params[:id])
-        @song.assign_attributes(song_params)
+        @song = Song.find_by(:id => params[:id])
+        @song.assign_attributes(song_params(:title, :artist_name, :genre, :released, \
+            :release_year, :artist_name))
         if @song.valid?
             @song.save
             redirect_to song_path(@song)
@@ -37,7 +39,9 @@ class SongsController < ApplicationController
         end
     end
 
-    def delete
+    def destroy
+        Song.find_by(:id => params[:id]).destroy
+        redirect_to songs_path
     end
 
     def song_params(*args)

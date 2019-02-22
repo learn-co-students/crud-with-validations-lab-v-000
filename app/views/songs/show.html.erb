@@ -4,3 +4,6 @@ Genre: <%= @song.genre %><br/>
 <% if released %>
     Release Year: <%= @song.release_year %><br/>
 <% end %>
+<%= form_tag song_path(@song.id), method: "delete" do %>
+    <%= submit_tag "Delete #{@song.title}" %>
+<% end %>
