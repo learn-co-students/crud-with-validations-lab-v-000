@@ -1,0 +1,6 @@
+<h2>Editing <%= @song.title %> by <%= @song.artist_name %></h2>
+
+<%= render 'form' %>
+
+<br>
+<%= link_to 'Cancel Changes', songs_path(@songs) %>
