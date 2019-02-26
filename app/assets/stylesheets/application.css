@@ -19,3 +19,17 @@
   background-color: red;
   display: table;
 }
+
+form div {
+  margin-bottom: 10px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 10px;
+}
