@@ -1,0 +1,20 @@
+<h1>Here's a list of songs in our database:</h1>
+<table>
+  <thead>
+    <tr>
+      <th>
+        Songs
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @songs.each do |song| %>
+    <tr>
+      <td>
+        <%= link_to song.title, song_path(song) %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'New Song', new_song_path %>
