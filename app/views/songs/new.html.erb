@@ -1,5 +1,4 @@
-<h2>Create an Song</h2>
-<%= form_tag songs_path, method: "post" do %>
+<%= form_for(@song) do |f| %>
   <% if @song.errors.any? %>
      <div id="error_explanation">
        <h2>There were some errors:</h2>
@@ -11,30 +10,20 @@
      </div>
    <% end %>
 
-  <div class="field<%= ' field_with_errors' if @song.errors[:title].any? %>">
-    <%= label_tag "title", "Title" %>
-    <%= text_field_tag "title", @song.title %>
-  </div>
+   <label>Song Title:</label><br>
+   <%= f.text_field :title %><br>
 
-  <div class="field<%= ' field_with_errors' if @song.errors[:released].any? %>">
-    <%= label_tag "released", "Released" %>
-    <%= text_field_tag "realeased", @song.released %>
-  </div>
+   <label>Released:</label><br>
+   <%= f.check_box :released %><br>
 
-  <div class="field<%= ' field_with_errors' if @song.errors[:release_year].any? %>">
-    <%= label_tag "release_year", "Release Year" %>
-    <%= text_field_tag "release_year", @song.release_year %>
-  </div>
+   <label>Release Year:</label><br>
+   <%= f.text_field :release_year %><br>
 
-  <div class="field<%= ' field_with_errors' if @song.errors[:artist_name].any? %>">
-    <%= label_tag "artist_name", "Artist Name" %>
-    <%= text_field_tag "artist_name", @song.artist_name %>
-  </div>
+   <label>Song Artist:</label><br>
+   <%= f.text_field :artist_name %><br>
 
-  <div class="field<%= ' field_with_errors' if @song.errors[:genre].any? %>">
-    <%= label_tag "genre", "Genre" %>
-    <%= text_field_tag "genre", @song.genre %>
-  </div>
+   <label>Song Genre:</label><br>
+   <%= f.text_field :genre %><br>
 
-  <%= submit_tag "Create" %>
-<% end %>
+   <%= f.submit %>
+ <% end %>
