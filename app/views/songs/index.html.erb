@@ -8,7 +8,6 @@
       <th>Artist</th>
       <th>Genre</th>
       <th>Edit</th>
-      <th>Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -19,7 +18,6 @@
       <td><%= song.artist_name %></td>
       <td><%= song.genre %></td>
       <td><%= link_to "Edit", edit_song_path(song) %></td>
-      <td><%= link_to "Delete", song_path(song), method: 'DELETE' %></td>
     </tr>
     <% end %>
   </tbody>
