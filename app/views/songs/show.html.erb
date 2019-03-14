@@ -1,0 +1,12 @@
+<%= link_to "Home", songs_path %><br />
+<h1><%= @song.title %></h1>
+<% if @song.released == true %>
+	<p>Released in: <%= @song.release_year %></p>
+<% end %>
+<p>Artist: <%= @song.artist_name %></p>
+<p>Genre: <%= @song.genre %></p>
+<%= link_to "Edit", edit_song_path(@song) %><br />
+<%= link_to 'Delete', song_path(@song), 
+                      method: :delete, 
+                      data: { confirm: 'Are you sure?' } %> 
+
