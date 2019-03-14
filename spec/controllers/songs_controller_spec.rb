@@ -40,7 +40,7 @@ RSpec.describe SongsController, type: :controller do
   end
 
   context "creating a valid song" do
-    before { post(:create, params: {song: invalid_attributes}) }
+    before { post(:create, params: {song: valid_attributes}) }
 
     it "creates a new Song" do
       expect(Song.count).to eq(1)
