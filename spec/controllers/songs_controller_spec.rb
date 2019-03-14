@@ -29,18 +29,18 @@ RSpec.describe SongsController, type: :controller do
     end
 
     it "views a single song" do
-      get :show, { id: song.id }
+      get :show, params: { id: song.id }
       expect(assigns(:song)).to eq(song)
     end
 
     it "fetches a song for editing" do
-      get :edit, { id: song.id }
+      get :edit, params: { id: song.id }
       expect(assigns(:song)).to eq(song)
     end
   end
 
   context "creating a valid song" do
-    before { post(:create, { song: valid_attributes }) }
+    before { post(:create, Song.create!(valid_attributes)) }
 
     it "creates a new Song" do
       expect(Song.count).to eq(1)
@@ -57,7 +57,7 @@ RSpec.describe SongsController, type: :controller do
   end
 
   context "creating an invalid song" do
-    before { post(:create, { song: invalid_attributes}) }
+    before { post(:create, Song.create!(invalid_attributes)) }
 
     it "has not been persisted" do
       expect(assigns(:song)).to be_new_record

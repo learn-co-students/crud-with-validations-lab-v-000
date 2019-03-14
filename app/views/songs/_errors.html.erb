@@ -1,12 +1,12 @@
-<% if obj.errors.any? %>
+<% if @song.errors.any? %>
   <div id="error_explanation">
     <h2>
-      <%= pluralize(obj.errors.count, "error") %>
+      <%= pluralize(@song.errors.count, "error") %>
       prohibited this obj from being saved:
     </h2>
  
     <ul>
-    <% obj.errors.full_messages.each do |msg| %>
+    <% @song.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>
