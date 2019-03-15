@@ -1,10 +1,11 @@
 class SongsController < ApplicationController
 
   class AuthorsController < ApplicationController
-  before_action :set_song!, only:[:show, :edit, :update]
+  before_action :set_song!, only:[:show, :edit, :update, :destroy]
 
   def index
-    root to 'somgs#index'
+    @songs = Song.all
+    root to 'songs#index'
   end
 
   def show
@@ -32,6 +33,10 @@ class SongsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    redirect_to "songs#index"
   end
 
   private
