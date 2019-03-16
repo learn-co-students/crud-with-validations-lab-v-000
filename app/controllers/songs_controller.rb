@@ -1,10 +1,9 @@
 class SongsController < ApplicationController
-  require 'pry'
 
-  class AuthorsController < ApplicationController
   before_action :set_song!, only:[:show, :edit, :update, :destroy]
 
   def index
+    #binding.pry
     @songs = Song.all
     #root to 'songs#index'
   end
@@ -17,8 +16,9 @@ class SongsController < ApplicationController
   end
 
   def create
+    #binding.pry
     @song = Song.new(song_params)
-    binding.pry
+    #binding.pry
     if @song.save
       redirect_to song_path(@song)
     else
@@ -38,7 +38,8 @@ class SongsController < ApplicationController
   end
 
   def destroy
-    redirect_to "songs#index"
+    @song.destroy
+    redirect_to songs_url
   end
 
   private
@@ -51,5 +52,4 @@ class SongsController < ApplicationController
     @song = Song.find(params[:id])
   end
 
-end
 end
