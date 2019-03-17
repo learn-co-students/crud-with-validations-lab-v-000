@@ -11,3 +11,7 @@ by <strong><%= @song.artist_name %></strong>
 </p>
 
 <%= link_to 'Edit', edit_song_path(@song) %>
+
+<%= form_tag song_path(@song.id), method: "delete" do %>
+  <%= submit_tag "Delete #{@song.title}" %>
+  <% end %>
