@@ -6,8 +6,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= javascript_include_tag "application" %>
 
 <%= yield %>
+
+
+
+
+<% unless current_page?(controller: "songs", action: "index") %>
+  <hr/>
+  <%= link_to "View All Songs", songs_path %>
+<% end %>
+
+
 
 </body>
 </html>
