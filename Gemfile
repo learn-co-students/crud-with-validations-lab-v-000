@@ -12,6 +12,7 @@ gem 'bundler', '~> 1.16', '>= 1.16.1'
 group :development, :test do
   gem 'capybara'
   gem 'pry'
+  gem 'rb-readline'
 end
 
 group :development do
