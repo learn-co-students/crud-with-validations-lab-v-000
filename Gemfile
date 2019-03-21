@@ -13,6 +13,7 @@ group :development, :test do
   gem 'capybara'
   gem 'pry'
   gem 'rb-readline'
+  gem 'byebug'
 end
 
 group :development do
