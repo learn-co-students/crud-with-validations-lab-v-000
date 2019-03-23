@@ -14,28 +14,35 @@ class SongsController < ApplicationController
 
   def create
     @song = Song.new(song_params)
-    if @song.valid?
-      @song.save
+    # binding.pry
+    if @song.save
       redirect_to song_path(@song)
     else
       render :new
-    end 
+    end
   end
 
   def edit
   end
 
   def update
+    @song.update(song_params)
+    if @song.valid?
+      redirect_to song_path(@song)
+    else
+      render :edit
+    end
   end
 
-  def delete
-
+  def destroy
+    Song.find(params[:id]).destroy
+    redirect_to songs_url
   end
 
   private
 
   def song_params
-    params.permit(:title, :released, :release_year, :artist_name, :genre)
+    params.require(:song).permit(:title, :released, :release_year, :artist_name, :genre)
   end
 
   def set_song!
