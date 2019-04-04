@@ -1,1 +1,19 @@
-<%= button_to "Edit", action: song_path, method: :patch %>
+<%= form_for @song do |f| %>
+
+  <% if @song.errors.any? %>
+    <div>
+      <ul>
+        <% @song.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.text_field :title %>
+  <%= f.text_field :artist_name %>
+  <%= f.check_box :released %>
+  <%= f.text_field :release_year %>
+  <%= f.text_field :genre %>
+  <%= f.submit %>
+<% end %>
