@@ -106,7 +106,7 @@ RSpec.describe SongsController, type: :controller do
   context "destroying a song" do
     let(:song) { Song.create!(valid_attributes) }
     before do
-      delete :destroy, { id: song.id }
+      delete :destroy, params: { id: song.id }
     end
 
     it "destroys the requested song" do
