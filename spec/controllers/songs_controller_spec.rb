@@ -91,7 +91,7 @@ RSpec.describe SongsController, type: :controller do
   context "updating a song with invalid data" do
     let(:song) { Song.create!(valid_attributes) }
     before do
-      patch :update, { id: song.id, song: invalid_attributes }
+      patch :update, params: { id: song.id, song: invalid_attributes }
     end
 
     it "does not persist changes" do
