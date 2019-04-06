@@ -75,7 +75,7 @@ RSpec.describe SongsController, type: :controller do
     let(:song) { Song.create!(valid_attributes) }
 
     before do
-      patch :update, { id: song.id, song: new_attributes }
+      patch :update, params: { id: song.id, song: new_attributes }
     end
 
     it "updates the song" do
