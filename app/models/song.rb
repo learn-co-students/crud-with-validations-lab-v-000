@@ -1,7 +1,7 @@
 class Song < ActiveRecord::Base
   validates :title, presence: true
   # validates :title (cannot be repeated by same arist in the same year)
-  validates :unique_title, confirmation: true
+  # validates :unique_title, confirmation: true
   validates :released, inclusion: [true, false]
   validates :release_year, presence: true, if: :released
     validates :past_year, confirmation: true
@@ -15,10 +15,11 @@ class Song < ActiveRecord::Base
     end
 
   def unique_title
+    binding.pry
     song = Song.find_by(title)
     if title && song
-      if song.release_year == release_year
-        errors[:title] << "Cannot have the same song title in the same year"
+      if song.release_year == release_year && song.artist_name == artist_name
+        errors[:title] << "Cannot have the same song title in the same year by the same artist"
       end
     end
   end
