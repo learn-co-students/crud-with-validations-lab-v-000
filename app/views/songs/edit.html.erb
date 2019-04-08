@@ -1,5 +1,7 @@
 <h1>Edit form</h1>
 
+<%= @song.errors.full_messages.first if @song.errors.any? %>
+
 <%= form_for(@song) do |f| %>
     <%= f.label :title%>
     <%= f.text_field :title%>
