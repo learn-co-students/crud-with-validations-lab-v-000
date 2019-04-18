@@ -34,7 +34,7 @@ class SongsController < ApplicationController
         end
     end
 
-    def delete
+    def destroy
         set_song
         if @song.valid?
             @song.delete
