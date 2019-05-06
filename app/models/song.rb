@@ -1,14 +1,20 @@
 class Song < ApplicationRecord
   validates :title, presence: true
-#  validates :title, uniqueness: true
-  validate :invalid_without_release_year
-  validates :release_year, numericality: { less_than_or_equal_to: Date.today.year }
-  #is valid without release year when released is false (FAILED - 3)
+  validates :release_year, numericality: { less_than_or_equal_to: Date.today.year, allow_nil: true}
 
-    def invalid_without_release_year
-      if released == true && release_year = nil
-        errors.add(:release_year, "must have a release year")
-      end
+  #is valid without release year when released is false (FAILED - 3)
+  validates_uniqueness_of :title
+
+  with_options if: :released? do |song|
+    song.validates :release_year, presence: true
+    song.validates :release_year, numericality: {
+      less_than_or_equal_to: Date.today.year
+    }
+  end
+
+
+    def released?
+      released
     end
 
 
