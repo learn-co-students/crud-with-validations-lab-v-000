@@ -1,3 +1,9 @@
 <% @songs.each do |song| %>
   <p><%= song.title %> </p>
+  <p><%= song.release_year %> </p>
+  <p><%= song.genre %> </p>
+  <p><%= song.artist_name %> </p>
+  <%= link_to 'View', song %> |
+         <%= link_to 'Edit', edit_song_path(song) %> |
+         <%= link_to 'Delete', song, method: :delete, data: { confirm: 'For real?' } %>
 <% end %>
