@@ -1,0 +1,23 @@
+<p>
+  <strong>Song: </strong>
+  <%= @song.title %>
+</p>
+
+<p>
+  <strong>Artist: </strong>
+  <%= @song.artist_name %>
+</p>
+
+<p>
+  <strong>Genre: </strong>
+  <%= @song.genre %>
+</p>
+
+<p>
+  <strong>Release Year: </strong>
+  <%= @song.release_year %>
+</p>
+
+<%= link_to 'edit', edit_song_path(@song) %> |
+<%= link_to 'back', songs_path %>
+
