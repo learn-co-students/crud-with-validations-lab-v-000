@@ -6,6 +6,11 @@ class Song < ApplicationRecord
   validates :released, inclusion: { in: [true, false] }
   validates :released, exclusion: { in: [nil] }
 
-  validates :release_year, presence: true
+  validates :release_year, presence: true, if: :is_released?
+  validates :release_year, numericality: { less_than_or_equal_to: Time.now.year }, if: :is_released?
+
+  def is_released?
+    released == true
+  end
 
 end
