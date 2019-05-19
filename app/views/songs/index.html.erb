@@ -1,0 +1,13 @@
+<h1>Songs</h1>
+
+<tbody>
+  <% @songs.each do |song| %>
+    <tr><%= link_to(song.title, song_path(song)) %></tr><br>
+  <% end %>
+</tbody>
+
+<br>
+
+<%= form_tag new_song_path, method: "get" do %>
+  <%= submit_tag "Add a Song" %>
+<% end %>
