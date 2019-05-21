@@ -1,0 +1,24 @@
+<h1>All Songs</h1>
+<%= button_to("New", new_song_path, method: :get) %>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Artist</th>
+      <th>Genre</th>
+      <th>Year Released</th>
+      <th>Released</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <td><%= song.title %></td>
+        <td><%= song.artist_name %></td>
+        <td><%= song.genre %></td>
+        <td><%= song.release_year %></td>
+        <td><%= song.released %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
