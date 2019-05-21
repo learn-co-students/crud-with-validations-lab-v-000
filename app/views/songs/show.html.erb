@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Artist</th>
+    <th>Genre</th>
+    <th>Year Released</th>
+    <th>Released</th>
+  </tr>
+
+  <tr>
+    <td><%= @song.title %></td>
+    <td><%= @song.artist_name %></td>
+    <td><%= @song.genre %></td>
+    <td><%= @song.release_year %></td>
+    <td><%= @song.released %></td>
+  </tr>
+</table>
+
+<%= button_to("Delete", @song, action: "destroy", method: :delete) %>
+<%= button_to("Edit", edit_song_path(@song), method: :get) %>
