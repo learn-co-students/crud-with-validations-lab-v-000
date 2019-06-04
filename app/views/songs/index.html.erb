@@ -1,0 +1,20 @@
+<h2>Songs index page</h2>
+
+<table>
+
+  <tr>
+   <th>Title</th>
+   <th>Artist Name</th>
+   <th></th>
+ </tr>
+
+<tbody>
+  <% @songs.each do |song| %>
+    <tr>
+      <td><%= song.title %></td>
+      <td><%= song.artist_name %></td>
+    </tr>
+  <% end %>
+</tbody>
+
+</table>
