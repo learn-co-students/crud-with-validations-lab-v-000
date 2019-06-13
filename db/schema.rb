@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20190610231432) do
     t.string   "title"
     t.boolean  "released"
     t.integer  "release_year"
-    t.string   "artitst_name"
+    t.string   "artist_name"
     t.string   "genre"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
