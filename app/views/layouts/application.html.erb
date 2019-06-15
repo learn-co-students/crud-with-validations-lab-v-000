@@ -7,6 +7,11 @@
 </head>
 <body>
 
+<% unless current_page?(controller: "songs", action: "index")%>
+  <%= link_to "View All Songs", songs_path %>
+  <hr/>
+<% end %>
+
 <%= yield %>
 
 </body>
