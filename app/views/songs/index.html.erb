@@ -1,8 +1,21 @@
-
-<%@songs.each do |song|%>
-Title: <%=song.title%><br>
-Artist: <%=song.artist_name%><br>
-Genre: <%=song.genre%><br>
-Release year: <%=song.release_year%>><br>
-Released?: <%=song.released%><br><br>
-<%end%>
+<% Song.all.each do |song|%>
+<table>
+  <%= form_for song do |s|%>
+  <tbody>
+    <tr>
+      <td><%= s.label :title %></td>
+      <td><%= s.text_field :title %></td>
+      <td><%= s.label :genre %></td>
+      <td><%= s.text_field :genre %></td>
+      <td><%= s.label :artist_name %></td>
+      <td><%= s.text_field :artist_name %></td>
+      <td><%= s.label :release_year %></td>
+      <td><%= s.text_field :release_year %></td>
+      <td><%= s.label :released %></td>
+      <td><%= s.check_box :released %></td>
+      <td><%= link_to 'Show', song %></td>
+    </tr>
+    </tbody>
+    <%end%>
+    </table>
+  <%end%>
