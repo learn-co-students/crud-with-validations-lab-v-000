@@ -11,7 +11,7 @@ class Song < ApplicationRecord
   end
 
   def future_release?
-    if release_year > Date.today.year
+    if release_year && release_year > Date.today.year
       errors.add(:release_year, "release year cannot be in the future")
     end
   end
