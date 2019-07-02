@@ -1,0 +1,25 @@
+<%= form_for @song do |f| %>
+    <% if @song.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@song.errors.count, "error") %>
+      prohibited this post from being saved:
+    </h2>
+ 
+    <ul>
+    <% @song.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+  <%= f.text_field :title %>
+  <%= f.boolean :released %>
+  <%= f.integer :release_year %>
+  <%= f.string :artist_name %>
+  <%= f.string :genre %>
+  
+  <%= f.submit %>
+<% end %>
