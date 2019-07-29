@@ -1,0 +1,26 @@
+<table>
+  <!-- <tbody> -->
+    <thead>
+
+      <tr>
+        <th>Title</th>
+        <th>Released</th>
+        <th>Release Year</th>
+        <th>Genre</th>
+        <th>Artist Name</th>
+      </tr>
+    </thead>
+  <tbody>
+
+<% @songs.each do |s| %>
+<tr>
+<td><%= s.title %></td>
+<td><%= s.released %></td>
+<td><%= s.release_year %></td>
+<td><%= s.genre %></td>
+<td><%= s.artist_name %></td>
+</tr>
+<%# link_to "Destroy", song_path(@song) %>
+<%end%>
+  </tbody>
+</table>
