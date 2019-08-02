@@ -1,1 +1,3 @@
 <%= @song.name %>
+<div class="song">
+<%= link_to "Delete", @song, method: :delete, data: { confirm: "Really?"} %>
