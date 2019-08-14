@@ -1,0 +1,34 @@
+
+<h2>Editing "<%= @song.title %>"</h2>
+<%= form_tag song_path(@song), method: "patch" do %>
+  <div class="field">
+    <%= label_tag "title", "Title" %>
+    <%= text_field_tag "song[title]", @song.title %>
+  </div>
+  <p></p>
+  <div class="field">
+    <%= label_tag "released", "Released" %>
+    - Must be either "True" or "False".<br>
+    <%= text_field_tag "song[released]", @song.released %>
+  </div>
+      <p></p>
+  <div class="field">
+    <%= label_tag "release_year", "Release Year" %>
+    <br />
+    <%= check_box_tag "song[release_year]", @song.release_year %>
+  </div>
+      <p></p>
+  <div class="field">
+    <%= label_tag "artist_name", "Artist Name" %>
+    <br />
+    <%= text_field_tag "song[artist_name]", @song.artist_name %>
+  </div>
+      <p></p>
+  <div class="field">
+    <%= label_tag "genre", "Genre" %>
+    <br />
+    <%= text_field_tag "song[genre]", @song.genre %>
+  </div>
+      <p></p>
+  <%= submit_tag "Update" %>
+<% end %>
