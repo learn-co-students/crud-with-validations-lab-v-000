@@ -1,1 +1,24 @@
-new.html.erb
+<h2>Create a Song</h2>
+<%= form_tag songs_path, method: "post" do %>
+  <div class="field">
+    <%= label_tag "song_title", "song_title" %>
+    <%= text_field_tag "song[title]" %>
+  </div>
+  <div class="field">
+    <%= label_tag "released", "released" %>
+    <%= text_field_tag "song[released]" %>
+  </div>
+  <div class="field">
+    <%= label_tag "release_year", "release_year" %>
+    <%= text_field_tag "song[release_year]" %>
+  </div>
+  <div class="field">
+    <%= label_tag "artist name", "artist name" %>
+    <%= text_field_tag "song[artist_name]" %>
+  </div>
+  <div class="field">
+    <%= label_tag "genre", "genre" %>
+    <%= text_field_tag "song[genre]" %>
+  </div>
+  <%= submit_tag "Create Song" %>
+<% end %>
