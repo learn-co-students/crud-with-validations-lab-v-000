@@ -2,11 +2,11 @@
 class Song < ApplicationRecord
   validates :title, :artist_name, presence: true
   validates :released, exclusion: { in: [nil] }
+  validates :title, uniqueness: { scope: :release_year,
+   message: "should happen once per year" }
   validate :relased
   validate :release_date
 
-  validates :title, uniqueness: { scope: :release_year,
-   message: "should happen once per year" }
 
   def relased
     if released == true && release_year == nil
@@ -19,9 +19,4 @@ class Song < ApplicationRecord
       errors.add(:release_year, "Can't be in the future")
     end
   end
-
-
-
-
-
 end
