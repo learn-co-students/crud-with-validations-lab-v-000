@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Title: <%= @song.title %></h1>
+<p>Artist: <%= @song.artist_name %></p>
+<p>Genre: <%= @song.genre %></p>
+<p>Released? <%= @song.released %>, in <%= @song.year %></p>
+
+<%= link_to 'Edit', edit_song_path(@song) %><br><br>
+<%= button_to 'Destroy', @song, method: :delete %><br><br>
+<%= link_to 'All Songs', songs_path %>
