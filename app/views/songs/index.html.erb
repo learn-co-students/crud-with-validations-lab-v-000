@@ -1,0 +1,32 @@
+<%= link_to "Create New Song", new_song_path %>
+<br><br>
+    <table> 
+        <thead>
+            <tr>
+                <th><strong> Title </strong></th>
+                <th><strong> Year </strong></th>
+                <th><strong> Genre </strong></th>
+                <th><strong> Artist Name </strong></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <%@songs.each do |song| %>
+                <tr>
+                    <td><%= song.title %></td>
+                    <td><%= song.release_year %></td>
+                    <td><%= song.genre %></td>
+                    <td><%= song.artist_name %></td>
+                    <td>
+
+                        <%= link_to "View", song %>     | 
+                         <%= link_to "Edit", edit_song_path(song) %>    |
+                          <%= link_to "Delete", song_path(song), :method => "post", data: 
+                          {confirm: "Confirm deletion "} %>
+                    </td>
+                </tr>
+            <%end%>
+        </tbody>
+    </table> 
+       
+            
