@@ -1,6 +1,15 @@
 <h2>New Song</h2>
 
 <%= form_for(@song) do |f| %>
+  <% if @song.errors.any? %>
+    <h3><%= pluralize(@song.errors.size, "error") %> found:</h3>
+    <ol>
+      <% @song.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ol>
+  <% end %>
+
   <%= f.label :title %>
   <%= f.text_field :title %><br><br>
 
