@@ -1,1 +1,15 @@
-<h2>All the songs!</h2>
+<h2>Songs:</h2>
+
+<table>
+  <thead>
+    <th>Title</th>
+  </thead>
+
+  <tbody>
+    <% @songs.each do |song| %>
+      <tr>
+        <td><%= song.title %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
