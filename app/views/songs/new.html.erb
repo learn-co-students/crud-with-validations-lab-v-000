@@ -19,11 +19,14 @@
   <%= f.label :genre, "Genre (optional)" %>
   <%= f.text_field :genre %><br></br>
 
-  <%= f.label(:released, "Released? (true/false)") %>
-  <%= f.text_field :released %><br><br>
-  <!-- Why doesn't this work? 
-    <%#= f.radio_button(:released, "true") %>
-    <%#= f.radio_button(:released, "false") %>
+  <%= f.label(:released, "Released?") %>
+  <%= f.radio_button(:released, "true") %>true
+  <%= f.radio_button(:released, "false") %>false<br><br>
+  
+  <!-- Equivalent code:
+    <%#= f.text_field :released %><br><br>
+    <input type="radio" id="song_released" name="song[released]" value="true">True
+    <input type="radio" id="song_released" name="song[released]" value="false">False<br><br>
   -->
 
   <%= f.label(:release_year, "Year Released (optional if the song was never released)") %><br>
