@@ -20,8 +20,9 @@
   <%= f.text_field :genre %><br></br>
 
   <%= f.label(:released, "Released?") %>
-  <%= f.radio_button(:released, "true") %>true
-  <%= f.radio_button(:released, "false") %>false<br><br>
+  <%= f.radio_button(:released, "true", id: "song_released") %>true
+  <%= f.radio_button(:released, "false") %>false<br><br> 
+  <!-- This way, the radio buttons have different id's -->
   
   <!-- Equivalent code:
     <%#= f.text_field :released %><br><br>

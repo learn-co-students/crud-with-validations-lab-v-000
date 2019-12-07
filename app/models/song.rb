@@ -5,14 +5,10 @@ class Song < ApplicationRecord
       message: "must be 'true' or 'false'"
     }
 
-  validates :release_year, 
-    allow_blank: true, unless: -> {self.released == true},
-    numericality: {
-      only_integer: true,
-      less_than_or_equal_to: Time.now.year
-    }
-  # How do I do this right? It needs to fail if left blank when :released is true.
-  
-  validates :title, presence: true
+  validates :release_year, presence: true, unless: -> { !released }
+  validates :release_year, numericality: { only_integer: true, less_than_or_equal_to: Time.now.year }, allow_blank: true
+  # This is ultimately what works best; see notes in my Rails document for the trial and error.
+
   validates :artist_name, presence: true
+  validates :title, presence: true, uniqueness: { scope: [:release_year, :artist_name] }
 end

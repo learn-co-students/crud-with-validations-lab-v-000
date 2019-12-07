@@ -2,7 +2,7 @@
 
 <strong>Artist: </strong><%= @song.artist_name %><br>
 
-<% if @song.genre %>
+<% unless @song.genre.blank? %>
   <strong>Genre: </strong><%= @song.genre %><br>
 <% end %>
 
