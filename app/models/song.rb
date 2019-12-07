@@ -10,5 +10,13 @@ class Song < ApplicationRecord
   # This is ultimately what works best; see notes in my Rails document for the trial and error.
 
   validates :artist_name, presence: true
-  validates :title, presence: true, uniqueness: { scope: [:release_year, :artist_name] }
+  validates :title, presence: true, 
+    uniqueness: {
+      scope: [:release_year, :artist_name],
+      message: "'%{value}' cannot be released by the same artist in the same year"
+    }
+
+  def error_messages
+    self.errors.full_messages.reverse
+  end
 end

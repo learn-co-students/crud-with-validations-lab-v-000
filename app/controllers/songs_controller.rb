@@ -17,10 +17,30 @@ class SongsController < ApplicationController
     if @song.save
       redirect_to song_path(@song)
     else
-      #raise @song.errors.full_messages.inspect
+      # raise @song.errors.full_messages.inspect
+      # raise @song.error_messages.inspect
       render :new
     end
   end
+
+  def edit
+    @song = Song.find_by_id(params[:id])
+  end
+
+  def update
+    @song = Song.find_by_id(params[:id])
+    if @song.update(song_params)
+      redirect_to song_path(@song)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    raise params.inspect # This never gets hit; maybe check the show page? AAQ about this.
+  end
+
+  private
 
   def song_params
     params.require(:song).permit(:title, :artist_name, :genre, :released, :release_year)

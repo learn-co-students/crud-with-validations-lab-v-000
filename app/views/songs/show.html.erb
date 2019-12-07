@@ -7,5 +7,7 @@
 <% end %>
 
 <% if @song.released %>
-  <strong>Year Released: </strong><%= @song.release_year %>
+  <strong>Year Released: </strong><%= @song.release_year %><br>
 <% end %>
+
+<%= link_to("Delete Song", song_path(@song), method: :delete) %>
