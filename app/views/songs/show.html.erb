@@ -10,4 +10,7 @@
   <strong>Year Released: </strong><%= @song.release_year %><br>
 <% end %>
 
-<%= link_to("Delete Song", song_path(@song), method: :delete) %>
+<%#= link_to("Delete Song", song_path(@song), method: :delete) %>
+<%= link_to 'Delete song', @song, method: :delete, 
+  data: { confirm: 'Are you sure you want to delete this song?' } 
+%>
