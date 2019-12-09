@@ -1,0 +1,30 @@
+<h2>Edit Song</h2>
+
+<%= form_for(@song) do |f| %> <!-- See ./new.html.erb for more notes. -->
+  <% if @song.errors.any? %>
+    <h3><%= pluralize(@song.errors.size, "error") %> found:</h3>
+    <ol>
+      <% @song.errors.full_messages.reverse.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ol>
+  <% end %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %><br><br>
+
+  <%= f.label :artist_name %>
+  <%= f.text_field :artist_name %><br><br>
+
+  <%= f.label :genre, "Genre (optional)" %>
+  <%= f.text_field :genre %><br></br>
+
+  <%= f.label(:released, "Released?") %>
+  <%= f.radio_button(:released, "true", id: "song_released") %>true
+  <%= f.radio_button(:released, "false") %>false<br><br> 
+
+  <%= f.label(:release_year, "Year Released (optional if the song was never released)") %><br>
+  <%= f.text_field :release_year %><br></br>
+
+  <%= f.submit %>
+<% end %>

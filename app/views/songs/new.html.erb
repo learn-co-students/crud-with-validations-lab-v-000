@@ -1,0 +1,37 @@
+<h2>New Song</h2>
+
+<%= form_for(@song) do |f| %>
+  <% if @song.errors.any? %>
+    <h3><%= pluralize(@song.errors.size, "error") %> found:</h3>
+    <ol>
+      <% @song.error_messages.each do |message| %><!-- Note: #error_messages is a custom Song method. -->
+        <li><%= message %></li>
+      <% end %>
+    </ol>
+  <% end %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %><br><br>
+
+  <%= f.label :artist_name %>
+  <%= f.text_field :artist_name %><br><br>
+
+  <%= f.label :genre, "Genre (optional)" %>
+  <%= f.text_field :genre %><br></br>
+
+  <%= f.label(:released, "Released?") %>
+  <%= f.radio_button(:released, "true", id: "song_released") %>true
+  <%= f.radio_button(:released, "false") %>false<br><br> 
+  <!-- This way, the radio buttons have different id's -->
+  
+  <!-- Equivalent code:
+    <%#= f.text_field :released %><br><br>
+    <input type="radio" id="song_released" name="song[released]" value="true">True
+    <input type="radio" id="song_released" name="song[released]" value="false">False<br><br>
+  -->
+
+  <%= f.label(:release_year, "Year Released (optional if the song was never released)") %><br>
+  <%= f.text_field :release_year %><br></br>
+
+  <%= f.submit %>
+<% end %>
