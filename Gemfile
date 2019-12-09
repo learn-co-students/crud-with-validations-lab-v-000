@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '5.0.7.1'
-# gem 'rails', '~> 4.2'
 gem 'sqlite3', '~>1.3.6'
 gem 'rspec-rails'
 gem 'sass-rails', '~> 5.0'
@@ -10,6 +9,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails-controller-testing'
 gem 'bootsnap'
+gem 'jquery-rails'
 group :development, :test do
   gem 'capybara'
   gem 'pry'

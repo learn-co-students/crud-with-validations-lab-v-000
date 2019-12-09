@@ -10,8 +10,9 @@
       <tr>
         <td><%= song.title %></td>
         <td>
-          <%#= helper.link_to("Delete Song", delete_song_path(song)) %>
-          <%= link_to 'Delete song', song, method: :delete, 
+          <%= link_to 'Show', song_path(song) %>
+          <%= link_to 'Edit', edit_song_path(song) %>
+          <%= link_to 'Delete', song, method: :delete, 
             data: { confirm: 'Are you sure you want to delete this song?' } 
           %>
         </td>

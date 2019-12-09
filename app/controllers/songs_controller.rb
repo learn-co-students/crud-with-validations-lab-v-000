@@ -37,10 +37,9 @@ class SongsController < ApplicationController
   end
 
   def destroy
-    # @song = Song.find_by_id(params[:id])
-    # binding.pry
-    raise params.inspect # This never gets hit; maybe check the show page? AAQ about this.
-    # redirect_to songs_path
+    @song = Song.find_by_id(params[:id])
+    @song.destroy
+    redirect_to songs_path
   end
 
   private
