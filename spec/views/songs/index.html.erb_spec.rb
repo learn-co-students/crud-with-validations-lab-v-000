@@ -8,7 +8,6 @@ RSpec.describe 'songs/index', type: :feature do
       artist_name: 'Man With Instruments'
     }
   end
-
   let(:song_attributes_2) do
     {
       title: 'Rhythms Which I Played Again at a Later Time',
@@ -18,9 +17,7 @@ RSpec.describe 'songs/index', type: :feature do
       artist_name: 'Man With Instruments'
     }
   end
-
   before { Song.create!([song_attributes_1, song_attributes_2]) }
-
   it 'renders a list of songs' do
     visit songs_path
     expect(all('tbody > tr').size).to eq(2)
