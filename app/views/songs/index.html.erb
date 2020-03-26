@@ -2,13 +2,17 @@
 
 <%= @songs.each do |song|%>
   <article>
-    <h2><%= @song.name%></h2>
+    <h2><%= song.title%></h2>
     <ul>
-      <li><%= @song.title %></li>
-      <li><%= @song.released %></li>
-      <li><%= @song.release_year %></li>
-      <li><%= @song.artist_name %></li>
-      <li><%= @song.genre %></li>
+      <li>
+        <% if song.released %>
+          Year Released: <%= song.release_year %>
+        <% else %>
+          Song Not Released Yet
+        <% end %>
+      </li>
+      <li>Artist Name: <%= song.artist_name %></li>
+      <li>Genre: <%= song.genre %></li>
     </ul>
   </article>
 <% end %>

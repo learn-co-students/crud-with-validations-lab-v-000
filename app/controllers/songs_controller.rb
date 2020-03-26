@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-  before_action :find_or_create_song, only: [:new, :show, :edit, :update]
+  before_action :find_song, only: [:show, :edit, :update, :destroy]
 
   def index
     @songs = Song.all
@@ -10,17 +10,12 @@ class SongsController < ApplicationController
   end
 
   def new
-
+    @song = Song.new
   end
 
   def create
-    binding.pry
-    song = Song.create(song_params)
-    if song.valid?
-      redirect_to song_path(song)
-    else
-      render :new
-    end
+    @song = Song.create(song_params)
+    render_or_redirect(:new)
   end
 
   def edit
@@ -28,21 +23,31 @@ class SongsController < ApplicationController
   end
 
   def update
-    song = Song.update(song_params)
-    if song
-      redirect_to song_path(song)
-    else
-      render :edit
-    end
+    @song.update(song_params)
+    render_or_redirect(:edit)
+  end
+
+  def destroy
+    @song.destroy
+    redirect_to songs_path
   end
 
   private
 
-  def find_or_create_song
-    @song = Song.find(params[:id]) || Song.new
+  def find_song
+    @song = Song.find(params[:id])
   end
 
   def song_params
     params.require(:song).permit(:title, :released, :release_year, :artist_name, :genre)
   end
+
+  def render_or_redirect(action)
+    if @song.valid?
+      redirect_to song_path(@song)
+    else
+      render action
+    end
+  end
+
 end

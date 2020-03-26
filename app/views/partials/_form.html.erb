@@ -1,0 +1,27 @@
+<%= form_for(@song) do |f| %>
+  <p>
+    <%= f.label :title, "Song Title:" %>
+    <%= f.text_field :title %>
+  </p>
+  <p>Has the song been released?
+    <%= f.label :released, "Yes"%>
+    <%= f.radio_button :released, "Yes", checked: true %>
+    <%= f.label :released, "No"%>
+    <%= f.radio_button :released, "No" %>
+  </p>
+  <p>
+    <%= f.label :release_year, "Year Released:" %>
+    <%= f.text_field :release_year %>
+  </p>
+  <p>
+    <%= f.label :artist_name, "Artist Name:" %>
+    <%= f.text_field :artist_name %>
+  </p>
+  <p>
+    <%= f.label :genre, "Genre:"%>
+    <%= f.text_field :genre %>
+  </p>
+
+  <%= f.submit %>
+
+<% end %>

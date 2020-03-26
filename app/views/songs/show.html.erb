@@ -1,10 +1,12 @@
 <article>
-  <h1><%= @song.name%></h1>
+  <h1><%= @song.title %></h1>
   <ul>
-    <li><%= @song.title %></li>
-    <li><%= @song.released %></li>
-    <li><%= @song.release_year %></li>
-    <li><%= @song.artist_name %></li>
-    <li><%= @song.genre %></li>
+    <% if @song.released %>
+      Year Released: <%= @song.release_year %>
+    <% else %>
+      Song Not Released Yet
+    <% end %>
+    <li>Artist Name: <%= @song.artist_name %></li>
+    <li>Genre: <%= @song.genre %></li>
   </ul>
 </article>
