@@ -8,14 +8,10 @@ RSpec.describe 'songs/edit', type: :feature do
       artist_name: 'Man With Instruments'
     }
   end
-
   let(:song) { Song.create!(song_attributes) }
-
   it 'renders the edit song form' do
     visit edit_song_path(song)
-
     form = find('form')
-
     expect(form[:action]).to eq(song_path(song))
     expect(form.find('input#song_title').value).to eq(song.title)
     expect(form.find('input#song_release_year').value).to eq(song.release_year.to_s)
