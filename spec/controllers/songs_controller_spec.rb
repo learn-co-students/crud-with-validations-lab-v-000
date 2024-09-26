@@ -5,8 +5,8 @@ RSpec.describe SongsController, type: :controller do
     {
       title: "Talisman",
       artist_name: "Air",
-      release_year: 2007,
       released: true,
+      release_year: 2007,
       genre: "Post-Rock"
     }
   end
@@ -15,8 +15,8 @@ RSpec.describe SongsController, type: :controller do
     {
       title: nil,
       artist_name: nil,
-      release_year: nil,
-      released: true
+      released: true,
+      release_year: nil
     }
   end
 
